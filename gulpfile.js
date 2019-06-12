@@ -1,7 +1,7 @@
 // 1. Requires 
 
 
-var gulp = require('gulp'),
+var gulp = require('gulp');
 
 var   uglify = require('gulp-uglify');  // Подключаем Uglify
 
@@ -36,6 +36,10 @@ var rename = require('gulp-rename');
 var del = require('del'); // Подключаем библиотеку для удаления файлов и папок
 
 var cleanCSS = require('gulp-clean-css');
+
+
+// var mustache = require("gulp-mustache");
+var mustache = require("gulp-mustache-plus");
 
     
 
@@ -184,7 +188,10 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
 
 gulp.task('watch', ['browser-sync', 'scss'], function() {
 
-    gulp.watch('app/sass/**/*.+(scss|scss)', [ 'scss']);    
+    // gulp.watch('app/sass/**/*.+(scss|scss)', [ 'scss']);
+
+    gulp.watch('app/sass/**/*.+(scss|scss)', [ 'scss']);  
+    gulp.watch('app/templates/**/*.mustache', [ 'html']);    
 });
 
 gulp.task('watchjs', ['browser-sync', 'js'], function() {
@@ -219,3 +226,43 @@ gulp.task('build', ['clean'],  function () {
 
 gulp.task('default', ['watch']);
 
+
+gulp.task('html', function(){
+
+    return gulp.src('app/templates/**/*.mustache')
+    // return gulp.src('app/**/*.mustache')
+
+    .pipe(mustache('app/data/data.json', {}, {}))
+    .pipe(gulp.dest('app/'));
+
+});
+
+
+/*
+gulp.src("./templates/*.mustache")
+    .pipe(mustache('your_json_file.json',{},{}))
+    .pipe(gulp.dest("./dist"));
+
+*/
+
+
+
+// gulp.src("./templates/**/*.mustache")
+
+// и
+
+// gulp.watch('./templates/**/*.mustache', ['mustache']);
+// Так пробовал? 
+
+
+
+// Gulp screencasts - 03
+gulp.task('move', function() {
+    return gulp.src('app/css/**/*.*')
+        .on('data', function(file){
+            // console.log('Перетащили файл' + file);
+            // console.dir(file);
+            console.log('Перетащили файл ' +  file.path);
+        })
+        .pipe(gulp.dest('app/css-dest'));
+} )

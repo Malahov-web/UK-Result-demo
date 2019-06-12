@@ -1,27 +1,10 @@
 
 // Input data:
-$columns: 12;
+$columns: 24;
 $columns_gap: 10;
-$container_width: 1200;
+$container_width: 1280;
 
-$column_name: 'ds_';
-
-/* 
-$devices: ( 
-    mobile_horizontal: 480,
-    tablets          : 768,
-    desktop          : 1024,
-    hi_definition    : 1366
-);
-
-$devices_class: ( 
-
-    mobile_horizontal: 'mh_',
-    tablets          : 'tb_',
-    desktop          : 'ds_',
-    hi_definition    : 'hd_'
-);
- */
+// $column_name: 'ds_';
 
 $devices: ( 
     mv_: 320,
@@ -217,33 +200,34 @@ $devices: (
 
 
 /* 4. Утилиты адаптации  */
+
+
+// v2
+
+/* Скрываем на больших, на малых показываем */
+
 @each $device, $key in $devices {
 
     // @media  (max-width : #{$key}-1+px ) {
+    // $hidden_breakpoint: $key - 1;
+    $hidden_breakpoint: $key;
+    @media  (min-width : $hidden_breakpoint+px ) {
+
+        body .#{$device}hidden {
+            display: none;
+        }
+
+    } 
+
     $hidden_breakpoint: $key - 1;
     @media  (max-width : $hidden_breakpoint+px ) {
 
-        .container .#{$device}hidden {
+        body .#{$device}visible {
             display: none;
-            // color: $hidden_breakpoint;
-            // color: $key;
         }
 
-        // @while $i < ($columns + 1) {
-
-        //     .#{$device}#{$i} {
-
-        //         $width: $i / $columns;
-        //         width: $width * 100%;
-        //     }
-
-        //     $i: $i + 1;
-
-        // }
-
-    } 
+    }     
 }
-
 
 
 

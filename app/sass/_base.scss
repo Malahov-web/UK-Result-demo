@@ -3,89 +3,242 @@
  *
 */
 
+
 @import 'vars';
 @import 'mixins';
 // @import 'components';
+
 
 /*
  * Base
 */
 
 html{
-    font-size : 14px;
-    height: 100%;
+    font-size : 13px;
+    min-height: 100%;
 }
 body{
     font-size : inherit;
-    // line-height : $l_h;
+    line-height : $l_h;
     font-family : $font_family;
-    height: 100%;   
+    min-height: 100%;   
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 *{
     box-sizing: border-box;
+    line-height: inherit;
 }
 
 a{
-    text-decoration : none;
+    @extend %transition;
+    text-decoration: none;
+    // text-decoration: underline;
+    color: $accent;
     &:hover{
         // color: $accent_dark; // Иконки в кнопках <a> задевает
+        color: $accent_dark;
     }
 }
-ul, ol{
-    margin: 0 ; padding: 0;
-    list-style: none;
+.content a {
+    text-decoration: underline;
 }
+
 h1, h2, h3, h4,
 .h1, .h2, .h3, .h4{
-    margin: 0;
+
+    margin: $l_h_base 0;
+
     line-height: $l_h_head;
     font-family: $font_family_head;
     // font-weight: bold;
-    // letter-spacing: $l_s_big;
     font-weight: 400;
     color: $text;
 }
 h1, .h1{
-    font-size: $font_h1;
-    letter-spacing: $l_s_big;
+    @include font_size('h1');
 }
 h2, .h2{
-    font-size: $font_h2;
+    @include font_size('h2');
 }
 h3, .h3{
-    font-size: $font_h3;
+    @include font_size('h3');
 }
 h4, .h4{
-    font-size: $font_h4;
+    @include font_size('h4');
 }
-
+h5, .h5{
+    @include font_size('h5');
+}
+  
 p{
-    margin-top: 0;
-    margin-bottom: 1em;
+    margin-top: 1 * $l_h;
+    margin-bottom: 1 * $l_h;
     font-size: $fb;
-    line-height: $l_h;
-    font-weight: 300;
+    // line-height: $l_h;
+    font-weight: 400;
+    line-height: inherit;
 
 }
+.content>p:first-child {
+    margin-top: 0px;
+}
+
+ul, ol{
+    margin: 0 ; padding: 0;
+    list-style: none;
+}
+.content ul, ol {
+    margin-top: 1 * $l_h;
+    margin-bottom: 1 * $l_h;
+    padding-left: 2em;
+    li {
+
+    }
+}
+.content ul {
+    list-style-type: disc;
+    list-style-type: none;
+    li {
+        position: relative;
+        padding-left: 4/5*$l_h;
+        &:before {
+            @include pseudoelement_left_top(0, 0);
+            margin-top: calc(1/2*#{$l_h} - 1/2*6px);
+            width: 6px;
+            height: 6px;
+            background-color: $accent;
+            border-radius: 50%;
+
+        }
+    }
+}
+
+.content ol { counter-reset: list 0; } /* Инициируем счетчик */
+.content ol li:before {
+    list-style-type: none;
+    counter-increment: list; /* Увеличиваем значение счетчика */
+    content: counter(list) ". "; /* Выводим число */
+    width: 1em;
+    margin-left: -1em;
+    // transform: translateX(-100%);
+}
+
 img{
     display: block;
     max-width: 100%; width: 100%; height: auto;
 }
+.content img {
+    width: auto;
+}
 
-.themify:before,
-.themify:after{
-    vertical-align: middle;
-    display: block;
+strong {
+    font-weight: 500;
+}
+b {
+    font-weight: bold;
+}
+.content table {
+
+    tr {
+        th, td {
+            width: 50%;
+        }
+        th {
+            padding-right: 30px;
+        }
+        td {
+            padding-right: 30px;
+        }
+    }
+}
+
+.title {
+    @include font_size('h1');
+    position: relative;
+    font-weight: bold;
+    letter-spacing: $l_s;
+    text-align: center;
+    text-transform: uppercase;
+
+    line-height: $l_h_head;
+    /* 75 + 22 + 75 */
+    /* 50 + 18  + 36 + 68 */
+    padding: 0.5 * $l_h_base  0;
+    margin: 2 * $l_h_base  0;
+
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+    }       
+
+    &:after {
+        @include pseudoelement_left_top(50%, 100%);
+        transform: translate(-50%, -100%);
+        width: 2.25 * $l_h_base;
+        height: 2px;
+        background-color: $accent;
+
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+
+            width: 4 * $l_h_base;
+            height: 4px;            
+        }          
+    }
+
+}
+.title-white {
+    color: $white;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.section-component {
+    // margin: 2 * $l_h 0;
 }
 
 
 
 
+p.rquote,
+.about p.rquote,
+.content p.rquote {
+    
+    padding: 1.25*$l_h 1.5*$l_h;
+    border: 2px solid $accent;
+    background-color: $white;
+
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        padding: 1.75*$l_h 1.7*$l_h;
+    }    
+}
+
+.bg-grey {
+    background-color: $bg_light;
+}
 
 
-.section-component {
-    margin: 2 * $l_h 0;
+.btn {
+    @include flex(center, center);            
+    width: 100%;
+}
+
+.btn-readmore {
+
+    @include font_size('fb');
+
+    height: 36px;
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        height: 48px;
+    } 
+
+    border: 2px solid $accent;
+
+    
+    @include color_scheme('accent');
+    // background: none;
+    // color: $accent;
+
+    &:hover,
+    &:active {
+        @include color_scheme('accent-reverse');
+    }
 }

@@ -4,36 +4,62 @@
 
 
 /* Colors */
-$accent: #2491dd;
-$accent_light: lighten($accent, 13%);  // #5daee6;   // #5fafe6 
-$accent_dark: darken($accent, 11%); // #1b72ae;  // #1b6aa1
+$gold: #c2b385;  
+$accent: #c2b385;   // 
+$accent_light: #d4caaa;
+$accent_dark: #aa9555;
+
 
 $grey : #9b999e;
 $grey_light: lighten($grey, 23%); // $grey_super_light: lighten($grey_light, 12%);  // f5f4f5
 $grey_lighter: lighten($grey, 30%);  //  #e8e7e9
-$grey_super_light: lighten($grey, 35%);  //  #f5f4f5
+// $grey_super_light: lighten($grey, 35%);  //  #f5f4f5
 $grey_dark: darken($grey, 14%); // #77757b;
 $grey_super_dark: darken($grey, 40%); // #353437
 
-// Semantic colors
-$text: $grey_super_dark;
+
+
+$grey_super_light : #f5f5f5;
+$grey_white : #f0f0f0;
+
+
 $white: #ffffff;
 $black: #000000;
+$black_light: #353535;
 
-$success_color: #35dd24;
-// $error_color  : #dd2435;
-$error_color  : #ae1b28;
-// $warning_color: #ddcd24; // #fbaf1c
-$warning_color: #aea11b; //
-$warning_color: #fbaf1c; //
-$info_color   : #2491dd;
+// Semantic colors
+$text: $grey_super_dark;
+$text: $black;
+$text_alt: $white;
+$border_color: #dfe0e0;
+$bg_light: $grey_super_light;
+
+
+// $success_color: #467026;
+// $error_color  : #71273C;
+// $warning_color: #7E772B; //
+// $info_color   : #1D3951;
+
+// with accent_dark // aa9555
+// $success_color: #386218;
+// $error_color  : #63192E;
+// $warning_color: #6E671C; //
+// $info_color   : #133047;
+
+// with accent_dark // aa9555
+$success_color: #6C974B;
+$error_color  : #994D62;
+$warning_color: #AAA355; //
+$info_color   : #3B576E;
 
 
 /* Fonts */
 $fb : 1rem;
 
-$font_coeff : 1.19;
-$font_h4    : $fb * $font_coeff;
+// DS
+$font_coeff : 1.135;
+$font_h5    : $fb * $font_coeff;
+$font_h4    : $font_h5 * $font_coeff;
 $font_h3    : $font_h4 * $font_coeff;
 $font_h2    : $font_h3 * $font_coeff;
 $font_h1    : $font_h2 * $font_coeff;
@@ -41,22 +67,38 @@ $font_h1    : $font_h2 * $font_coeff;
 $font_small   : $fb * 1/$font_coeff;
 $font_smaller : $font_small * 1/$font_coeff;
 
+
+// TB, MB
+$font_coeff_m : 1.1;
+$font_h5_m    : $fb * $font_coeff_m;
+$font_h4_m    : $font_h5_m * $font_coeff_m;
+$font_h3_m    : $font_h4_m * $font_coeff_m;
+$font_h2_m    : $font_h3_m * $font_coeff_m;
+$font_h1_m    : $font_h2_m * $font_coeff_m;
+
+$font_small_m   : $fb * 1/$font_coeff_m;
+$font_smaller_m : $font_small * 1/$font_coeff_m;
+
+
+
+
 // Semantical fonts
 $font_forms_elements: $fb;
 
 
+$l_s_small:  0.02em;
 $l_s:  0.025em;
 $l_s_big:  0.05em;
 
-$l_h : 1.5em;
+$l_h : 1.5625em;
 $l_h_head: 1.2em;
+$l_h_medium: 1.375em;
+$l_h_base : 1.5625rem;
 
 $font_family : "Roboto",  Verdana,  Arial, sans-serif;
 $font_family_head : "Roboto",  Tahoma,  Arial, sans-serif;
+$font_family_alt : "GothamPro", Verdana, Arial, sans-serif;;
 
-
-/* Borders */
-$bd_rad: 8px;
 
 
 /* Z-index */
@@ -67,19 +109,28 @@ $zindex_modal: 400;
 $zindex_tooltip: 500;
 
 
-$sidebar_width: 260;
+
+/* Layout Metrics */
+$sidebar_width: 330px;
 // $sidebar_offset: (40 - $columns_gap)+px;
-$sidebar_offset: 40px;
+$sidebar_offset: 20px;
+
+$margin_v_small: 20px;
+$margin_v: 30px;
+$margin_v_medium: 40px;
+$margin_v_big: 60px;
 
 
 /* Animation */
-$trns_dur: 0.4s;
+$tr_dur: 0.4s;
 $transition_duration: 0.25s;
 
 
-// Last DO:
-/*
-Updt Z-index,
-Add Animation,
-
-*/
+$devices: ( 
+    mv_: 320,
+    mh_: 480,
+    tb_: 768,
+    ds_: 1024,
+    hd_: 1200
+);
+$columns_gap: 10;

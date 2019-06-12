@@ -1,29 +1,30 @@
+
+
 @mixin height_leveling($type){
-    $padding_leveling: (1.5em - 1.2em) / 2;
+
+    $padding_leveling: ($l_h - $l_h_head) / 2;
     // line-height: $l_h_head; 
 
     @if $type == heading {
         line-height: $l_h_head;
         padding-top: $padding_leveling;
         padding-bottom: $padding_leveling;        
-    } @if $type == heading_double {
+    } @if $type == heading_double {  // +
         line-height: $l_h_head;
         padding-top: $padding_leveling;
         padding-bottom: $padding_leveling;
-        height: 1 * $l_h_head + 2 * $padding_leveling;
-        overflow: hidden; position: relative;
+        height: 2 * $l_h_head + 2 * $padding_leveling;
+        overflow: hidden;
         text-overflow:  ellipsis;
-        // &:after{
-        //     content: "..";
-        //     position: absolute; right: 0; bottom : 0; line-height: $l_h_head;
-        // }  
-    } @else if $type == heading_bg {
-        line-height: $l_h_head;
-        padding-top: $padding_leveling;
-        padding-bottom: $padding_leveling;
-    } @else if $type == text {
+ 
+    }
+    @else if $type == text {  // +
         line-height: $l_h;
-    } @else if $type == forms_element {
+    } 
+    @else if $type == text-compressed {  // +
+        line-height: $l_h_medium;
+    }  
+    @else if $type == forms_element {
         line-height: $l_h;
         padding-top: 0.333334 * $l_h;
         padding-bottom: 0.333334 * $l_h;
@@ -86,8 +87,18 @@
     @else if $type == nav_element {
 
         padding-left: $fs * 2;
-        padding-right: $fs * 2;         
-    }
+        padding-right: $fs * 2; 
+    } 
+    @else if $type == card { // +
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        } 
+    } 
 }
 
 
@@ -106,5 +117,48 @@
     } @else if $type == link {
         font-weight: 300;
         letter-spacing: $l_s_big;
+    }
+
+    @else if $type == card-title { // +
+        font-weight: 500;
+        // color: $text;
+        text-align: center;
+
+    }
+
+}
+
+@mixin color_scheme ($type) {
+
+    @if $type == default {
+ 
+       color: $text; 
+    }
+    @else if $type == accent { // +
+        background-color: $white;
+        color: $accent;
+    }    
+    @else if $type == accent-reverse { // +
+        background-color: $accent;
+        color: $white;
+    }
+    @else if $type == card { // +
+        background-color: $white;
+        border-color: $grey_white;
+        color: $text;
+
+        border: 2px solid $grey_white;
+
+        &:hover {
+            border-color: $accent;
+        }
+    }
+    @else if $type == 'grey' { // +
+        background-color: $grey_super_light;
+        color: $text;
     }     
-}   
+
+
+
+
+}

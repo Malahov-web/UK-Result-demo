@@ -1,5 +1,21 @@
 
-@media (min-width: 768px) {
+
+// @media (min-width: 768px) {
+@media (min-width: #{map-get($devices, 'tb_')}px) {
+
+
+html{
+    font-size: 14px;
+}   
+
+} /* media end*/
+
+
+
+
+// @media (min-width: 1024px) {
+@media (min-width: #{map-get($devices, 'ds_')}px) {
+
 
 html{
     font-size: 16px;

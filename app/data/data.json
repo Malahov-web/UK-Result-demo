@@ -1,0 +1,308 @@
+{
+    "menu-class": "menu-main",
+    "items": [
+      {"name": "red", "first": true, "url": "#Red"},
+      {"name": "green", "link": true, "url": "#Green"},
+      {"name": "YelloW", "link": true, "url": "#YelloW"}
+    ],
+    "empty": false,
+    "menu-items": [
+        { "menu-items-name": "Об агентстве" },
+        { "menu-items-name": "Представительство в судах" },
+
+        { "menu-items-name": "Допуски СРО" },
+        { "menu-items-name": "Лицензирование" },
+        { "menu-items-name": "Регистрация и ликвидация" },
+        { "menu-items-name": "Услуги " }
+    ],
+    "services": [
+        { "item-title": "Допуски СРО", "item-image": "agreement.svg"},
+        { "item-title": "Лицензии МЧС" , "item-image": "agreement.svg"},
+        { "item-title": "Регистрация ООО", "item-image": "agreement.svg" },
+        { "item-title": "Услуги бухгалтера", "item-image": "agreement.svg" },
+        { "item-title": "Услуги адвоката", "item-image": "agreement.svg" },
+        { "item-title": "Налоговый адвокат", "item-image": "agreement.svg" }
+    ],
+
+    "offers": [
+        { 
+            "item-title": "Уголовное право",
+            "item-image": "court.png",
+            "id": 1,
+            "even": false,
+            "list": [
+                {
+                    "list-item-title": "Досудебное урегулирование споров",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Представительство интересов в арбитражном суде (арбитраж)",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Суды общей юрисдикции",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Адвокат по уголовным делам",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Банкротство физических лиц",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Взыскание долгов",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Семейные споры",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Жилищные споры",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Земельные споры",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Оспаривание корректировок таможенной стоимости",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Консультации и подготовка документов",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Наследственное право",
+                    "list-item-image": "briefcase.png"
+                }               
+            ]
+        },
+
+
+        { 
+            "item-title": "Гражданское право",
+            "item-image": "book-2.png",
+            "id": 2,
+            "even": true,
+            "list": [
+                {
+                    "list-item-title": "Досудебное урегулирование споров",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Представительство интересов в арбитражном суде (арбитраж)",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Суды общей юрисдикции",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Адвокат по уголовным делам",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Банкротство физических лиц",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Взыскание долгов",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Семейные споры",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Жилищные споры",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Земельные споры",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Оспаривание корректировок таможенной стоимости",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Консультации и подготовка документов",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Наследственное право",
+                    "list-item-image": "briefcase.png"
+                }               
+            ]
+        },
+
+
+        { 
+            "item-title": "Услуги юриста",
+            "item-image": "avatar-2.png",
+            "id": 3,
+            "even": false,
+            "list": [
+                {
+                    "list-item-title": "Досудебное урегулирование споров",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Представительство интересов в арбитражном суде (арбитраж)",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Суды общей юрисдикции",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Адвокат по уголовным делам",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Банкротство физических лиц",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Взыскание долгов",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Семейные споры",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Жилищные споры",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Земельные споры",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Оспаривание корректировок таможенной стоимости",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Консультации и подготовка документов",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Наследственное право",
+                    "list-item-image": "briefcase.png"
+                }               
+            ]
+        },
+
+        { 
+            "item-title": "Бизнесу",
+            "item-image": "team.png",
+            "id": 4,
+            "even": true,
+            "list": [
+                {
+                    "list-item-title": "Досудебное урегулирование споров",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Представительство интересов в арбитражном суде (арбитраж)",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Суды общей юрисдикции",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Адвокат по уголовным делам",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Банкротство физических лиц",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Взыскание долгов",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Семейные споры",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Жилищные споры",
+                    "list-item-image": "briefcase.png"
+                },
+                {
+                    "list-item-title": "Земельные споры",
+                    "list-item-image": "agreement.png"
+                },
+                {
+                    "list-item-title": "Оспаривание корректировок таможенной стоимости",
+                    "list-item-image": "avatar.png"
+                },
+                {
+                    "list-item-title": "Консультации и подготовка документов",
+                    "list-item-image": "book.png"
+                },
+                {
+                    "list-item-title": "Наследственное право",
+                    "list-item-image": "briefcase.png"
+                }               
+            ]
+        }
+
+    ],
+
+    "news": [
+        { 
+            "item-title": "Кредитные карты — как не быть обманутым", 
+            "item-image": "news-item-img-1.jpg",
+            "item-date": "05.02.2019",
+            "item-datetime": "2019-02-05",
+            "item-text": "Создание приверженного покупателя усиливает охват аудитории, не считаясь с затратами",
+            "item-link": "#"
+        },
+
+        { 
+            "item-title": "IT-компаниям могут предоставить налоговые льготы", 
+            "item-image": "news-item-img-2.jpg",
+            "item-date": "05.03.2019",
+            "item-datetime": "2019-03-05",
+            "item-text": "В Госдуме обсудили меры поддержки производителей отечественного программного обеспечения.",
+            "item-link": "#"
+        },
+
+        { 
+            "item-title": "Правительство РФ расширило перечень товаров облагаемых НДС", 
+            "item-image": "news-item-img-3.jpg",
+            "item-date": "04.02.2019",
+            "item-datetime": "2019-02-04",
+            "item-text": "Правительство РФ расширило перечень товаров, облагаемых по ставке НДС 10%",
+            "item-link": "#"
+        },
+
+        { 
+            "item-title": "Порядок открытия лицевых счетов для организаций и ИП", 
+            "item-image": "news-item-img-4.jpg",
+            "item-date": "05.02.2019",
+            "item-datetime": "2019-02-05",
+            "item-text": "Порядок открытия лицевых счетов для организаций и ИП",
+            "item-link": "#"
+        }                        
+
+    ],
+
+
+    "section": [
+        { "item": "value"},
+        { "item": "value"},
+        { "item": "value"}
+    ]
+
+}
+
+

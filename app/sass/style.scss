@@ -56,10 +56,11 @@
 */
 
 .header{
+    padding: 1*$l_h  0;
 
 }
 .header-top{
-
+    text-align: center;
 }
 .logo{
 
@@ -117,3 +118,18 @@
         height: 100vh;
     }
 }
+
+/*
+{
+    "menu-class": "menu-main",
+    "menu-items": [
+        { "menu-items-name": "Об агентстве" },
+        { "menu-items-name": "Представительство в судах" },
+
+        { "menu-items-name": "Допуски СРО" },
+        { "menu-items-name": "Лицензирование" },
+        { "menu-items-name": "Регистрация и ликвидация" }
+    ]
+    
+}
+*/

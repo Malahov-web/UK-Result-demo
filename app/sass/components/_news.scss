@@ -9,20 +9,46 @@
 .news{
 
     &__item{
-
-        &-title{
-
-        }
-        &-text{
-
-        }
         &-image{
+            position: relative;
+            display: block;
+            height: 6*$l_h_base;  // DS: 150px;;
+            overflow: hidden;
             img{
-
+                @include image_center_cover();
             }
         }
-        &-date{
+        &-content{
+            @include h_rhytm('card', $l_h);
+            @include color_scheme('grey');
+            padding-top: 16px;
+            // padding-bottom: 12px;
+            padding-bottom: 1px;
+        }
+        &-title{
+            // @include font_size('h5');
+            @include font_size('fb');
+            @include height_leveling('heading_double');            
+            color: $text;
+            a {
+                color: inherit;
+            }
+            &:hover {
+                color: $accent;  // general a:hover ?;
+            }            
+        }
+        &-text{
+            @include font_size('small');
+            @include height_leveling('text-compressed');
+            @include v_rhytm('text', $l_h_base);
+            word-wrap: break-word;
+            min-height: 3*$l_h_medium;
+        }
 
+        &-date{
+            @include font_size('smaller');
+            @include v_rhytm('text', $l_h);            
+            display: block;
         }
     }
 }

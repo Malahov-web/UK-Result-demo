@@ -1,8 +1,12 @@
 
-@import 'menu-main';     //
-@import 'menu-mobile';     //
-@import 'news';     //
-@import 'actions';     //
-@import 'features';     //
-@import 'edges';     //
-@import 'slider';     //
+@import 'components/menu-main';     //
+// @import 'components/menu-mobile';     //
+
+// @import 'components/actions';     //
+// @import 'components/features';     //
+// @import 'components/edges';     //
+// @import 'components/slider';     //
+
+@import 'components/services';     //
+@import 'components/offers';     //
+@import 'components/news';     //

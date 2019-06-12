@@ -1,0 +1,139 @@
+
+.offers {
+
+    &__item {
+        @extend %transition;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: $margin_v;
+
+        @include color_scheme('card');
+        // background-color: $white;
+        // border: 2px solid $grey_white;
+
+        &:hover {
+            @extend %shadow_big;
+
+            .offers__item-title {
+                @include color_scheme('accent-reverse');
+            }
+        }
+
+        &-header {
+
+        }
+        &-content {
+
+        }
+
+        &-icon {
+            @include flex(center, center);
+            padding: 30px 0;
+
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                padding: 40px 0;               
+            }              
+            img {
+                width: auto;
+                height: 80px;
+            }
+        }
+        &-title {
+            @extend %transition; 
+            @include flex(center, center);
+            @include font_size('fb');
+            @include height_leveling('text');
+            @include typo('card-title');
+
+            height: 42px;
+            overflow: hidden;
+            background-color: $grey_white;
+
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                height: 48px;
+            }              
+
+        }       
+        &-button {
+            padding-left: 0;
+            padding-right: 0;
+
+            a {
+                @include flex(center, center);
+                @include font_size('fb');
+                @include color_scheme('accent-reverse');
+                position: relative;
+                width: 100%;
+                height: 40px;
+
+                &.open {
+                    @include color_scheme('accent');
+                    &:after {
+                        //transform: rotate(90deg) scaleY(0.75) translateY(-50%)  ; // scaleY(50%)
+                    }   
+                }
+                span {
+                    position: relative;
+                    &:after {
+                        @include pseudoelement_left_top(100%, 50%);
+                        transform:  scaleY(0.75) translateY(-50%)  ; // scaleY(50%)
+                        display: inline-block;
+                        margin-left: 0.25em;
+                        content: "▼";
+                        color: inherit; // color: $white;
+                        font-size: 0.5rem;
+                    }                    
+                }
+
+            }
+            
+        }    
+        &-list {
+
+            @include h_rhytm('card', $fb);
+            padding-top: 12px;
+            padding-bottom: 12px;
+
+            @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                height: 0px;
+                overflow: hidden;
+
+                &.open {
+                    height: auto;
+                }               
+            }             
+
+            li {
+                $list_item_image_metric: 2*$fb;
+                position: relative;
+                padding-top: 10px; padding-bottom: 10px;
+                padding-left: calc(#{$list_item_image_metric} + 4px); // 40 
+
+                @media (min-width: #{map-get($devices, 'ds_')}px) {
+                    padding-top: 12px; padding-bottom: 12px;
+                }  
+
+                img {
+                    @include pseudoelement_left_top(0, 50%);
+                    transform: translateY(-50%);
+                    width: auto;
+                    max-width: $list_item_image_metric;
+                    max-height: $list_item_image_metric;                     
+                }
+                a {
+                    @include font_size('small');
+                    @include height_leveling('text');
+
+                    // Replace to @ color_scheme('link-item-title')
+                    color: $text;
+                    &:hover {
+                        color: $accent;
+                    }                    
+                }
+            }
+        }
+
+
+    }
+}

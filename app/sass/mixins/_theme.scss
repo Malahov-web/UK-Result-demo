@@ -66,7 +66,7 @@
  * Call: // font_size('h3');  ||  font_size(h3);  - протетстить
 */
 
-// @mixin set_font_size_adaptive ('h3') {
+
 @mixin font_size ($type) {
 
     @if $type == fb {
@@ -90,7 +90,21 @@
             font-size: $font_smaller;
         }
         
-    }  @else if $type == h3 {
+    }  @else if $type == h5 {
+
+        font-size: $font_h5_m;
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            font-size: $font_h5;
+        }
+
+    }  @else if $type == h4 {
+
+        font-size: $font_h4_m;
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            font-size: $font_h4;
+        }
+
+    } @else if $type == h3 {
 
         font-size: $font_h3_m;
         @media (min-width: #{map-get($devices, 'ds_')}px) {
@@ -112,4 +126,40 @@
         }
     }    
 
+}
+
+
+/*
+ * Set adaptive vertical paddings
+ * Call: // v_padding(2*$l_h, $l_h)
+*/
+
+@mixin v_padding ($p_top, $p_bottom) {
+
+    // config:
+    $coeff_TB: 3/4;
+    $coeff_MB: 1/2;
+
+    padding-top: $p_top * $coeff_MB;
+    padding-bottom: $p_bottom * $coeff_MB;
+
+    @media (min-width: #{map-get($devices, 'tb_')}px) {
+        padding-top: $p_top * $coeff_TB;
+        padding-bottom: $p_bottom * $coeff_TB;
+    }
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        padding-top: $p_top;
+        padding-bottom: $p_bottom;
+    } 
+
+}
+
+@mixin image_center_cover () {
+
+    width: auto;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    @include pseudoelement_left_top(50%, 50%);
+    transform: translate(-50%, -50%);
 }

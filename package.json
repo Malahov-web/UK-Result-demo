@@ -18,6 +18,8 @@
     "gulp-consolidate": "^0.2.0",
     "gulp-csslint": "^1.0.1",
     "gulp-iconfont": "^10.0.2",
+    "gulp-mustache": "^4.1.1",
+    "gulp-mustache-plus": "^1.0.1",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",

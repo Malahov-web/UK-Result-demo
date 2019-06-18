@@ -1,0 +1,54 @@
+
+.reviews {
+    overflow: hidden;
+
+    &__item {
+
+        &-image {
+
+            @extend %transition;
+            @include color_scheme('gallery');
+            position: relative;
+            display: inline-block;
+            font-size: 0;            
+            border-width: 5px; border-style: solid;
+
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                border-width: 10px;
+            }
+
+            &:before {
+                @extend %transition;             
+                @include pseudoelement_left_top(50%, 50%);
+                transform: translate(-50%, -50%);
+                z-index: $zindex_icon;
+                @include font_size('fb');
+                width: 4.25em;
+                height: 4.25em;
+                background: $white url('../images/magnifying-glass.svg') center center no-repeat;
+                background-size: 2em;
+                border-radius: 50%;
+
+                opacity: 0;
+            }
+
+            img {
+                @extend %transition;
+                width: auto;
+            }
+
+            &:hover img {
+                opacity: 0.3;
+            }
+            &:hover:before {
+                opacity: 1;
+            }             
+        }
+    }
+
+    .owl-item &__item-outer {
+    // .owl-item .reviews__item-outer {
+        width: 100%;
+    }
+
+}

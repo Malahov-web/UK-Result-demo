@@ -10,6 +10,7 @@
 
     &__item{
         &-image{
+            @include color_scheme('accent-reverse');            
             position: relative;
             display: block;
             height: 6*$l_h_base;  // DS: 150px;;
@@ -47,6 +48,7 @@
 
         &-date{
             @include font_size('smaller');
+            @include height_leveling('text');            
             @include v_rhytm('text', $l_h);            
             display: block;
         }

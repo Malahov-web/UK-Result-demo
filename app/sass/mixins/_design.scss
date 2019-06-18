@@ -28,7 +28,14 @@
         line-height: $l_h;
         padding-top: 0.333334 * $l_h;
         padding-bottom: 0.333334 * $l_h;
-    } @else {
+    }
+    @else if $type == button {  // +
+        height: 36px;
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            height: 48px;
+        } 
+    }
+    @else {
         
     }
 
@@ -158,6 +165,10 @@
         color: $text;
     }     
 
+    @else if $type == gallery { // +
+        background-color: $accent;
+        border-color: $accent;
+    } 
 
 
 

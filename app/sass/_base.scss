@@ -129,6 +129,9 @@ img{
     display: block;
     max-width: 100%; width: 100%; height: auto;
 }
+a > img:hover {
+    opacity: 0.85;
+}
 .content img {
     width: auto;
 }
@@ -224,16 +227,11 @@ p.rquote,
 .btn-readmore {
 
     @include font_size('fb');
-
-    height: 36px;
-    @media (min-width: #{map-get($devices, 'ds_')}px) {
-        height: 48px;
-    } 
-
-    border: 2px solid $accent;
-
-    
+    @include height_leveling('button');
     @include color_scheme('accent');
+
+    border: 2px solid $accent;  
+
     // background: none;
     // color: $accent;
 
@@ -241,4 +239,19 @@ p.rquote,
     &:active {
         @include color_scheme('accent-reverse');
     }
+}
+
+.btn-order {
+    @include font_size('h4');
+    @include height_leveling('button');
+    @include typo('card-title');
+    @include color_scheme('accent');
+
+    border: 2px solid $accent; 
+
+    &:hover,
+    &:active {
+        @include color_scheme('accent-reverse');
+    }
+
 }

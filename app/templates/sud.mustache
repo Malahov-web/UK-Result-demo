@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UK Result demo - home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <meta content='true' name='HandheldFriendly'>
+    <meta content='width' name='MobileOptimized'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+
+    <meta name="theme-color" content="#ffffff"> 
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4285f4"> 
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4285f4"> 
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+    <!-- Яндекс.Браузер -->
+    <meta name="viewport" content="ya-title=#4e69a2,ya-dock=fade">      
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/mw_kit.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/responsive.css"> -->
+
+    <!-- Plugins -->
+    <link rel="stylesheet" type="text/css" href="libs/css-hamburgers/dist/hamburgers.min.css">
+
+</head>
+
+<body class="">
+<div id="my-page">
+
+<header class="header">
+    <div class="header-top">
+        <div class="container">
+            UK Result demo
+
+        </div>      
+    </div>
+
+    <div class="header-middle">
+
+    </div>
+
+    <div class="header-bottom">
+
+        <div class="container">
+
+            <!--div class="menu-main-outer">
+                <ul class="menu-main">
+                    <li><a href="">Об агентстве</a></li>
+                    <li><a href="">Представительство в судах</a></li>
+                    <li><a href="">asdf</a></li>
+                    <li><a href="">asdf</a></li>
+                    <li><a href="">asdf</a></li>
+                </ul>
+            </div-->
+
+            {{#items}}
+              {{#first}}
+                <li><strong>{{name}}</strong></li>
+              {{/first}}
+              {{#link}}
+                <li><a href="{{url}}">{{name}}{{name}}</a></li>
+              {{/link}}
+            {{/items}}
+
+            <div class="menu-main-outer">
+
+                <ul class="{{menu-class}}">
+                    {{#menu-items}}
+                        <li><a href="#">{{menu-items-name}}</a></li>
+                    {{/menu-items}}
+
+                </ul>
+
+            </div>
+
+
+    
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+
+<section class="section section-about section-content">
+
+    <div class="container ">
+        <div class="row">
+            <div class="mv_24">
+                <h1 class="title">Представительство в судах</h1>
+            </div>
+        </div>
+
+        <!--  topinfo  -->
+        <div class="row row-topinfo">
+            <div class="mv_24 tb_24">
+                <div class="row topinfo">
+                    
+                    <div class="mv_24 tb_14 ds_15">
+                        <div class="content">
+                            <p>ЮА «Результат» предлагает услуги представительства в судах в Москве: общей юрисдикции различных инстанций, арбитражных и третейских судах. <strong>Мы обладаем богатым опытом по представлению интересов организаций и граждан в суде,
+                                    помогаем подготовиться к процессу и сопровождаем его до вынесения решения, в том числе в апелляционных инстанциях</strong>.</p>
+                            <p>Ежегодно представители нашей компании принимают участие в сотнях судебных заседаний во Владивостоке и других городах ДФО. Если в силу различных обстоятельств нам не удается защитить интересы клиентов в суде первой инстанции,
+                                мы продолжаем защищать их в судах следующих инстанций, имеем опыт представительства интересов в Верховном суде Российской Федерации.</p>                
+                        </div>                        
+                    </div>
+
+                    <div class="mv_24 tb_10 ds_9 ds_offset_0 image_molotok-outer" >
+
+                        <div class="image_molotok">
+                            <picture>
+                                <source media="(max-width: 1023px)" srcset="images/img_molotok_tb.jpg">
+                                <source media="(max-width: 1920px)" srcset="images/img_molotok.jpg">
+                            
+                                <img src="images/img_molotok.jpg">                            
+                            </picture>
+                        </div>
+                    </div>
+
+                    <div class="mv_24 ds_15">
+                        <p>
+                            <strong>На 2016 год за нашей спиной более 1000 судебных дел, решенных в пользу клиента.Защита Ваших законных прав и интересов — дело, которым должны заниматься профессионалы. Мы гарантируем профессиональный подход к урегулирования любого спора.</strong>
+                        </p>                        
+                    </div>
+
+                </div>
+            </div>
+        </div>        
+
+
+
+    </div>
+</section>
+
+
+
+
+<section class="section section-subcategories bg-grey">
+    <div class="container">
+
+        <div class="row">
+            <div class="mv_24">
+                <h1 class="title">Представительство в судах</h1>
+            </div>
+        </div>
+
+        <div class="row-flex top subcategories">
+
+            {{#subcategories}}
+            <div class="mv_24 tb_12 ds_8">
+                <a href="#" class="subcategories__item">
+                    <span class="subcategories__item-image">
+                        <img src="uploads/subpages/{{item-image}}" alt="{{item-title}}">
+                    </span>
+                    <h3 class="subcategories__item-title">{{item-title}}</h3>
+                </a>
+            </div>
+            {{/subcategories}}
+
+
+                
+                <div class="mv_24 tb_12 ds_8">
+                    <div class="subpagelist__item d-shadow-light">
+                        <a href="#"><img src="uploads/subpages/007-team.svg" alt=""></a>
+                        <h4><a href="#">Досудебное урегулирование споров</a></h4>
+                    </div>
+                </div>
+
+            
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="section section-about">
+    <div class="container">
+
+        <div class="row">
+            <div class="mv_24">
+                <h2 class="title">Почему выбирают нас?</h2>
+            </div>
+        </div>
+
+
+        <div class="row about">
+            <div class="mv_24 ds_24 content">
+                <div class="row">
+                    <div class="mv_24 ds_18 content">
+                        <p>Специалисты Юридического агентства «Москонсалт» в течение <strong>17 лет</strong> специализируются на юридических услугах и решении различных правовых вопросов, среди которых особенно выделяются <strong>защита интересов в суде</strong> юридических и физических лиц
+                            <strong>на всех стадиях</strong> производства, представление интересов в Арбитражном суде, получение лицензий (в том числе, получение строительных лицензий, получение медицинских лицензий, получение пожарных лицензий МЧС, получение реставрационных
+                            лицензий Минкультуры, получение алкогольных лицензий, получение лицензий на охранную и детективную деятельность и др.), получение допусков СРО для строительных, проектировочных, изыскательских организаций, регистрация предприятий
+                            (регистрация ИП, регистрация ООО, регистрация АО, регистрация организаций с иностранными инвестициями, регистрация некоммерческих организаций, регистрация оффшоров, регистрация эмиссии акций в ФСФР, регистрация фирменного знака),
+                            ликвидация юридических лиц, закрытие фирм, подготовка документов и регистрация любых сделок с недвижимостью, приватизация квартир, бухгалтерские услуги. <strong>Обращаясь в наше агентство, Вы всегда можете быть уверены в том, что получите
+                                квалифицированную помощь.</strong>
+                        </p>
+                        <p>Мы готовы профессионально решать любые гражданские, жилищные, семейные, трудовые, наследственные, арбитражные и иные судебные споры и найдем ответы на все Ваши вопросы.</p>                            
+                    </div>
+                    <div class="mv_24 ds_6">
+                        <div class="about__decor">
+                            Молоток
+                            <img src="images/about__decor.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="rquote"><strong>Юридическое агентство «Москонсалт»</strong> уже более 5 лет специализируется на включении строительных и иных компаний в реестр саморегулируемых организаций (СРО). С нашей помощью Ваша компания сможет <a href="http://urcompanya.ru/services/companies/dopuski-sro/">вступить в СРО</a>                        в самые кратчайшие сроки. Мы являемся официальными представителями нескольких СРО, что делает возможным получение Вами допуска быстро и качественно!
+                </p>
+                <p>Многие наши клиенты из Владивостока и других городов Приморского края, обратившись однажды, теперь регулярно пользуются услугами Юридического агентства «Москонсалт». Многие из них приобрели абонемент постоянного юридического обслуживания,
+                    позволяющий значительно сэкономить на решении текущих правовых вопросов. Только в нашем агентстве при заключении договора на абонементное юридическое обслуживание Вы получаете <strong><a href="http://urcompanya.ru/services/companies/polis/">Юридический полис</a>,</strong>                        который дает вам право преимущественного пользования нашими услугами в любое время дня и ночи!</p>
+                <p class="rquote">Отношения между нами и клиентами построены, прежде всего, на основах взаимного доверия – мы всегда соблюдаем режим конфиденциальности в своей работе.
+                Если Вы не хотите ограничиваться решением конкретной задачи и желаете снизить финансовые риски в будущем, полностью обезопасив свой бизнес, – Вы правильно выбрали компанию, оказывающую юридические услуги. Мы всегда стремимся к тому,
+                    чтобы отношения с клиентами были взаимовыгодным сотрудничеством.</p>
+
+            </div>
+        </div>        
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-top">
+    </div>
+    <div class="footer-bottom">
+    </div>
+</footer>
+</div>
+
+
+
+
+
+<!-- JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script> -->
+
+<!-- mmenu -->  
+    <!-- <script src="path/to/jquery.js"></script> -->
+    <!-- <script src="libs/jQuery.mmenu/dist/jquery.mmenu.all.js"></script> -->
+    <!-- <link href="libs/jQuery.mmenu/dist/jquery.mmenu.all.css" rel="stylesheet"> -->
+
+<!-- owl -->
+    <!-- <link href="libs/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet"> -->
+    <!-- <script src="libs/owl.carousel/dist/owl.carousel.min.js"></script> -->
+    
+
+
+
+
+    <!-- <script src="js/scripts.js"> </script> -->
+    <script src="js/min/scripts.min.js"> </script>    
+
+</body>
+</html>

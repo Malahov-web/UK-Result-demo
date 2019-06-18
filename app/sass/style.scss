@@ -17,6 +17,7 @@
 @import 'fonts'; //
 @import 'svgfontstyle'; //
 @import 'libs'; //
+@import '../fonts/dist/flaticons/_flaticon'; //
 @import 'base'; //
 @import 'media'; //
 
@@ -133,3 +134,122 @@
     
 }
 */
+
+
+/* 5. intro
+ * **********************************************************************
+ *
+*/
+
+.section-intro {
+// TEMP:
+padding-bottom: 100px;
+border-bottom: 1px solid $text;
+
+    .title {
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            display: inline-block;
+            text-align: left;
+        }  
+    }
+}
+
+
+/* 9. about
+ * **********************************************************************
+ *
+*/
+
+.section-about {
+    
+    padding-bottom: $margin_v;
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        padding-bottom: $margin_v_big;
+    }     
+}
+.home .section-about {
+    @include color_scheme('grey');
+}
+
+
+/* 12. subcategories
+ * **********************************************************************
+ *
+*/
+
+.section-subcategories {
+    // padding-top: 2*$margin_v_medium;
+    // padding-bottom: $margin_v_small;
+    padding: $margin_v_medium  0;
+
+    @media (min-width: #{map-get($devices, 'tb_')}px) {
+        // padding-top: $margin_v_medium;
+        // padding-bottom: $margin_v_medium;
+        padding: $margin_v_big  0;
+    }  
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        // padding-top: $margin_v_big;
+        // padding-bottom: $margin_v_big;
+
+        padding: 2*$margin_v_medium  0;
+    }          
+}
+
+
+
+
+
+
+
+/* B. Plugins
+ * **********************************************************************
+ *
+*/
+
+/* Owl-carousel */
+
+body .owl-prev, 
+body .owl-next {
+    @extend .fi;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    // width: 15px;
+    // height: 30px;
+    width: auto;
+    height: auto;    
+    font-size: 0;
+
+    &:before {
+        @extend %transition;        
+        @extend .flaticon-down-arrow;
+        font-size: 2*$fb;
+    }
+    span {
+        display: none;
+    }
+    
+}
+
+body .owl-prev {
+    left : 0; right : auto;
+    &:before {
+        transform: rotate(90deg);
+    }    
+}
+body .owl-next {
+    left : auto; right : 0;
+    &:before {
+        transform: rotate(-90deg);
+    }    
+}
+
+body .owl-prev, 
+body .owl-next {
+
+    &:hover {
+        &:before {
+            color: $accent;
+        }
+    }    
+}

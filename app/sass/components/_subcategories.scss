@@ -1,0 +1,27 @@
+
+.subcategories {
+
+    margin-bottom: -$margin_v_small;    
+
+    &__item {
+
+        @extend %transition;
+        @include flex(flex-start, center);
+        margin-bottom: $margin_v_small;
+        min-height: 2*$l_h;
+        min-height: 130px;
+        // background-color: $white;
+        // border: 2px solid $grey_white;
+        @include color_scheme('card');
+        font-size: 0;
+
+        &-image {
+            img {
+
+            }
+        }
+        &-title {
+
+        }
+    }
+}

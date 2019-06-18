@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
 // @import '../fonts/social-icons/styles'; //
 
 
@@ -51,9 +51,6 @@
 
 
 
-// @include font-face(Samplino, fonts/Samplino); 
-@include font-face(myfont, fonts/myfont); 
-// @include font-face(SFUI-Text-Light, fonts/SFUI-Text-Light); 
-// @include font-face(SFUI-Text-Light, fonts/SFUI-Text-Bold); 
-// @include font-face(SFUI-Text-Light, fonts/SFUI-Text-Medium); 
-// @include font-face('social-icons', fonts/social-icons); 
+@include font-face('GothamPro', '../fonts/dist/GothamPro', 400); 
+@include font-face('GothamPro', '../fonts/dist/GothamPro-Bold', 700); 
+

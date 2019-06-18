@@ -1,0 +1,47 @@
+
+.difference {
+
+    &__list {
+        padding-top: 1px;
+
+        column-count: 2;
+        // column-fill: auto;
+        column-fill: balance;
+        // column-fill: balance-all;
+
+        > .mv_20 {
+            width: auto!important;
+        }
+        li {
+            padding: 1px;
+        }
+        &-item {
+            @extend %shadow;
+            position: relative;
+            margin-bottom: 1.5 * $l_h;
+            padding: 20px 20px 15px 20px;
+
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                margin-bottom: 2.5 * $l_h;
+                padding: 25px 30px 20px 30px;
+            }
+
+            &-title {
+               margin-bottom: 0.5 * $l_h;
+               font-size: $font_h5_m; 
+               font-weight: 500; 
+
+                @media (min-width: #{map-get($devices, 'ds_')}px) {
+                    font-size: $font_h5;
+                    font-size: $font_h4;
+                } 
+            }
+
+            &-text {
+                margin: 0; 
+                letter-spacing: $l_s_small;
+            }            
+        }
+    }
+
+}

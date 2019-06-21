@@ -2,31 +2,97 @@
  * **********************************************************************
  *
 */  
-/* 
+
 .menu-main-outer{
-    background-color: ;
+
 }
 .menu-control{
     display: none;
 }
 .menu-main{
+    @include flex(space-around, center);
 }
-    .menu-main li{
-        // display: inline-block;
-        // float: left;
+    .menu-main > li{
+        position: relative;
         
         &:last-child{
             margin-right: 0;
         }
         a{
+            position: relative;
             display: block;
-            font-size: ;
-            color: ;
+            // padding: 0.9*$l_h  $margin_v_small;
+            padding: 0.9*$l_h  0;
+            @include h_rhytm('card', $l_h);
+
+            @include font_size('fb');
+            @include height_leveling('text');
+            @include typo('menu-item');
+            @include color_scheme('dark');
 
             &:hover{
-                color: ;
+                @include color_scheme('accent');                
             }
         }
+        &:after {
+            @include pseudoelement_left_top(0, 100%);
+            @extend %transition;
+            transform: translateY(-100%);
+            width: 100%;
+            height: 5px;
+            background-color: $accent;
+            opacity: 0;
+        }
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        .sub-menu {
+            display: none;
+            @extend %shadow;            
+            position: absolute;
+            z-index: $zindex_nav;
+            width: 10000%;
+            max-width: 600px;
+            padding: $margin_v_small;
+            background-color: $white;
+
+            column-count: 2;
+            background-clip: padding-box;
+
+
+    border: 2px solid $accent;
+
+            li {
+                a {
+                    padding: 0.5*$l_h;
+                    // @include v_rhytm('text', $l_h);  // сбивается выравнивание
+                    font-size: $font_small;
+                    // color: $text;
+                    @include color_scheme('default');
+                    font-weight: 400;
+
+                    &:hover {
+                        // color: $accent;
+                        @include color_scheme('accent');
+                        
+                    }
+                }
+            }
+
+        }
+        &:last-child .sub-menu {
+            left: auto;
+            right: 0;
+        }
+        &:hover {
+            .sub-menu {
+                display: block;
+            }
+        }
+
     }
 
 
@@ -39,4 +105,8 @@
     }
     
 } // media end
- */
+
+
+.sub-menu {
+    display: none;
+}

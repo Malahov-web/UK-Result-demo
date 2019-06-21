@@ -134,11 +134,17 @@
  * Call: // v_padding(2*$l_h, $l_h)
 */
 
+    $coeff_TB: 1;
+    $coeff_MB: 2/3;
+
 @mixin v_padding ($p_top, $p_bottom) {
 
     // config:
-    $coeff_TB: 3/4;
-    $coeff_MB: 1/2;
+    // $coeff_TB: 3/4;
+    // $coeff_MB: 1/2;
+
+
+    // $coeff_MB: 1;
 
     padding-top: $p_top * $coeff_MB;
     padding-bottom: $p_bottom * $coeff_MB;
@@ -154,6 +160,22 @@
 
 }
 
+@mixin v_margin ($p_top, $p_bottom) {
+
+    margin-top: $p_top * $coeff_MB;
+    margin-bottom: $p_bottom * $coeff_MB;
+
+    @media (min-width: #{map-get($devices, 'tb_')}px) {
+        margin-top: $p_top * $coeff_TB;
+        margin-bottom: $p_bottom * $coeff_TB;
+    }
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        margin-top: $p_top;
+        margin-bottom: $p_bottom;
+    } 
+
+}
+
 
 @mixin image_center_cover () {
 
@@ -163,4 +185,22 @@
     min-width: 100%;
     @include pseudoelement_left_top(50%, 50%);
     transform: translate(-50%, -50%);
+}
+
+
+/*
+ * Set adaptive bg-image
+ * Call: // set_bg_adaptive('../images/section-main-bg', 1200);
+*/
+
+@mixin set_bg_adaptive($file_path, $breakpoint_prefix, $file_ext) {
+
+    background: #fff url($file_path+'.'+$file_ext) 0 0 no-repeat;
+
+    
+    // @media (min-width: #{map-get($devices, 'ds_')}px) {
+    @media (min-width: $breakpoint_prefix+px) {
+        
+        background-image: url($file_path+'-'+$breakpoint_prefix+'.'+$file_ext);
+    }      
 }

@@ -1,0 +1,52 @@
+.search {
+
+    @include flex(flex-start, center);
+    max-width: 230px;
+    border-bottom: 2px solid $accent;
+
+    $search_button_width: 20px;
+
+    .search__field {
+        // Reset
+        border: none;
+        @include font_size('small');
+        @include height_leveling('button-small');
+        width: calc(100% - #{$search_button_width});
+    }
+
+    .search__button {
+        position: relative;
+        @include height_leveling('button-small');
+
+        width: $search_button_width;    
+        // @include flex(center, center);
+        cursor: pointer;
+        opacity: 0.5;
+
+            // zoom icon
+            &:before {
+                @extend %transition;             
+                @include pseudoelement_left_top(50%, 50%);
+                transform: translate(-50%, -50%);
+                z-index: $zindex_icon;
+                @include font_size('fb');
+                width: $search_button_width;
+                height: $search_button_width;
+                background: $white url('../images/magnifying-glass.svg') center center no-repeat;
+                // background-size: 2em;
+                // border-radius: 50%;
+
+                // opacity: 0;
+            }        
+    }    
+
+}
+
+.btn-search {
+    // Reset
+    background: none;
+    border: none;
+    // background-color: $pink;
+    // border-radius: 50%;
+    // color: $white;
+}

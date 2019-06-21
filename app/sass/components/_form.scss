@@ -1,0 +1,100 @@
+
+.form-outer {
+
+    @include v_rhytm('block-card', '' );
+}
+.form{
+
+    &__subtitle {
+
+        @include height_leveling('text-compressed');
+        @include font_size('fb');
+        @include typo('notice');
+
+        @include v_margin(-2*$l_h_base, 0);
+        @include v_padding(1*$l_h_base, 1*$l_h_base,);
+    }
+
+    &__notice {
+
+        // @include v_rhytm('text', $l_h);
+        @include height_leveling('text-compressed');
+        @include font_size('fb');
+        @include typo('notice');
+
+        // @include v_padding(1*$l_h_base,  0);
+        // @include v_margin(0, -1*$l_h_base); 
+
+        @include v_margin(1*$l_h_base, -1*$l_h_base);        
+    }
+    &__subtitle--white {
+        color: $white;
+    }    
+    &__notice--white {
+        color: $white;
+    }
+
+}
+.field-outer {
+    @include v_rhytm('card', '' );
+}
+
+.request__image {
+    // картинка слева
+    position: absolute;
+    left:0;
+    bottom : 0;
+    display: none;
+
+    @include v_margin(0, -3*$l_h_base);
+
+    @media (min-width: #{map-get($devices, 'tb_')}px) {
+        display: block;
+        // bottom: -$margin_v;
+    } 
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        // bottom: -40px;
+
+    }     
+    img {
+
+    }
+}
+
+input {
+
+}
+
+
+
+input,
+textarea{
+    width: 100%;
+    background-color: $white;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    line-height: $l_h;
+    font-family: $font_family;
+}
+input[type="text"],
+input[type="email"],
+input[type="phone"],
+input[type="tel"],
+input[type="password"]{
+
+    @include font_size('h5');
+    @include height_leveling('forms_element');
+    @include h_rhytm('forms_element', $font_forms_elements); 
+    
+    @include color_scheme('form_elements');
+    border-width: 2px; border-style: solid;
+    // border: 2px solid $accent;        
+
+    &:placeholder  {
+        color: transparentize($text, 0.5);      
+    }
+
+}

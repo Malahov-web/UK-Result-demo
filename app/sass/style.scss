@@ -49,6 +49,23 @@
     }
 }
 
+.section {
+    // padding-top: 2*$l_h_base;
+    // padding-top: 3*$l_h_base;
+
+    // @include v_padding(3*$l_h_base, 3*$l_h_base);
+    @include v_rhytm('section', $l_h_base);
+
+
+}
+.section {
+    
+    .title {
+        // margin-top: - 1*$l_h_base;
+        // @include v_margin(-1*$l_h_base, 2*$l_h_base);
+
+    }
+}
 
 
 /* 1. Header
@@ -62,7 +79,27 @@
 }
 .header-top{
     text-align: center;
+
+    padding: 12px 0;
+    border-bottom: 2px solid $black_light;    
+
+    @media (min-width: #{map-get($devices, 'tb_')}px) {
+        padding: 1/2*$margin_v_small  0;
+        // border-bottom: 2px solid $border_color;
+    }
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        border-bottom: 2px solid $border_color;
+    }
+
 }
+
+.oldversion {
+    @include font_size('small');
+    @include typo('notice');
+    @include color_scheme('default');
+    text-decoration: underline;
+}
+
 .logo{
 
     img{
@@ -70,7 +107,31 @@
     }
 }
 
+.header-middle {
 
+}
+
+.header-bottom {
+    @include color_scheme('accent-reverse');
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        @include color_scheme('dark');
+    }
+
+    .menu-trigger {
+        .btn {
+            @include color_scheme('accent-reverse');
+        }
+    }
+}
+/* 
+     <!--
+     {{#sub-menu}}
+     <ul class="sub-menu">
+         <li><a href="#">{{sub-menu-item-name}}</a></li>
+     </ul>
+     {{/sub-menu}}
+ -->
+*/     
 @media (max-width: 768px) {
    
     
@@ -83,27 +144,6 @@
  *
 */  
 
-.menu-main-outer{
-}
-.menu-control{
-    display: none;
-}
-.menu-main{
-}
-    .menu-main li{
-        display: inline-block;
-        
-        &:last-child{
-            margin-right: 0;
-        }
-        a{
-            display: block;
-
-            &:hover{
-
-            }
-        }
-    }
 
 
 /* 3. Slider
@@ -177,6 +217,7 @@ border-bottom: 1px solid $text;
  *
 */
 
+/*
 .section-subcategories {
     // padding-top: 2*$margin_v_medium;
     // padding-bottom: $margin_v_small;
@@ -194,11 +235,102 @@ border-bottom: 1px solid $text;
         padding: 2*$margin_v_medium  0;
     }          
 }
+*/
+
+/* 8. reviews
+ * **********************************************************************
+ *
+*/
+
+.section-reviews {
+    
+    // padding-bottom: $margin_v_big;
+}
+
+
+/* 13. top_block
+ * **********************************************************************
+ *
+*/
+
+.section-features {
+    
+    overflow: hidden;
+    @include v_rhytm('section-collapse', $l_h);
+}
 
 
 
 
 
+.section-form {
+    border-top: 1px solid $text;
+
+    .bg-grey {
+        @include v_rhytm('section', $l_h);
+    }
+
+    .btn-more {
+        @include v_margin(-1*$l_h_base, 1*$l_h_base);
+        max-width: 200px;
+        margin: 0 auto;
+    }
+   
+}
+.section-form--request {
+    padding-bottom: 0;
+}
+
+.section-form--consultation {
+
+    background: #fff url() 0 0 no-repeat;
+
+    text-align: center;
+    // padding-top: $margin_v;
+    // padding-bottom: $margin_v;
+    background: url('../images/section-request-bg.jpg') 0 0 no-repeat;
+    background-size: cover;
+
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        // padding-bottom: $margin_v_medium;   
+        background: url('../images/section-request-bg.jpg') 0 0 no-repeat;
+        background-size: cover;   
+    }
+}
+
+
+/* . actions
+ * **********************************************************************
+ *
+*/
+
+.section-actions {
+    
+    overflow: hidden;
+    // @include v_rhytm('section-collapse', $l_h);
+    padding-bottom: 0;
+    
+}
+
+.section-definitions {
+    
+    overflow: hidden;
+    @include v_rhytm('section', $l_h);
+
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        padding-top: 6*$l_h_base;
+    }  
+    
+}
+
+
+
+
+
+/* B. Plugins
+ * **********************************************************************
+ *
+*/
 
 
 /* B. Plugins
@@ -252,4 +384,29 @@ body .owl-next {
             color: $accent;
         }
     }    
+}
+
+
+
+/* ?. ?
+ * **********************************************************************
+ *
+*/
+
+
+.image_molotok-outer {
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        float: right !important;
+    }      
+}
+.image_molotok { 
+
+    img {
+        margin: 0 auto;
+        width: auto;
+    }   
+
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        position: relative; top:-30px;
+    }      
 }

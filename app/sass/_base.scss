@@ -157,7 +157,7 @@ b {
     }
 }
 
-.title {
+/* .title {
     @include font_size('h1');
     position: relative;
     font-weight: bold;
@@ -166,8 +166,8 @@ b {
     text-transform: uppercase;
 
     line-height: $l_h_head;
-    /* 75 + 22 + 75 */
-    /* 50 + 18  + 36 + 68 */
+    75 + 22 + 75
+    50 + 18  + 36 + 68
     padding: 0.5 * $l_h_base  0;
     margin: 2 * $l_h_base  0;
 
@@ -188,7 +188,43 @@ b {
         }          
     }
 
+} */
+
+.title {
+ margin: -0px;
+    @include font_size('h1');
+    // @include height_leveling('text');
+    // @include height_leveling('heading');
+    @include height_leveling('text-compressed');
+    @include typo('heading');
+
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: relative;
+    text-align: center;
+
+    // margin-bottom: 2*$l_h_base;
+    // @include v_margin(0, 2*$l_h_base);
+    @include v_rhytm('section-title', $l_h_base);
+
+    &:after {
+        @include pseudoelement_left_top(50%, 100%);
+        transform: translate(-50%, -100%);
+        // margin-top: 0.5em;
+        width: 2.25 * $l_h_base;
+        height: 2px;
+        background-color: $accent;
+
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            width: 4 * $l_h_base;
+            height: 4px;            
+        }          
+    }    
+
 }
+
+
+
 .title-white {
     color: $white;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
@@ -254,4 +290,37 @@ p.rquote,
         @include color_scheme('accent-reverse');
     }
 
+}
+
+.btn-submit {
+    @include font_size('h4');
+    @include height_leveling('forms_element');
+    @include typo('card');
+    @include color_scheme('accent');
+
+    border: 2px solid $accent;
+    &:hover,
+    &:active {
+        @include color_scheme('accent-reverse');
+    }    
+}
+
+.btn-more {
+    @include font_size('h5');
+    @include height_leveling('button-small');
+    @include typo('notice');
+    @include color_scheme('accent-reverse');
+
+    &:hover,
+    &:active {
+        @include color_scheme('dark');
+    }      
+}
+
+.btn-cta {
+    @extend .btn-submit;
+
+    // @include color_scheme('default');
+    color: $text_alt;
+    max-width: 275px;
 }

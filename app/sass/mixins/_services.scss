@@ -19,3 +19,18 @@ $browser-context: 16;
 @function em($pixels, $context: $browser-context) {
     @return #{$pixels/$context}em;
 }
+
+
+@function m($obj, $prop) {
+
+
+    @return map-get($obj, $prop);
+}
+
+@function _($obj, $prop) {
+
+
+    @return map-get($obj, $prop);
+}
+
+// @media (min-width: #{map-get($devices, 'ds_')}px) {

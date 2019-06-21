@@ -6,15 +6,101 @@
       {"name": "YelloW", "link": true, "url": "#YelloW"}
     ],
     "empty": false,
-    "menu-items": [
-        { "menu-items-name": "Об агентстве" },
-        { "menu-items-name": "Представительство в судах" },
 
-        { "menu-items-name": "Допуски СРО" },
-        { "menu-items-name": "Лицензирование" },
-        { "menu-items-name": "Регистрация и ликвидация" },
-        { "menu-items-name": "Услуги " }
+    "menu-items": [
+        { 
+            "menu-items-name": "Об агентстве",
+            "sub-menu": [
+                { "sub-menu-item-name": "Кейсы" },
+                { "sub-menu-item-name": "Вакансии" }
+            ]
+        },
+        {
+            "menu-items-name": "Представительство в судах",
+            "sub-menu": [
+                { "sub-menu-item-name": "Досудебное урегулирование споров" },
+                { "sub-menu-item-name": "Представительство интересов в арбитражном суде (арбитраж)" },
+                { "sub-menu-item-name": "Банкротство физических лиц" },
+                { "sub-menu-item-name": "Взыскание долгов" },
+                { "sub-menu-item-name": "Жилищные споры" },
+                { "sub-menu-item-name": "Семейные споры" },
+                { "sub-menu-item-name": "Земельные споры" },
+                { "sub-menu-item-name": "Оспаривание корректировок таможенной стоимости" },
+                { "sub-menu-item-name": "Наследственное право" },
+                { "sub-menu-item-name": "Консультации и подготовка документов" }
+            ]
+        },
+
+        {
+            "menu-items-name": "Допуски СРО",
+            "sub-menu": false
+        },
+        {
+            "menu-items-name": "Лицензирование",
+            "sub-menu": [
+                { "sub-menu-item-name": "Лицензии МЧС" },
+                { "sub-menu-item-name": "Лицензии на гостайну ФСБ" },
+                { "sub-menu-item-name": "Медицинские лицензии" },
+                { "sub-menu-item-name": "Фармацевтические лицензии" },
+                { "sub-menu-item-name": "Лицензирование управляющих компаний" },
+                { "sub-menu-item-name": "Лицензия для автошколы" },
+                { "sub-menu-item-name": "Реставрационные лицензии Минкультуры" },
+                { "sub-menu-item-name": "Лицензии на розничную реализацию алкоголя" },
+                { "sub-menu-item-name": "Заключения СЭС, УГПН" },
+                { "sub-menu-item-name": "Лицензия на геодезию и картографию" },
+                { "sub-menu-item-name": "Сертификация услуг авторемонтных мастерских" },
+                { "sub-menu-item-name": "Туристические сертификаты" },
+                { "sub-menu-item-name": "Сертификация предприятий общественного питания" },
+                { "sub-menu-item-name": "Разрешения на торговлю (регистрационные удостоверения)" },
+                { "sub-menu-item-name": "Лицензии на трудоустройство за рубежом" },
+                { "sub-menu-item-name": "Лицензии на охранную и детективную деятельность" },
+                { "sub-menu-item-name": "Лицензии на переработку лома черных и цветных металлов" }
+            ]
+        },
+        {
+            "menu-items-name": "Регистрация и ликвидация",
+            "sub-menu": [
+                { "sub-menu-item-name": "Регистрация ИП" },
+                { "sub-menu-item-name": "Регистрация ООО" },
+                { "sub-menu-item-name": "Регистрация некоммерческих организаций" },
+                { "sub-menu-item-name": "Внесение изменений" },
+                { "sub-menu-item-name": "Ликвидация ООО" }
+            ]
+        },
+        {
+            "menu-items-name": "Услуги ",
+            "sub-menu": [
+                { "sub-menu-item-name": "asdf" },
+                { "sub-menu-item-name": "asdf" },
+                { "sub-menu-item-name": "asdf" },
+                { "sub-menu-item-name": "asdf" },
+                { "sub-menu-item-name": "asdf" }
+            ]
+        }
     ],
+
+    "top-menu": [
+        {
+            "top-menu-item-name": "Главная"
+        },
+        {
+            "top-menu-item-name": "Услуги"
+        },
+        {
+            "top-menu-item-name": "Об агентстве"
+        },
+        {
+            "top-menu-item-name": "Сервисы"
+        },
+        {
+            "top-menu-item-name": "Вакансии"
+        },
+        {
+            "top-menu-item-name": "Контакты"
+        }
+
+    ],
+
     "services": [
         { "item-title": "Допуски СРО", "item-image": "agreement.svg"},
         { "item-title": "Лицензии МЧС" , "item-image": "agreement.svg"},

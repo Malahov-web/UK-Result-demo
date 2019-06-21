@@ -9,7 +9,7 @@
         line-height: $l_h_head;
         padding-top: $padding_leveling;
         padding-bottom: $padding_leveling;        
-    } @if $type == heading_double {  // +
+    } @if $type == heading_double {  // +  _services
         line-height: $l_h_head;
         padding-top: $padding_leveling;
         padding-bottom: $padding_leveling;
@@ -24,19 +24,27 @@
     @else if $type == text-compressed {  // +
         line-height: $l_h_medium;
     }  
-    @else if $type == forms_element {
+    @else if $type == forms_element { // +
         line-height: $l_h;
-        padding-top: 0.333334 * $l_h;
-        padding-bottom: 0.333334 * $l_h;
+        height: 40px;
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            height: 54px;
+        } 
     }
     @else if $type == button {  // +
         height: 36px;
         @media (min-width: #{map-get($devices, 'ds_')}px) {
             height: 48px;
         } 
-    }
-    @else {
-        
+    } 
+    @else if $type == button-small {  // +
+        height: 24px;
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            height: 32px;
+        } 
+    } 
+    @else if $type == fullheight {  // +
+        @extend %fullheight;
     }
 
 }
@@ -53,28 +61,39 @@
         margin-top: $lh * 0.5;
         margin-bottom: $lh * 0.5;
     } 
+    @else if $type == section {  // +
+        // padding-bottom: $lh * 2;
+        // @include v_padding(2*$l_h_base, 2*$l_h_base);
+        @include v_padding(3*$l_h_base, 3*$l_h_base);
 
-      @else if $type == section {
-        padding-bottom: $lh * 2;
-    } @else if $type == section-title {
-        margin-top: 2 * $l_h;
-        margin-bottom: 2 * $l_h;
-  
-    } @else if $type == section-block {
+    }
+    @else if $type == section-collapse {  // +
+        padding-top:-0px;
+        padding-bottom: 0px;
+
+    }    
+    @else if $type == section-title {  // + .title
+        // margin-top: 2 * $l_h;
+        // margin-bottom: 2 * $l_h;
+        @include v_margin(-1*$l_h_base, 2*$l_h_base);
+    }
+    @else if $type == section-block {
         margin-top: 2 * $l_h;
         // margin-bottom: 2 * $l_h;  
     }
-     @else if $type == block {
+    @else if $type == block {
         margin-top: -0.5 * $l_h;
         margin-bottom: -0.5 * $l_h;         
-    } @else if $type == item {
+    }
+    @else if $type == item {
         margin-top: $lh * 0.5;
         margin-bottom: $lh * 0.5;
     }
-     @else if $type == block-card {
+    @else if $type == block-card {  // +
         margin-top: -$columns_gap+px;
         margin-bottom: -$columns_gap+px;
-    }     @else if $type == card {
+    }
+    @else if $type == card {  // +
         margin-top: $columns_gap+px;
         margin-bottom: $columns_gap+px;
     } @else {
@@ -85,11 +104,10 @@
 
 @mixin h_rhytm($type, $fs) {
 
-    @if $type == forms_element {
-        padding-left: $columns_gap+px;
-        padding-right: $columns_gap+px;
-        padding-left: $fs * 1.25;
-        padding-right: $fs * 1.25;      
+    @if $type == forms_element {  // +
+
+        padding-left: 2 * $columns_gap+px;
+        padding-right: 2 * $columns_gap+px;
     } 
     @else if $type == nav_element {
 
@@ -105,18 +123,31 @@
             padding-left: 20px;
             padding-right: 20px;
         } 
+    }
+    @else if $type == modal { // +
+
+        padding-left: 1*$l_h_base;
+        padding-right: 1*$l_h_base;
+
+        @media (min-width: #{map-get($devices, 'tb_')}px) {
+            padding-left: 2*$l_h_base;
+            padding-right: 2*$l_h_base;
+        } 
     } 
 }
 
 
 @mixin typo($type) {
 
-    @if $type == heading {
-        font-family: $font_family_head;
-        font-weight: 500;
-        letter-spacing: $l_s_big;
-        text-transform: uppercase;
-        // color: $black;  
+    @if $type == heading {  // +
+        // font-family: $font_family_head;
+        // font-weight: 500;
+        // letter-spacing: $l_s_big;
+        // text-transform: uppercase;
+
+        font-weight: bold;
+        letter-spacing: $l_s;
+        text-transform: uppercase; 
 
     } @else if $type == text {
         letter-spacing: $l_s;
@@ -125,24 +156,39 @@
         font-weight: 300;
         letter-spacing: $l_s_big;
     }
+    @else if $type == notice { // +
+        font-family: $font_family_alt;
+    }    
 
     @else if $type == card-title { // +
         font-weight: 500;
-        // color: $text;
         text-align: center;
-
     }
+    @else if $type == menu-item { // +
+        font-weight: 500;
+        letter-spacing: $l_s;
+    }    
 
 }
 
 @mixin color_scheme ($type) {
 
     @if $type == default {
- 
-       color: $text; 
-    }
-    @else if $type == accent { // +
         background-color: $white;
+        color: $text; 
+    }
+    @else if $type == dark { // +
+        background-color: $black_light;
+        color: $text_alt; 
+    }
+    @else if $type == semi-dark {  // +
+        background: transparentize($black, 0.5) ;
+        color: $text_alt;
+    } 
+    @else if $type == accent { // +
+        // border-color: $accent;
+        // background-color: $white;
+        background-color: transparent;
         color: $accent;
     }    
     @else if $type == accent-reverse { // +
@@ -160,11 +206,15 @@
             border-color: $accent;
         }
     }
+    @else if $type == form_elements { // +
+        border-color: $accent;
+        background-color: $white;
+        color: $text;
+    }    
     @else if $type == 'grey' { // +
         background-color: $grey_super_light;
         color: $text;
-    }     
-
+    }
     @else if $type == gallery { // +
         background-color: $accent;
         border-color: $accent;

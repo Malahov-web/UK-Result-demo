@@ -33,9 +33,39 @@
 <div id="my-page">
 
 <header class="header">
+
     <div class="header-top">
         <div class="container">
-            UK Result demo
+
+            <div class="row-flex middle">
+
+                <div class="ds_12 ds_visible">
+                    <div class="menu-top-outer">
+                
+                        <ul class="menu-top menu-top--ds">
+                            {{#top-menu}}
+                            <li><a href="#">{{top-menu-item-name}}</a></li>
+                            {{/top-menu}}
+                        </ul>
+                
+                    </div>
+                </div>
+                
+                <div class="mv_24 tb_16 ds_6">
+                    <div class="search">
+                        <input class="search__field field-text" type="text" placeholder="Поиск по сайту"></input>
+                        <button class="search__button btn btn-search"></button>
+                        <!-- <a class="search__button button button-search"><i class="themify  themify-search"></i></a>  -->                   
+                    </div>  
+                </div>
+                
+                <div class="mv_24 ds_4">
+                    <a href="#" class="oldversion">Старая версия сайта</a>
+                </div>
+
+            </div>
+
+
 
         </div>      
     </div>
@@ -46,7 +76,7 @@
 
     <div class="header-bottom">
 
-        <div class="container">
+        <div class="container ds_visible">
 
             <!--div class="menu-main-outer">
                 <ul class="menu-main">
@@ -58,30 +88,42 @@
                 </ul>
             </div-->
 
-            {{#items}}
-              {{#first}}
-                <li><strong>{{name}}</strong></li>
-              {{/first}}
-              {{#link}}
-                <li><a href="{{url}}">{{name}}{{name}}</a></li>
-              {{/link}}
-            {{/items}}
 
             <div class="menu-main-outer">
 
-                <ul class="{{menu-class}}">
+                <ul class="menu-main {{menu-class}}">
                     {{#menu-items}}
-                        <li><a href="#">{{menu-items-name}}</a></li>
-                    {{/menu-items}}
+                        <li>
+                            <a href="#">{{menu-items-name}}</a>
 
+                            <ul class="sub-menu">
+                                {{#sub-menu}}
+                                <li><a href="#">{{sub-menu-item-name}}</a></li>
+                                {{/sub-menu}}
+                            </ul>            
+                        </li>
+                    {{/menu-items}}
                 </ul>
 
             </div>
 
+        </div>
 
-    
+        <div class="container tb_hidden menu-trigger">
 
+            <a href="#" class="btn btn-readmore js-trigger" data-target="m_nav_menu_bottom" data-text-default="Навигация" data-text-open="Назад">Навигация</a>                        
+        </div>
 
+        <div class="container ds_hidden">
+            <div class="menu-top-outer">
+                
+                <ul class="menu-top menu-top--mv menu-top--tb">
+                    {{#top-menu}}
+                    <li><a href="#">{{top-menu-item-name}}</a></li>
+                    {{/top-menu}}
+                </ul>
+                
+            </div>
         </div>
 
     </div>
@@ -537,6 +579,60 @@
 
 
 
+<section class="section section-form section-form--request">
+    <div class="container">
+
+        <div class="row">
+            <div class="mv_24 tb_16 tb_offset_8 ">
+                <h2 class="title">Оставьте заявку и получите 
+бесплатную консультацию юриста</h2>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="bg-grey request">
+        <div class="container">
+            <div class="row ">
+                
+                <div class="mv_24 tb_16 tb_offset_8  ds_18 ds_offset_6 form-outer">
+                    <form action="#" class="form form--request">                        
+
+                        <div class="row">
+                            <div class="mv_24 tb_12 ds_8 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                            </div>
+                            <div class="mv_24 tb_12 ds_8 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="phone">
+                            </div>
+                            <div class="mv_24 ds_8 field-outer">
+                                <a href="#" class="btn btn-submit">Отправить заявку</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+        
+            </div>
+
+            <div class="row">
+                <div class="mv_24 tb_16 tb_offset_8 ds_18 ds_offset_6 ">
+                    <div class="form__notice">В течение часа с Вами свяжется наш менеджер и ответит на все интересуюшие вопросы</div>
+                </div>
+                <div class="request__image">
+                    <img src="images/section-request-girl.png" alt="">
+                </div>                  
+            </div>
+
+        </div>        
+    </div>
+
+</section>
+
+
+
+
 <section class="section section-reviews">
     <div class="container">
 
@@ -546,21 +642,23 @@
             </div>
         </div>
 
-
-
-        <div class="row reviews owl-carousel">
-            
-            {{#reviews}}
-            <div class="mv_22 mv_offset_1 tb_8 tb_offset_0 reviews__item-outer">
-                <div class="reviews__item centered">
-                    <a href="#" class="reviews__item-image">
-                        <img src="uploads/reviews/{{item-image}}" alt="{{item-title}}">
-                    </a>
+        <div class="row">
+            <div class="mv_24 reviews-outer">
+                <div class="row reviews owl-carousel">
+                    
+                    {{#reviews}}
+                    <div class="mv_22 mv_offset_1 tb_8 tb_offset_0 reviews__item-outer">
+                        <div class="reviews__item centered">
+                            <a href="#" class="reviews__item-image">
+                                <img src="uploads/reviews/{{item-image}}" alt="{{item-title}}">
+                            </a>
+                        </div>
+                    </div>
+                    {{/reviews}}
+                
                 </div>
             </div>
-            {{/reviews}}
-
-        </div>
+        </div>        
 
     </div>
 </section>
@@ -616,6 +714,62 @@
 
 
 
+<section class="section section-form section-form--consultation">
+    <div class="container">
+
+        <div class="row">
+            <div class="mv_24 tb_24 ds_18 ds_offset_3">
+                <a href="#" class="btn btn-more">Узнайте больше</a>
+            </div>                 
+        </div> 
+
+        <div class="row">
+            <div class="mv_24 tb_24 ds_18 ds_offset_3 ">
+                <h2 class="title title-white">получите бесплатную консультацию</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mv_24 tb_24 ds_18 ds_offset_3">
+                <div class="form__subtitle form__notice--white">Заполните форму и наш менеджер свяжется с вами в течение 10 минут</div>
+            </div>                 
+        </div>  
+
+
+        <div class="row consultation">
+            <div class="mv_24 tb_24 ds_18 ds_offset_3 form-outer">
+                    <form action="#" class="form form--consultation">                        
+
+                        <div class="row">
+                            <div class="mv_24 tb_12 ds_8 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                            </div>
+                            <div class="mv_24 tb_12 ds_8 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="phone">
+                            </div>
+                            <div class="mv_24 ds_8 field-outer">
+                                <a href="#" class="btn btn-submit">Отправить заявку</a>
+                            </div>
+                        </div>
+
+                    </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mv_24 tb_24 ds_18 ds_offset_3">
+                <div class="form__notice form__notice--white">Нам доверяют больше <b>500 клиентов</b></div>
+            </div>                 
+        </div>        
+
+ 
+    </div>
+
+</section>
+
+
+
+
 <section class="section section-news">
     <div class="container">
 
@@ -653,9 +807,6 @@
 
     </div>
 </section>
-
-
-
 
 
 

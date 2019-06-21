@@ -3,29 +3,44 @@
  *
 */
 
-.actions-outer{
-
+.actions-bg {
+    @include v_padding(2.5*$l_h_base, 2.5*$l_h_base);
+    @include set_bg_adaptive('../images/section-actions-bg', 1024, 'jpg');
+    background-size: cover;
 }
+
 .actions{
     &__item{
+        position: relative;
+        @include v_padding ($margin_v_medium, $margin_v_medium);        // padding: $margin_v  1*$l_h;
+        @include h_rhytm('modal', $l_h);
+        @include color_scheme('semi-dark');
+
+        &:after {
+            @include pseudoelement_left_top(100%, 0);
+            width: 1000px;
+            height: 100%;
+            background: none;
+            transform: translateX(-50%);
+            @media (min-width: #{map-get($devices, 'tb_')}px) {
+                transform: none;
+                background: inherit;
+            }         
+        }
 
         &-title{
-
+            @include font_size('h4');
+            @include typo('heading');
+            padding-bottom: 5px; padding-bottom: 10px;            
         }
-        &-text{
-
+        &-subtitle{
+            @include font_size('fb');
+            @include height_leveling('text-compressed');
         }
-        &-image{
-            img{
-
-            }
+        &-button{
+            margin-top: $margin_v_small;
         }
-        &-link{
 
-        }
-        &-date{
-
-        }
     }
 }
 

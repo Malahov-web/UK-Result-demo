@@ -5,21 +5,78 @@
 
 .features{
 
+
     &__item{
+        // width: map-get($devices, 'hd_')+px;
+        // width: m($devices, 'ds_')+px;
+        // width: _($devices, 'ds_')+px;
 
-        &-title{
+        &-image{
 
-        }
-        &-text{
+            @include height_leveling('fullheight'); 
 
-        }
-        &-icon{
-            img{
+// image_center_cover
 
+            @media (max-width: #{map-get($devices, 'ds_')-1}px) {
+                height: 12*$l_h_base;
+                overflow: hidden;
+                img{
+                    @include image_center_cover();
+                }
+            }
+            @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                height: 8*$l_h_base;
+            } 
+
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                img{
+                    width: auto;
+                    max-width: none;
+                    min-width: 50vw;
+                    min-height: 100%;                 
+                }
             }
         }
 
-    }    
+        &-content{
+            @include flex(flex-start, center);
+            @include height_leveling('fullheight'); // Нужно добавить еще один элемент внутрь и его центрировать
+            padding: $margin_v $margin_v_small;
+
+            @media (min-width: #{map-get($devices, 'tb_')}px) {
+                padding: $margin_v $margin_v_medium;
+            }        
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                padding: $margin_v_medium $margin_v_big;
+            }
+            
+            &-inner {
+
+            }
+
+            h3 {
+                @extend .title;
+                @include font_size('h2');
+                margin-top: 0;
+                text-align: left;
+                &:after {
+                    left: 0;
+                    transform: translate(0%, -100%);
+                }
+            }
+            p {
+
+            }
+            ul {
+                li {
+                    margin-top: 2/5*$l_h;
+                    margin-bottom: 2/5*$l_h;
+                }
+            }
+
+        }
+
+    }
 
 }
 
@@ -27,7 +84,33 @@
 @media (min-width: #{map-get($devices, 'ds_')}px) {
 
 .features{
+    // &__item:nth-child(even) {
+    &__item:nth-child(even) {
+        // background-color: $accent;
 
+        .features__item-image {
+            float: left;
+            img {
+                float: left;
+            }
+        }
+
+        > .row-flex {
+            flex-direction: row-reverse;;    
+        }
+    }
+
+    &__item:nth-child(odd) {
+        // background-color: $grey_light;
+
+        .features__item-image {
+            float: right;
+            img {
+                float: right;  
+            }
+        }
+    } 
 }
     
 } // media end
+

@@ -65,3 +65,7 @@
 %transition {
     transition: all $tr_dur;
 }
+
+%border {
+    border: 2px solid $border_color;
+}

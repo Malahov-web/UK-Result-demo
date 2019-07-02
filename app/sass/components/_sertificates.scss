@@ -1,0 +1,69 @@
+
+.sertificates {
+
+    &__slider {
+
+    }
+        &__item {
+
+            &-image {
+                @extend %transition;
+                // @extend %border;
+                @include color_scheme('gallery');
+                position: relative;
+                display: inline-block;
+                font-size: 0;
+                border: 1px solid $border_color;
+
+                // zoom icon
+                &:before {
+                    @extend %transition;             
+                    @include pseudoelement_left_top(50%, 50%);
+                    transform: translate(-50%, -50%);
+                    z-index: $zindex_icon;
+                    @include font_size('fb');
+                    width: 4.25em;
+                    height: 4.25em;
+                    background: $white url('../images/magnifying-glass.svg') center center no-repeat;
+                    background-size: 2em;
+                    border-radius: 50%;
+
+                    opacity: 0;
+                }
+
+                img {
+                    @extend %transition;
+                    width: auto;
+                }
+
+                &:hover img {
+                    opacity: 0.3;
+                }
+                &:hover:before {
+                    opacity: 1;
+                }                
+            }   
+        }
+
+    &__content {
+
+    }
+
+        &__text {
+            @include v_rhytm('item', $l_h_base);
+            @include font_size('h5');
+
+        }
+
+        &__button {
+            @include v_rhytm('item', $l_h_base);
+            .btn {
+                max-width: 230px;
+                @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                    margin: 0 auto;
+                }                  
+            }
+        }  
+      
+
+}

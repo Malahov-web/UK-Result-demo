@@ -38,7 +38,8 @@
         } 
     } 
     @else if $type == button-small {  // +
-        height: 24px;
+        // height: 24px;
+        height: 28px;
         @media (min-width: #{map-get($devices, 'ds_')}px) {
             height: 32px;
         } 
@@ -68,7 +69,7 @@
 
     }
     @else if $type == section-collapse {  // +
-        padding-top:-0px;
+        padding-top: 0px;
         padding-bottom: 0px;
 
     }    
@@ -85,7 +86,7 @@
         margin-top: -0.5 * $l_h;
         margin-bottom: -0.5 * $l_h;         
     }
-    @else if $type == item {
+    @else if $type == item {  // +
         margin-top: $lh * 0.5;
         margin-bottom: $lh * 0.5;
     }
@@ -151,6 +152,7 @@
 
     } @else if $type == text {
         letter-spacing: $l_s;
+        font-weight: 400;
 
     } @else if $type == link {
         font-weight: 300;
@@ -158,6 +160,7 @@
     }
     @else if $type == notice { // +
         font-family: $font_family_alt;
+        letter-spacing: $l_s_small;
     }    
 
     @else if $type == card-title { // +

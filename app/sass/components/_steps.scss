@@ -1,0 +1,100 @@
+
+.steps {
+    @include v_padding(2*$l_h_base, 0);
+    justify-content: center;    
+    counter-reset: list 0;
+
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        background: url('../images/section-offers-decor.png') center center no-repeat;
+        justify-content: space-between;
+    } 
+
+    &__item-outer {
+        $steps_item_outer_pseudo_offset: 2.5*$l_h_base; // MB:50;
+        position: relative;       
+        max-width: 280px;        
+
+        @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+            padding-left: $steps_item_outer_pseudo_offset;
+        } 
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            width: 100%;           
+            max-width: 25%;
+        }
+        @media (min-width: #{map-get($devices, 'hd_')}px) {            
+            max-width: 280px; 
+        }
+
+        &:before {
+            @include pseudoelement_left_top(0, 50%);
+            @extend %transition;
+            @include typo('card-title');
+            z-index: $zindex_icon;
+            transform: translate(-$steps_item_outer_pseudo_offset, -50%);
+            // transform: translate(-50px, -50%);
+            margin-top: -1/2*$margin_v_small;
+            height: 1em; line-height: 1em;
+            font-size: 160px;           
+            color: transparentize($black, 0.9);
+
+            counter-increment: list; /* Увеличиваем значение счетчика */
+            content: counter(list) ""; /* Выводим число */  
+
+            @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                transform: translate(-0px, -50%);
+            }             
+            @media (min-width: #{map-get($devices, 'ds_')}px) {
+                margin-top: -1/2*$margin_v_big;
+            } 
+        }
+
+        &:hover {
+            &:before {
+                color: transparentize($black, 0.82);
+            }
+        }
+    }
+
+
+    &__item {
+        @extend %shadow;
+        @extend %transition;
+        position: relative; 
+        z-index: $zindex_icon + 10; 
+
+        @include v_margin(0, 2*$l_h_base);
+        @include v_padding(2*$l_h_base, 1*$l_h_base);
+        @include h_rhytm('card', $fb);
+        @include color_scheme('default');    
+
+        &-image {
+            @include flex(center, center);
+            position: relative;
+            height: calc(70px + #{$margin_v});
+            @include v_padding(0, 1*$l_h_base);
+            @include v_margin(0, 1.5*$l_h_base);           
+          
+            img {
+                width: auto;
+            }
+            &:after {
+                @include pseudoelement_left_top(50%, 100%);
+                transform: translateX(-50%);
+                width: 60px;
+                height: 2px;
+                background-color: transparentize($accent, 0.75);
+                @media (min-width: #{map-get($devices, 'ds_')}px) {
+                    width: 75px;
+                    height: 3px;
+                }
+            }            
+        }
+        &-text {
+            @include font_size('fb');
+            @include height_leveling('text-compressed');
+            min-height: 3*$l_h_medium;
+            text-align: center;
+        }
+
+    }
+}

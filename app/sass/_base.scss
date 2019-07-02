@@ -256,8 +256,10 @@ p.rquote,
 
 
 .btn {
+    @extend %transition;
     @include flex(center, center);            
     width: 100%;
+    cursor: pointer;
 }
 
 .btn-readmore {
@@ -305,7 +307,7 @@ p.rquote,
     }    
 }
 
-.btn-more {
+.btn-more {  // gold bg
     @include font_size('h5');
     @include height_leveling('button-small');
     @include typo('notice');
@@ -323,4 +325,21 @@ p.rquote,
     // @include color_scheme('default');
     color: $text_alt;
     max-width: 275px;
+}
+
+.btn-mini {
+    @include font_size('small');
+    @include height_leveling('button-small');
+    @include typo('card-title');
+    @include color_scheme('accent');
+
+    border: 2px solid $accent;
+    &:hover,
+    &:active {
+        @include color_scheme('accent-reverse');
+    }     
+}
+
+.btn-search {
+
 }

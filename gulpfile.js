@@ -52,6 +52,8 @@ var bs = require('browser-sync').create();  // Подключаем Browser Sync
 var notify = require("gulp-notify");  // Выводит сообщения
 
 var duration = require("gulp-duration");  // Выводит сообщения
+
+var svgSprite = require('gulp-svg-sprite');
  
 
 
@@ -68,7 +70,7 @@ var autoprefixerOptions = {
   browsers: ['last 15 versions', 'IE 10', 'IE 11']
 };   
 // Vars
-var fontName = 'themify';
+var fontName = 'ukresultflaticons';
 var js_jquery = 'app/libs/jquery/dist/jquery.min.js';
 var js_owl = 'app/libs/owl.carousel/dist/owl.carousel.min.js';
 var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';   
@@ -167,7 +169,7 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
     });
 
 
-    // Iconfont - генерация шрифта
+    // Iconfont - генерация шрифта  // Нужно запускать 2 раза)
     gulp.task('Iconfont', function (done) {
         var iconStream = gulp.src(['app/images/svg-min/*.svg'])
             .pipe(iconfont({
@@ -180,7 +182,8 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
             function handleGlyphs(cb) {
                 iconStream.on('glyphs', function (glyphs, options) {
                     // gulp.src('app/images/svgfontstyle/css.css')
-                    gulp.src('app/images/svgfontstyle/svgfontstyle.scss')
+                    gulp.src('app/images/svgfontstyle/svgfontstyle.scss')  // Файл с шаблоном классов ИШ
+                    // gulp.src('app/svgfontstyle/svgfontstyle.scss')
                         .pipe(consolidate('lodash', {
                             glyphs: glyphs,
                             fontName: fontName,
@@ -200,6 +203,24 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
             }
         ], done);
     }); 
+
+  // Basic configuration example
+    var configSvgSprite = {
+        mode: {
+          css: { // Activate the «css» mode
+            render: {
+              css: true // Activate CSS output (with default options)
+            }
+          }
+        }
+    };
+
+    gulp.task('svgSprite', function(){
+        return gulp.src('app/images/svg-min/*.svg')
+            .pipe(svgSprite(configSvgSprite))
+            .pipe(gulp.dest('app/images/svg-sprite'))
+
+    });
 
 
     // JS - сборка
@@ -239,6 +260,7 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
         })
     ];
 
+    // Clean - очистка директории для build
     gulp.task('clean', function() {
         return del.sync('dist'); // Удаляем папку dist перед сборкой
     });
@@ -273,7 +295,7 @@ gulp.task('build', ['clean'],  function () {
         .pipe(gulp.dest('dist'))        
 
     gulp.src('app/css/**/*.css')
-        .pipe(cleanCSS({compatibility: 'ie10'}))
+        // .pipe(cleanCSS({compatibility: 'ie10'}))
         .pipe(gulp.dest('dist/css'))
 
     gulp.src('app/js/min/scripts.min.js')
@@ -417,3 +439,9 @@ gulp.task('assets', function() {
 // gulp-plumber - создает свой поток, который имеет доступ к другим потокам (для передачи ошибки)
 // gulp-multipipe - собирает несколько поток в свой (оборачивает?)
 // stream-combiner2
+
+
+// Gulp screencasts - 13
+// gulp-svg-sprite;
+// gulp-cssnano
+// gulp-rev

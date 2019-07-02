@@ -1,0 +1,45 @@
+
+.language {
+    position: relative;
+    float: right;    
+
+    &__current {
+        @include font_size('fb');
+        @include typo('menu-item');
+        @include height_leveling('text');
+        @include color_scheme('accent');
+        text-transform: uppercase;
+        
+        i {
+            margin-left: 5px;
+            @include font_size('smaller');
+            @include color_scheme('default');
+        }
+    }
+
+    &__list {
+        display: none;
+        @include h_rhytm('card', $fb);
+        @include color_scheme('default');
+        @extend %shadow_small;
+        position: absolute;
+        z-index: $zindex_nav;
+        border: 2px solid $accent;
+
+        li {
+            a {
+                display: block;
+                @include v_rhytm('text', $l_h);
+                @include height_leveling('text');
+                @include color_scheme('default');
+                &:hover {
+                    @include color_scheme('accent');
+                }
+            }
+        }
+    }
+
+    &:hover &__list{
+        display: block;
+    }
+}

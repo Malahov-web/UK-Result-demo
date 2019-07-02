@@ -26,7 +26,6 @@
             @media (min-width: #{map-get($devices, 'tb_')}px) {
                 // @include pseudoelement_right_top(0, 100%);
                 position: absolute;
-                // right: 0;
                 bottom: 0;
                 width: auto;
                 height: auto;

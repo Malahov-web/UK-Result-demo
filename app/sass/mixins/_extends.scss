@@ -30,6 +30,10 @@
      // box-shadow: 0 0 95px 9px transparentize($black, 0.9); 
      box-shadow: 0 0 95px 9px rgba(0, 0, 0, 0.1); 
 }
+%shadow_small{
+ 
+     box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.1); 
+}
 
 %top_list_item_link{
     display: block;
@@ -68,4 +72,15 @@
 
 %border {
     border: 2px solid $border_color;
+}
+
+%footer__title {
+    @include font_size('fb');   
+    @include typo('heading');
+    @include typo('notice');
+    @include color_scheme('accent');    
+}
+
+%footer-border {
+    border-bottom: 2px solid transparentize($white, 1 - 0.4);
 }

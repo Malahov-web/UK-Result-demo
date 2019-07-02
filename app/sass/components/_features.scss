@@ -41,14 +41,18 @@
         &-content{
             @include flex(flex-start, center);
             @include height_leveling('fullheight'); // Нужно добавить еще один элемент внутрь и его центрировать
-            padding: $margin_v $margin_v_small;
 
-            @media (min-width: #{map-get($devices, 'tb_')}px) {
-                padding: $margin_v $margin_v_medium;
-            }        
-            @media (min-width: #{map-get($devices, 'ds_')}px) {
-                padding: $margin_v_medium $margin_v_big;
-            }
+            @include h_rhytm('modal', $l_h_base);
+            @include v_padding(1.5*$l_h_base, 1.5*$l_h_base);
+
+            // padding: $margin_v $margin_v_small;
+
+            // @media (min-width: #{map-get($devices, 'tb_')}px) {
+            //     padding: $margin_v $margin_v_medium;
+            // }        
+            // @media (min-width: #{map-get($devices, 'ds_')}px) {
+            //     padding: $margin_v_medium $margin_v_big;
+            // }
             
             &-inner {
 
@@ -76,6 +80,42 @@
 
         }
 
+    }
+
+    &__promo-outer {
+        @include color_scheme('grey');
+        // @include v_rhytm('section', $l_h_base);
+        // padding-bottom: 0;
+        @include v_padding(3*$l_h_base,0);
+    }
+    &__promo {
+        @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+            flex-direction: column-reverse;
+        }
+
+        &-image {
+            img {
+                    width: auto; 
+                    margin: 0 auto; 
+                    @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                        // width: 75%;
+                        max-width: 480px;        
+                    }
+            }
+        }
+        &-content {
+            // @include h_rhytm('modal', $l_h_base);
+            @include v_padding(0, 3*$l_h_base);            
+        }
+        &-button {
+            .btn {
+                max-width: 280px;
+                text-decoration: none;
+                @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                    margin: 0 auto;
+                }                
+            }
+        }
     }
 
 }

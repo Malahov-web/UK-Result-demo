@@ -6,9 +6,62 @@
 .news-outer{
 
 }
-.news{
+// .news{
 
-    &__item{
+//     &__item{
+//         &-image{
+//             @include color_scheme('accent-reverse');            
+//             position: relative;
+//             display: block;
+//             height: 6*$l_h_base;  // DS: 150px;;
+//             overflow: hidden;
+//             img{
+//                 @include image_center_cover();
+//             }
+//         }
+//         &-content{
+//             @include h_rhytm('card', $l_h);
+//             @include color_scheme('grey');
+//             padding-top: 16px;
+//             // padding-bottom: 12px;
+//             padding-bottom: 1px;
+//         }
+//         &-title{
+//             // @include font_size('h5');
+//             @include font_size('fb');
+//             @include height_leveling('heading_double');            
+//             color: $text;
+//             a {
+//                 color: inherit;
+//             }
+//             &:hover {
+//                 color: $accent;  // general a:hover ?;
+//             }            
+//         }
+//         &-text{
+//             @include font_size('small');
+//             @include height_leveling('text-compressed');
+//             @include v_rhytm('text', $l_h_base);
+//             word-wrap: break-word;
+//             min-height: 3*$l_h_medium;
+//         }
+
+//         &-date{
+//             @include font_size('smaller');
+//             @include height_leveling('text');            
+//             @include v_rhytm('text', $l_h);            
+//             display: block;
+//         }
+
+            // &-button {
+
+            // }
+//     }
+// }
+
+.news--card{
+
+    .news__item{
         &-image{
             @include color_scheme('accent-reverse');            
             position: relative;
@@ -20,12 +73,16 @@
             }
         }
         &-content{
-            @include h_rhytm('card', $l_h);
+            // @include h_rhytm('card', $l_h);  // -> &-content-inner
             @include color_scheme('grey');
             padding-top: 16px;
             // padding-bottom: 12px;
             padding-bottom: 1px;
+           
         }
+        &-content-inner {
+            @include h_rhytm('card', $l_h);
+        }         
         &-title{
             // @include font_size('h5');
             @include font_size('fb');
@@ -52,6 +109,91 @@
             @include v_rhytm('text', $l_h);            
             display: block;
         }
+        &-button {
+            @include color_scheme('default');
+        }
+    }
+}
+
+.news--slat{
+
+    .news__item{
+        position: relative;
+        padding-left: 300px;
+margin-bottom: 30px;
+// margin-bottom: 3*$l_h_base;
+margin-bottom: 2*$l_h_base;
+    min-height: 9*$l_h_base;
+
+        &-image{
+            @include color_scheme('accent-reverse');            
+            position: relative;
+            display: block;
+            height: 6*$l_h_base;  // DS: 150px;;
+            overflow: hidden;
+
+            width: 300px;  // +
+            height: 9*$l_h_base;  // +-
+            @include pseudoelement_left_top(0, 0);  // +
+            img{
+                @include image_center_cover();
+            }
+        }
+        &-content{
+
+            // @include color_scheme('grey');
+            @include color_scheme('default');
+            // padding-top: 16px;
+            padding-bottom: 1px;
+        }
+        &-content-inner {
+            @include h_rhytm('card', $l_h);
+            // @include h_rhytm('modal', $l_h);
+            // padding-left: 1.5*$l_h_base;
+        }
+        &-title{
+            @include font_size('h4');  
+            // @include font_size('fb');  // +-
+            @include height_leveling('heading');   // +-          
+            color: $text;
+            a {
+                color: inherit;
+            }
+            &:hover {
+                color: $accent;  // general a:hover ?;
+            }            
+        }
+        &-text{
+            @include font_size('fb');  // +-
+            @include height_leveling('text-compressed');  // +-
+            @include height_leveling('text');
+            @include v_rhytm('text', $l_h_base);
+            word-wrap: break-word;
+            min-height: 3*$l_h_medium;
+        }
+
+        &-date{
+            @include font_size('smaller');
+            @include height_leveling('text');            
+            @include v_rhytm('text', $l_h);            
+            display: block;
+        }
+
+        &-button {
+display: none;
+            // @include color_scheme('default');
+            // @include h_rhytm('card', $l_h);
+            @include h_rhytm('modal', $l_h);
+            .btn {
+                border: none;            
+                @include flex(flex-start, center);
+                &:hover {
+                    @include color_scheme('accent');
+                    text-decoration: underline;
+                }
+            }
+            
+        }        
     }
 }
 

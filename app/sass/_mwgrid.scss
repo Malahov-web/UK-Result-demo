@@ -55,6 +55,7 @@ $devices: (
 
 .row-line.row-reverse{ direction : rtl; }
 .row-line.row-reverse>div{ direction : ltr; }
+
 /* 1.1.3 flex */
 .row-flexbox{ display : flex; margin-left: -$columns_gap+px; margin-right: -$columns_gap+px; } 
 [class*=row-flex].middle{ align-items : center; }
@@ -62,6 +63,13 @@ $devices: (
 [class*=row-flex].bottom{ align-items : flex-end; }
 [class*=row-flex].baseline{ align-items : baseline; }
 [class*=row-flex].stretch{ align-items : stretch; }
+
+[class*=row-flex].lefted{ justify-content: flex-start }
+[class*=row-flex].righted{ justify-content: flex-end; }
+[class*=row-flex].centered{ justify-content: center; }
+[class*=row-flex].justifyed{ justify-content: space-between; }
+[class*=row-flex].evenlyed{ justify-content: space-around; }
+
 // $i: 1;
 // @while $i < ($columns + 1) {
 

@@ -12,17 +12,15 @@
 .actions{
     &__item{
         position: relative;
-        @include v_padding ($margin_v_medium, $margin_v_medium);        // padding: $margin_v  1*$l_h;
+        @include v_padding ($margin_v_medium, $margin_v_medium);   // padding: $margin_v  1*$l_h;
         @include h_rhytm('modal', $l_h);
         @include color_scheme('semi-dark');
 
         &:after {
-            @include pseudoelement_left_top(100%, 0);
-            width: 1000px;
-            height: 100%;
-            background: none;
-            transform: translateX(-50%);
             @media (min-width: #{map-get($devices, 'tb_')}px) {
+                @include pseudoelement_left_top(100%, 0);
+                width: 10000px;
+                height: 100%;
                 transform: none;
                 background: inherit;
             }         
@@ -31,7 +29,8 @@
         &-title{
             @include font_size('h4');
             @include typo('heading');
-            padding-bottom: 5px; padding-bottom: 10px;            
+            // padding-bottom: 5px; padding-bottom: 10px;  
+            padding-bottom: 1/2*$l_h_base;          
         }
         &-subtitle{
             @include font_size('fb');
@@ -39,16 +38,12 @@
         }
         &-button{
             margin-top: $margin_v_small;
+            .btn {
+                @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                    margin: 0 auto;
+                }
+            }
         }
 
     }
 }
-
-
-@media (min-width: #{map-get($devices, 'ds_')}px) {
-
-.actions{
-
-}
-    
-} // media end

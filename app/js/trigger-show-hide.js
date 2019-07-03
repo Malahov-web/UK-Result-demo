@@ -16,17 +16,16 @@
             animationTemp = parseInt($(this).attr('data-animation-temp'));
             animationTemp = animationTemp || animationTempDefault;
 
-// alert();
-            target = $(this).attr('data-target'); 
 
+            var target = $(this).attr('data-target'); 
             // $('#'+target+'').toggle(animationTemp);
             $('#'+target+'').toggleClass('active');
             $(this).toggleClass('active');
 
 
             // toggle button text    
-            textOpen = jQuery(this).attr('data-text-open');
-            textDefault = jQuery(this).attr('data-text-default');
+            var textOpen = jQuery(this).attr('data-text-open');
+            var textDefault = jQuery(this).attr('data-text-default');
 
             if ( textOpen && textDefault ) {
                 if ( $(this).is('.active') == false ) {

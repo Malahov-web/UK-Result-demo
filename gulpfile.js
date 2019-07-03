@@ -73,6 +73,7 @@ var autoprefixerOptions = {
 var fontName = 'ukresultflaticons';
 var js_jquery = 'app/libs/jquery/dist/jquery.min.js';
 var js_owl = 'app/libs/owl.carousel/dist/owl.carousel.min.js';
+var js_fancybox = 'app/libs/fancybox/dist/jquery.fancybox.min.js';
 var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';   
     
 
@@ -229,6 +230,7 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
         [
             js_jquery,
             js_owl,
+            js_fancybox,
             js_selectric,
             'app/js/*.js'
 

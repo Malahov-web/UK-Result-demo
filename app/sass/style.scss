@@ -49,6 +49,12 @@
     }
 }
 
+.mobile_collapse {
+    @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+        padding-left: 0; padding-right: 0;
+    } 
+}
+
 .section {
     // padding-top: 2*$l_h_base;
     // padding-top: 3*$l_h_base;
@@ -66,7 +72,9 @@
 
     }
 }
-
+.container, .container-elastic {
+    min-width: 300px;
+}
 
 /* 1. Header
  * **********************************************************************
@@ -83,8 +91,8 @@
     text-align: center;
 
     padding: 12px 0;
-    border-bottom: 2px solid $black_light;    
-border-bottom: 2px solid $grey;    
+    // border-bottom: 2px solid $black_light; 
+    // border-bottom: 2px solid $grey; 
 
     @media (min-width: #{map-get($devices, 'tb_')}px) {
         padding: 1/2*$margin_v_small  0;
@@ -463,6 +471,39 @@ border-bottom: 1px solid $text;
 */
 
 /* Owl-carousel */
+
+body .row.owl-carousel {
+    margin-left: 0px;
+    margin-right: 0px;   
+}
+
+
+body .owl-dots {
+
+    @include flex(center, center);
+    @include height_leveling('button');
+    margin-top: 0.5*$l_h_base;
+    width: 100%;
+
+    .owl-dot {
+        // margin: 0  0.5*$l_h_base;
+        margin: 0  1*$columns_gap+px;
+        span {
+            display: block;
+
+            width: 0.5*$l_h_base; // 12 
+            height: 0.5*$l_h_base; // 12 
+            background-color: transparentize($accent, 0.5);
+            background-color: #d8e4e8;
+            border-radius: 50%;
+        }
+    }
+    .owl-dot.active {
+        span {
+            background-color: $accent;
+        }
+    }    
+}
 
 body .owl-prev, 
 body .owl-next {

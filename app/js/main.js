@@ -2,7 +2,8 @@
 
 jQuery(document).ready(function($) {
 
-    var mobile_breakpoint = 768;   
+    // var mobile_breakpoint = 768;   
+    var mobile_breakpoint = 1024;   
 
 
     // jQuery('.reviews.owl-carousel').owlCarousel({
@@ -51,12 +52,13 @@ jQuery(document).ready(function($) {
 
         // mobileMenu(); 
 
-        searchMobile();        
+        searchMobile();   
+
+        slidersTBInit();
 
         // accordeonMobile();
 
-        // dropdownList();
-
+        dropdownList();
 
         
     } else {

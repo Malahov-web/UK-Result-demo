@@ -63,7 +63,26 @@
         &:after {
             content: "-";
         } 
-    }     
+    }
+
+    .sub-menu {
+        @include font_size('h4');
+        padding-bottom: 0.5*$l_h;
+        li {
+            a {
+                display: block;
+                padding: 0.25*$l_h  0  0.25*$l_h  1*$l_h;
+                @include font_size('fb');
+                @include typo('notice');
+                @include color_scheme('dark');
+
+                &:hover {
+                    @include color_scheme('accent');                    
+                }                  
+            }
+        }
+    }
+
    
 } // media
 }

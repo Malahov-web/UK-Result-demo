@@ -35,7 +35,12 @@
 
         {
             "menu-items-name": "Допуски СРО",
-            "sub-menu": false
+            "menu-items-class": "menu-item-has-children",
+            "sub-menu": [
+                { "sub-menu-item-name": "СРО в строительстве" },
+                { "sub-menu-item-name": "СРО в проектировании" },
+                { "sub-menu-item-name": "СРО в изысканиях" }
+            ]
         },
         {
             "menu-items-name": "Лицензирование",
@@ -62,6 +67,7 @@
         },
         {
             "menu-items-name": "Регистрация и ликвидация",
+            "menu-items-class": "menu-item-has-children",
             "sub-menu": [
                 { "sub-menu-item-name": "Регистрация ИП" },
                 { "sub-menu-item-name": "Регистрация ООО" },
@@ -71,13 +77,14 @@
             ]
         },
         {
-            "_menu-items-name": "Услуги ",
-            "_sub-menu": [
-                { "sub-menu-item-name": "asdf" },
-                { "sub-menu-item-name": "asdf" },
-                { "sub-menu-item-name": "asdf" },
-                { "sub-menu-item-name": "asdf" },
-                { "sub-menu-item-name": "asdf" }
+            "menu-items-name": "Услуги ",
+            "menu-items-class": "menu-item-has-children",
+            "sub-menu": [
+                { "sub-menu-item-name": "Услуги бухгалтера" },
+                { "sub-menu-item-name": "Уголовный юрист" },
+                { "sub-menu-item-name": "Автоадвокат" },
+                { "sub-menu-item-name": "Операции с недвижимостю" },
+                { "sub-menu-item-name": "Наследственные споры" }
             ]
         }
     ],
@@ -453,24 +460,28 @@
         { 
             "item-title": "Отзыв от MyCompany", 
             "item-image": "reviews-item-img-1.jpg",
+            "item-image-large": "reviews-item-img-1-large.jpg",
             "item-link": "#"
         },
 
         { 
             "item-title": "Благодарность от YourCompany", 
             "item-image": "reviews-item-img-2.jpg",
+            "item-image-large": "reviews-item-img-2-large.jpg",            
             "item-link": "#"
         },
 
         { 
             "item-title": "Благодарственное письмо от No1Company", 
             "item-image": "reviews-item-img-3.jpg",
+            "item-image-large": "reviews-item-img-3-large.jpg",            
             "item-link": "#"
         },
 
         { 
             "item-title": "Отзыв от TransNeftGazAlmaz", 
             "item-image": "reviews-item-img-4.jpg",
+            "item-image-large": "reviews-item-img-4-large.jpg",            
             "item-link": "#"
         }                        
 

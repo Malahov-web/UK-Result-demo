@@ -11,8 +11,7 @@
             loop:true,
             //true:0,
             nav:true,
-            // dots:true,
-            pagination: true,
+            dots:false,
             //Авто-прокрутка
             autoplay : false,
             stopOnHover : true,
@@ -46,7 +45,6 @@
             //true:0,
             nav:true,
             dots:false,
-            pagination: true,
             //Авто-прокрутка
             autoplay : false,
             stopOnHover : true,

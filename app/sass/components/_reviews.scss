@@ -28,7 +28,7 @@
             font-size: 0;            
             border-width: 5px; border-style: solid;
 
-            // box-shadow:  10px 100px 20px 0px transparentize($black, 0.5);
+            // @extend %shadow_inset;
 
             @media (min-width: #{map-get($devices, 'ds_')}px) {
                 border-width: 10px;

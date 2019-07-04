@@ -1,47 +1,81 @@
 
 .difference {
-
     &__list {
-        padding-top: 1px;
 
-        column-count: 2;
-        // column-fill: auto;
-        column-fill: balance;
-        // column-fill: balance-all;
-
-        > .mv_20 {
-            width: auto!important;
-        }
-        li {
-            padding: 1px;
-        }
         &-item {
-            @extend %shadow;
+            @extend %shadow;            
+            @include v_margin(0, 2*$l_h_base);
+            @include h_rhytm('nav_element', $fb);
             position: relative;
-            margin-bottom: 1.5 * $l_h;
-            padding: 20px 20px 15px 20px;
+            // padding-top: 1*$l_h_base;
+            // padding-top: 2/5*$l_h_base;
+            // padding-bottom: 4/5*$l_h_base; 
+            padding-top: 1/2*$l_h_base;
+            padding-bottom: 1/2*$l_h_base;  
 
-            @media (min-width: #{map-get($devices, 'ds_')}px) {
-                margin-bottom: 2.5 * $l_h;
-                padding: 25px 30px 20px 30px;
-            }
-
-            &-title {
-               margin-bottom: 0.5 * $l_h;
-               font-size: $font_h5_m; 
-               font-weight: 500; 
-
-                @media (min-width: #{map-get($devices, 'ds_')}px) {
-                    font-size: $font_h5;
-                    font-size: $font_h4;
-                } 
-            }
-
-            &-text {
-                margin: 0; 
-                letter-spacing: $l_s_small;
+            @extend [data-icon];
+            &:before {
+                @include pseudoelement_left_top(0, 0);
+                transform: translate(-50%, -50%);
+                width: $font_h1;
+                height: $font_h1;
+                @include font_size('h1');
             }            
+
+            &-title {               
+                @include v_rhytm('text', $l_h_base);  // @include v_rhytm('text', $l_h); // margin-bottom: 0.5 * $l_h;
+                @include font_size('h4');
+                @include typo('menu-item'); 
+            }
+            &-text {
+                @include v_rhytm('text', $l_h_base);                 
+                @include font_size('fb');
+                @include height_leveling('text-compressed');               
+            }             
         }
+
+        &-item--we {
+            border: 1px solid $success_color;
+        }
+        &-item--they {
+            
+        }
+
     }
 
 }
+
+.difference .difference__list-item--we:before {
+    @extend .ukr-019-verification-mark;
+    color: $success_color;
+}
+.difference .difference__list-item--they:before {
+    @extend .ukr-close;
+    color: $grey_light;
+}
+
+
+// TB and DS logic)
+$difference_list_item_number: 12; // all items number
+$d_l_i_number: $difference_list_item_number;
+
+@media (min-width: #{map-get($devices, 'tb_')}px) {
+
+    @for $i from 1 through 1/2*$d_l_i_number {
+        .difference__list-item-outer:nth-child(#{$i}) {
+            // background-color: $success_color;
+            order: 2*$i - 1;
+        }
+
+    }
+
+    @for $i from 1/2*$d_l_i_number+1 through $d_l_i_number {
+
+        .difference__list-item-outer:nth-child(#{$i}) {
+            // background-color: yellow;
+            order: 2*$i - $d_l_i_number;
+        }
+
+    }
+
+} // media end

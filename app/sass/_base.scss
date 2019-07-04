@@ -306,6 +306,20 @@ p.rquote,
         @include color_scheme('accent-reverse');
     }    
 }
+.btn-submit-alt {
+
+    @include font_size('h4');
+    @include height_leveling('forms_element');
+    @include typo('card');
+    @include color_scheme('accent-reverse');
+    
+    border: 2px solid $accent;     
+    &:hover,
+    &:active {
+        @include color_scheme('dark');
+    }
+
+}
 
 .btn-more {  // gold bg
     @include font_size('h5');

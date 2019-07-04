@@ -41,7 +41,7 @@
 
                 <div class="mv_10 tb_6 ds_hidden">
                     <div class="m_nav">
-                        <div class="btn btn-mini">
+                        <div class="btn btn-mini js-modal-open" data-target="modal-callback">
                             Позвоните мне
                         </div>     
                     </div>
@@ -168,7 +168,7 @@
                                 <a href="tel:+7423245-82-40">245-82-40</a>, 
                                 <a href="tel:+78005557910">8 (800) 555-79-10</a></div>
                         </div>
-                        <a href="#" class="btn btn-mini">
+                        <a href="#" class="btn btn-mini js-modal-open" data-target="modal-callback">
                             Перезвоните мне
                         </a>                              
                     </div>
@@ -606,7 +606,7 @@
                     </div>
                     
                     <div class="intro__button">
-                        <a href="#" class="btn btn-order" >Получить консультацию</a>
+                        <a href="#" class="btn btn-order js-modal-open" data-target="modal-request">Получить консультацию</a>
                     </div>
                 </div>
 
@@ -623,7 +623,46 @@
     <div class="container">
         <div class="row difference">
 
-            <div class="mv_24">
+
+            <!--  v3  all items in one stream, flex -->
+
+                <ul class="difference__list row-flex top">
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2 difference__list-item-outer collapse">
+                        <li>
+                            <h2 class="title title-red title-difference">Как работаем мы </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-we}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2 difference__list-item-outer collapse">
+                        <li class="difference__list-item  difference__list-item--we">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-we}}
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4 difference__list-item-outer collapse">
+                        <li>
+                            <h2 class="title title-red title-difference">наши конкуренты </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-competitor}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4 difference__list-item-outer collapse">
+                        <li class="difference__list-item difference__list-item--they">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-competitor}}    
+
+                </ul>
+
+
+            <!--  v2  all items in one stream, columns:2 -->    
+            <!--div class="mv_24">
                 <ul class="difference__list difference__list--we row">
 
                     <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2">
@@ -657,7 +696,7 @@
                     {{/difference-competitor}}    
 
                 </ul>
-            </div>
+            </div-->
 
 
 
@@ -724,7 +763,7 @@
                                 <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
                             </div>
                             <div class="mv_24 tb_12 ds_8 field-outer">
-                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="phone">
+                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
                             </div>
                             <div class="mv_24 ds_8 field-outer">
                                 <a href="#" class="btn btn-submit">Отправить заявку</a>
@@ -1030,6 +1069,77 @@
 
 </div>
 
+
+<div class="overlay" id="overlay">
+    <div class="overlay__container container">
+
+        <div class="modal modal--callback js-modal" id="modal-callback">
+            <div class="modal-close js-modal-close">
+                <i class="ukr-close"></i>
+            </div>    
+
+            <div class="modal-inner">
+
+                <div class="modal__title">
+                    <h2 class="title">Заказ обратного звонка</h2>
+                </div>                 
+
+                <div class="modal__content">
+                    <form action="#" class="form form--callback">                        
+                    
+                        <div class="row">
+                            <div class="mv_24 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <a href="#" class="btn btn-submit-alt">Отправить заявку</a>
+                            </div>
+                        </div>
+                    
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal modal--request js-modal" id="modal-request">
+            <div class="modal-close js-modal-close">
+                <i class="ukr-close"></i>
+            </div>    
+
+            <div class="modal-inner">
+
+                <div class="modal__title">
+                    <h2 class="title">Заказ консультации</h2>
+                </div>                 
+
+                <div class="modal__content">
+                    <form action="#" class="form form--request">                        
+                    
+                        <div class="row">
+                            <div class="mv_24 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <a href="#" class="btn btn-submit-alt">Отправить заявку</a>
+                            </div>
+                        </div>
+                    
+                    </form>
+                </div>
+
+            </div>
+        </div>        
+        
+    </div>
+</div>
 
 
 

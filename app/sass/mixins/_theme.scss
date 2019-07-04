@@ -195,7 +195,8 @@
 
 @mixin set_bg_adaptive($file_path, $breakpoint_prefix, $file_ext) {
 
-    background: #fff url($file_path+'.'+$file_ext) 0 0 no-repeat;
+    // background: #fff url($file_path+'.'+$file_ext) 0 0 no-repeat;
+    background: #fff url($file_path+'.'+$file_ext) center center no-repeat;
 
     
     // @media (min-width: #{map-get($devices, 'ds_')}px) {

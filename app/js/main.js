@@ -40,10 +40,16 @@ jQuery(document).ready(function($) {
         
     // });
 
+    jQuery(function($){
+       $("input[type=phone]").mask("+7 (999) 999-9999");
+    });
+
 
     slidersInit();
 
     triggerShowHide();
+
+    modals();
     
 
     // smoothScrollMenu();

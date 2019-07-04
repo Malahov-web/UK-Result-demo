@@ -71,10 +71,12 @@ var autoprefixerOptions = {
 };   
 // Vars
 var fontName = 'ukresultflaticons';
+
 var js_jquery = 'app/libs/jquery/dist/jquery.min.js';
 var js_owl = 'app/libs/owl.carousel/dist/owl.carousel.min.js';
 var js_fancybox = 'app/libs/fancybox/dist/jquery.fancybox.min.js';
 var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';   
+var js_maskedinput = 'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js';   
     
 
 
@@ -232,6 +234,7 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
             js_owl,
             js_fancybox,
             js_selectric,
+            js_maskedinput,
             'app/js/*.js'
 
             //, 'app/js/menu-responsive/js/menu-responsive.js'

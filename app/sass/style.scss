@@ -410,19 +410,12 @@ border-bottom: 1px solid $text;
 
 .section-form--consultation {
 
-    background: #fff url() 0 0 no-repeat;
-
     text-align: center;
     // padding-top: $margin_v;
     // padding-bottom: $margin_v;
-    background: url('../images/section-request-bg.jpg') 0 0 no-repeat;
-    background-size: cover;
 
-    @media (min-width: #{map-get($devices, 'ds_')}px) {
-        // padding-bottom: $margin_v_medium;   
-        background: url('../images/section-request-bg.jpg') 0 0 no-repeat;
-        background-size: cover;   
-    }
+    @include set_bg_adaptive('../images/section-request-bg', 1024, 'jpg');
+    background-size: cover;
 }
 
 .section-form--sro {
@@ -687,4 +680,86 @@ display: none;
     @include font_size('smaller');
     @include typo('notice');
     @include color_scheme('dark');
+}
+
+
+
+#overlay {
+    // display: block;
+}
+
+.overlay {
+// display: none;
+    z-index: $zindex_modal;
+    left : 0; top : 0;
+    position : fixed;
+    width: 100vw;
+    height: 100vh;
+    background: transparentize($black, 0.3)
+}
+.overlay__container {
+    position: relative; height: 100%;
+}
+
+.modal {
+    position : absolute; 
+    top : 50%;  left : 50%; bottom : auto; overflow : visible;
+    transform: translate(-50%, -50%);
+    max-width: 520px;
+
+    @extend %shadow;
+    @include v_rhytm('section', $l_h_base);
+    @include h_rhytm('modal', $l_h_base);    
+    @include color_scheme('default');
+
+    &-inner {
+        
+    }
+    &-close {
+        @include pseudoelement_right_top(1*$l_h_base, 1*$l_h_base);
+        @include font_size('h4');
+        color: $grey_light;
+        cursor: pointer;
+        &:hover {
+            color: $accent;
+        }
+        i {
+            color: inherit;
+        }
+    }
+
+    &__title {
+        .title {
+             @include font_size('h2');
+        }
+       
+
+    }
+    &__content {
+
+    }
+    .btn {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+
+}
+
+.modal--callback {
+    background: 
+        linear-gradient(to top, transparentize($white, 0.15) 0%, transparentize($white, 0.15) 100%,),
+        $white url('../images/logo_result.png') center center no-repeat;
+    background-size: contain;
+    background-size: auto 90%;        
+}
+
+.modal--request {
+    // @include set_bg_adaptive('../images/section-request-bg', 1024, 'jpg');
+    // background-size: cover;
+
+    background: 
+        linear-gradient(to top, transparentize($white, 0.15) 0%, transparentize($white, 0.15) 100%,),
+        $white url('../images/section-request-bg.jpg') center center no-repeat;
+    background-size: cover;   
 }

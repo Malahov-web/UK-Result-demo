@@ -110,15 +110,35 @@ var js_maskedinput = 'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js
 
         // .pipe(debug({title: 'SRC'}))
         .pipe(sourcemaps.init())
-        // .pipe(plumber())
+        .pipe(plumber())
 
-        .pipe(plumber( {  
-            errorHandler: notify.onError()
-        } ))
+        // .pipe(plumber( {  
+        //     errorHandler: notify.onError()
+        // } ))
 
         // .pipe(postcss(processors, {syntax: syntax_scss}))  // Lint
 
+        // .pipe(gulpif(
+        //     condition, 
+        //     uglify()
+        //     ))
 
+        // .on('data', function(file){  // Файл - файл который проходит обработку процессом 
+        //     // console.dir(file);
+        //     console.log('Проходит файл ' +  file.path);
+        //     // console.log('Имя файла ' +  file.name);
+        //     console.log('basename файла ' +  file.basename);
+        //     // console.log('dirname файла ' +  file.dirname);
+        //     // 'C:\HTML 2\UKResult demo\_html\app\sass\style.scss'
+
+        //     gulpif(
+        //         file.path === 'C:\HTML 2\UKResult demo\_html\app\sass\style.scss', 
+        //         console.log('ЭТО НАШ ФАЙЛ! ' +  file.path)
+        //         // postcss(processors, {syntax: syntax_scss})  
+        //     )
+
+        // })
+        
          .pipe(
             gulpif(
                 function (file) {
@@ -144,6 +164,21 @@ var js_maskedinput = 'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js
                 postcss(processors, {syntax: syntax_scss})
             )  
         )
+
+        //  .pipe(
+        //     gulpif(
+        //         function (file) {
+        //             file.path === 'C:\HTML 2\UKResult demo\_html\app\sass\style.scss', 
+        //             console.log('ЭТО НАШ ФАЙЛ! ' +  file.path);
+        //             postcss(processors, {syntax: syntax_scss})
+        //         }
+        //     )  
+        // )
+     
+
+    
+      
+
 
 
         .pipe(sass()) // Преобразуем scss в CSS посредством gulp-sass

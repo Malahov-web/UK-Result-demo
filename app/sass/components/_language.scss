@@ -1,22 +1,19 @@
 
 .language {
     position: relative;
-    float: right;    
-
+    float: right;
     &__current {
         @include font_size('fb');
         @include typo('menu-item');
         @include height_leveling('text');
         @include color_scheme('accent');
         text-transform: uppercase;
-        
         i {
             margin-left: 5px;
             @include font_size('smaller');
             @include color_scheme('default');
         }
     }
-
     &__list {
         display: none;
         @include h_rhytm('card', $fb);
@@ -25,7 +22,6 @@
         position: absolute;
         z-index: $zindex_nav;
         border: 2px solid $accent;
-
         li {
             a {
                 display: block;
@@ -38,8 +34,7 @@
             }
         }
     }
-
-    &:hover &__list{
+    &:hover &__list {
         display: block;
     }
 }

@@ -1,63 +1,41 @@
+
 /* . features
  * **********************************************************************
  *
 */
 
-.features{
-
-
-    &__item{
-        // width: map-get($devices, 'hd_')+px;
+.features {
+    &__item {
         // width: m($devices, 'ds_')+px;
-        // width: _($devices, 'ds_')+px;
-
-        &-image{
-
-            @include height_leveling('fullheight'); 
-
-// image_center_cover
-
+        // width: _($devices, 'ds_')+px; // testing map-get wrapper)
+        &-image {
+            @include height_leveling('fullheight');
             @media (max-width: #{map-get($devices, 'ds_')-1}px) {
                 height: 12*$l_h_base;
                 overflow: hidden;
-                img{
+                img {
                     @include image_center_cover();
                 }
             }
             @media (max-width: #{map-get($devices, 'tb_')-1}px) {
                 height: 8*$l_h_base;
-            } 
-
+            }
             @media (min-width: #{map-get($devices, 'ds_')}px) {
-                img{
+                img {
                     width: auto;
                     max-width: none;
                     min-width: 50vw;
-                    min-height: 100%;                 
+                    min-height: 100%;
                 }
             }
         }
-
-        &-content{
+        &-content {
             @include flex(flex-start, center);
-            @include height_leveling('fullheight'); // Нужно добавить еще один элемент внутрь и его центрировать
-
+            @include height_leveling('fullheight');
             @include h_rhytm('modal', $l_h_base);
             @include v_padding(1.5*$l_h_base, 1.5*$l_h_base);
-
-            // padding: $margin_v $margin_v_small;
-
-            // @media (min-width: #{map-get($devices, 'tb_')}px) {
-            //     padding: $margin_v $margin_v_medium;
-            // }        
-            // @media (min-width: #{map-get($devices, 'ds_')}px) {
-            //     padding: $margin_v_medium $margin_v_big;
-            // }
-            
-            &-inner {
-
-            }
-
+            &-inner {}
+            // Updt: это он. Нужно добавить еще один элемент внутрь и его центрировать
             h3 {
                 @extend .title;
                 @include font_size('h2');
@@ -68,44 +46,34 @@
                     transform: translate(0%, -100%);
                 }
             }
-            p {
-
-            }
             ul {
                 li {
                     margin-top: 2/5*$l_h;
                     margin-bottom: 2/5*$l_h;
                 }
             }
-
         }
-
-    }
-
+    } // features__promo - промо блок с фоном на всю ширину
     &__promo-outer {
         @include color_scheme('grey');
-        // @include v_rhytm('section', $l_h_base);
-        // padding-bottom: 0;
-        @include v_padding(3*$l_h_base,0);
+        @include v_padding(3*$l_h_base, 0); // @include v_rhytm('section', $l_h_base);
     }
     &__promo {
         @media (max-width: #{map-get($devices, 'tb_')-1}px) {
             flex-direction: column-reverse;
         }
-
         &-image {
             img {
-                    width: auto; 
-                    margin: 0 auto; 
-                    @media (max-width: #{map-get($devices, 'tb_')-1}px) {
-                        // width: 75%;
-                        max-width: 480px;        
-                    }
+                width: auto;
+                margin: 0 auto;
+                @media (max-width: #{map-get($devices, 'tb_')-1}px) {
+                    // width: 75%;
+                    max-width: 480px;
+                }
             }
         }
         &-content {
-            // @include h_rhytm('modal', $l_h_base);
-            @include v_padding(0, 3*$l_h_base);            
+            @include v_padding(0, 3*$l_h_base); // @include h_rhytm('modal', $l_h_base);
         }
         &-button {
             .btn {
@@ -113,44 +81,35 @@
                 text-decoration: none;
                 @media (max-width: #{map-get($devices, 'tb_')-1}px) {
                     margin: 0 auto;
-                }                
+                }
             }
         }
     }
-
 }
-
 
 @media (min-width: #{map-get($devices, 'ds_')}px) {
-
-.features{
-    // &__item:nth-child(even) {
-    &__item:nth-child(even) {
-        // background-color: $accent;
-
-        .features__item-image {
-            float: left;
-            img {
+    .features {
+        // разбрасываем в шахматном порядке
+        &__item:nth-child(even) {
+            .features__item-image {
                 float: left;
+                img {
+                    float: left;
+                }
+            }
+            > .row-flex {
+                flex-direction: row-reverse;
             }
         }
-
-        > .row-flex {
-            flex-direction: row-reverse;;    
+        &__item:nth-child(odd) {
+            .features__item-image {
+                float: right;
+                img {
+                    float: right;
+                }
+            }
         }
     }
-
-    &__item:nth-child(odd) {
-        // background-color: $grey_light;
-
-        .features__item-image {
-            float: right;
-            img {
-                float: right;  
-            }
-        }
-    } 
 }
-    
-} // media end
 
+/* media end */

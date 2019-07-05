@@ -1,73 +1,51 @@
 
-
 .services {
     @include v_margin(0, -2*$l_h_base);
     &__item {
-
-            display: block;
-            margin: 0 auto;
-            // margin-bottom: $margin_v_small;
-            @include v_margin(0, 2*$l_h_base);
-            width: 150px;
-            height: 150px;
-            
-            // width: 188px;
-            // height: 188px;
-            background-color: $white;
-            border: 2px solid $grey_white;
-
-            &:hover {
-                @extend %shadow_big;
-                border: 2px solid $accent;
-            }
-            @media (min-width: #{map-get($devices, 'tb_')}px) {
-                width: 100%;
-            } 
-            @media (min-width: #{map-get($devices, 'ds_')}px) {
-                // margin-bottom: $margin_v_medium;
-                width: 100%;
-                height: 190px;
-                max-width: 190px;
-            } 
-
+        display: block;
+        margin: 0 auto; // margin-bottom: $margin_v_small;
+        width: 150px;
+        height: 150px;
+        @include v_margin(0, 2*$l_h_base);
+        @include color_scheme('default');
+        border: 2px solid $grey_white;
+        &:hover {
+            @extend %shadow_big;
+            border: 2px solid $accent;
+        }
+        @media (min-width: #{map-get($devices, 'tb_')}px) {
+            width: 100%;
+        }
+        @media (min-width: #{map-get($devices, 'ds_')}px) {
+            // margin-bottom: $margin_v_medium;
+            width: 100%;
+            height: 190px;
+            max-width: 190px;
+        }
         &-icon {
             margin: 0 auto;
-            margin-top: 20px;
-            margin-bottom: 15px;
+            @include v_margin(1.2*$l_h_base, 4/5*$l_h_base);
             width: 70px;
             height: 70px;
-
             @media (min-width: #{map-get($devices, 'ds_')}px) {
-                margin-top: $margin_v;
-                margin-bottom: $margin_v_small;
                 width: 84px;
                 height: 84px;
-            } 
-
+            }
             img {
                 margin: auto;
                 width: auto;
             }
         }
-
         &-title {
             @include flex( center, center);
-            @include font_size('fb');
             @include height_leveling('heading_double');
-            // line-height: $l_h_head;
-            // height: 2*$l_h_head ;
-
+            @include font_size('fb');
             @include typo('card-title');
-            // font-weight: 500;
-            color: $text;
-            text-align: center;
-
-            background-color: $grey_lighter;
-
-            span {               
+            @include color_scheme('default');
+            span {
                 max-height: 2*$l_h_head;
                 display: block;
             }
-        }        
+        }
     }
 }

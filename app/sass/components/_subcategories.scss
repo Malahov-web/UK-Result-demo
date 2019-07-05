@@ -1,45 +1,33 @@
 
 .subcategories {
-
-    // margin-bottom: -$margin_v_small; 
-    @include v_rhytm('block-card', $l_h);   
-    // width: 100%;
-
+    @include v_rhytm('block-card', $l_h); // width: 100%;
     &__item-outer {
         @include v_rhytm('card', $l_h);
     }
-
     &__item {
-
         @extend %transition;
-        @include flex(flex-start, center);       
-        @include color_scheme('card');       
+        @include flex(flex-start, center);
+        @include color_scheme('card');
         @include height_leveling('fullheight');
         min-height: 130px; // min-height: 2*$l_h;
-
         &-image {
-
             $subcategories_item_image_metric: 65px;
             $subcategories_item_image_metric_ds: 80px;
-
             padding: $margin_v_small $margin_v_small;
-            width: calc( #{2*$margin_v} + #{$subcategories_item_image_metric});
-
+            width: calc(#{2*$margin_v} + #{$subcategories_item_image_metric}); // отступы + сам img
             @media (min-width: #{map-get($devices, 'ds_')}px) {
                 padding: $margin_v_small $margin_v;
-                width: calc( #{2*$margin_v} + #{$subcategories_item_image_metric_ds});
+                width: calc(#{2*$margin_v} + #{$subcategories_item_image_metric_ds}); // отступы + сам img
             }
-
             img {
                 box-sizing: content-box;
-                margin: 0 auto; 
+                margin: 0 auto;
                 width: auto;
                 max-width: $subcategories_item_image_metric;
                 height: auto;
-
                 @media (min-width: #{map-get($devices, 'ds_')}px) {
                     max-width: $subcategories_item_image_metric_ds;
-                }                  
+                }
             }
         }
         &-title {
@@ -51,8 +39,7 @@
             color: inherit;
         }
     }
-
     &__item:hover {
         @extend %shadow_big;
-    }    
+    }
 }

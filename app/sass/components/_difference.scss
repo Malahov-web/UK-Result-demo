@@ -1,18 +1,12 @@
-
 .difference {
     &__list {
-
         &-item {
-            @extend %shadow;            
+            @extend %shadow;
             @include v_margin(0, 2*$l_h_base);
             @include h_rhytm('nav_element', $fb);
             position: relative;
-            // padding-top: 1*$l_h_base;
-            // padding-top: 2/5*$l_h_base;
-            // padding-bottom: 4/5*$l_h_base; 
             padding-top: 1/2*$l_h_base;
-            padding-bottom: 1/2*$l_h_base;  
-
+            padding-bottom: 1/2*$l_h_base;
             @extend [data-icon];
             &:before {
                 @include pseudoelement_left_top(0, 0);
@@ -20,62 +14,52 @@
                 width: $font_h1;
                 height: $font_h1;
                 @include font_size('h1');
-            }            
-
-            &-title {               
-                @include v_rhytm('text', $l_h_base);  // @include v_rhytm('text', $l_h); // margin-bottom: 0.5 * $l_h;
+            }
+            &-title {
+                @include v_rhytm('text', $l_h_base);
                 @include font_size('h4');
-                @include typo('menu-item'); 
+                @include typo('menu-item');
             }
             &-text {
-                @include v_rhytm('text', $l_h_base);                 
+                @include v_rhytm('text', $l_h_base);
                 @include font_size('fb');
-                @include height_leveling('text-compressed');               
-            }             
+                @include height_leveling('text-compressed');
+            }
         }
-
         &-item--we {
             border: 1px solid $success_color;
         }
-        &-item--they {
-            
-        }
-
+        &-item--they {}
     }
-
 }
 
 .difference .difference__list-item--we:before {
     @extend .ukr-019-verification-mark;
     color: $success_color;
 }
+
 .difference .difference__list-item--they:before {
     @extend .ukr-close;
     color: $grey_light;
 }
 
-
 // TB and DS logic)
+/*
+  выводим подряд элементы из двух блоков (массивов) последовательно ,
+  на TB миксуем их через один (чередуем) с пом. св-ва order
+*/
 $difference_list_item_number: 12; // all items number
 $d_l_i_number: $difference_list_item_number;
 
 @media (min-width: #{map-get($devices, 'tb_')}px) {
-
     @for $i from 1 through 1/2*$d_l_i_number {
         .difference__list-item-outer:nth-child(#{$i}) {
-            // background-color: $success_color;
             order: 2*$i - 1;
         }
-
     }
-
-    @for $i from 1/2*$d_l_i_number+1 through $d_l_i_number {
-
+    @for $i from 1/2*$d_l_i_number + 1 through $d_l_i_number {
         .difference__list-item-outer:nth-child(#{$i}) {
-            // background-color: yellow;
             order: 2*$i - $d_l_i_number;
         }
-
     }
-
-} // media end
+} /* media end */

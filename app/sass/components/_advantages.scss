@@ -1,59 +1,48 @@
 
 .advantages {
     @include v_rhytm('block-card', $l_h);
-
-    &__item-outer {
-        
-    }
-
+    &__item-outer {}
     &__item {
         @extend %shadow;
         @include flex(flex-start, stretch);
         @include v_rhytm('card', $l_h);
         position: relative;
         padding-left: 60px;
-
         @media (min-width: #{map-get($devices, 'tb_')}px) {
             padding-left: 100px;
         }
         @media (min-width: #{map-get($devices, 'tb_')}px) {
             padding-left: 120px;
         }
-
         &-icon {
             @include flex(center, center);
-            @include pseudoelement_left_top(0, 0); 
-            @include color_scheme('accent-reverse');          
+            @include pseudoelement_left_top(0, 0);
+            @include color_scheme('accent-reverse');
             width: 60px;
             height: 100%;
-
             @media (min-width: #{map-get($devices, 'tb_')}px) {
                 width: 100px;
             }
             @media (min-width: #{map-get($devices, 'tb_')}px) {
                 width: 120px;
-            } 
-
+            }
             i {
                 font-size: 1.5*$font_h1;
                 @media (min-width: #{map-get($devices, 'tb_')}px) {
                     font-size: 2*$font_h1;
-                }                
+                }
             }
         }
-        &-text {          
+        &-text {
             @include font_size('fb');
             @include v_padding(1*$l_h_base, 1*$l_h_base);
             @include h_rhytm('modal', $l_h_base);
-            width: 100%; 
-
+            width: 100%;
             &-inner {
-                @include flex(flex-start, center);                
+                @include flex(flex-start, center);
                 @include height_leveling('text-compressed');
                 min-height: 3*$l_h_medium;
             }
-            
         }
-
     }
 }

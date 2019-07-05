@@ -1,110 +1,56 @@
+
 /* . news
  * **********************************************************************
  *
 */
 
-.news-outer{
+.news-outer {}
 
-}
-// .news{
-
-//     &__item{
-//         &-image{
-//             @include color_scheme('accent-reverse');            
-//             position: relative;
-//             display: block;
-//             height: 6*$l_h_base;  // DS: 150px;;
-//             overflow: hidden;
-//             img{
-//                 @include image_center_cover();
-//             }
-//         }
-//         &-content{
-//             @include h_rhytm('card', $l_h);
-//             @include color_scheme('grey');
-//             padding-top: 16px;
-//             // padding-bottom: 12px;
-//             padding-bottom: 1px;
-//         }
-//         &-title{
-//             // @include font_size('h5');
-//             @include font_size('fb');
-//             @include height_leveling('heading_double');            
-//             color: $text;
-//             a {
-//                 color: inherit;
-//             }
-//             &:hover {
-//                 color: $accent;  // general a:hover ?;
-//             }            
-//         }
-//         &-text{
-//             @include font_size('small');
-//             @include height_leveling('text-compressed');
-//             @include v_rhytm('text', $l_h_base);
-//             word-wrap: break-word;
-//             min-height: 3*$l_h_medium;
-//         }
-
-//         &-date{
-//             @include font_size('smaller');
-//             @include height_leveling('text');            
-//             @include v_rhytm('text', $l_h);            
-//             display: block;
-//         }
-
-            // &-button {
-
-            // }
-//     }
-// }
-
-.news--card{
-    // @include v_rhytm('block', $l_h_base);  
-    overflow: hidden;  
-    .news__item{
+.news--card {
+    // @include v_rhytm('block', $l_h_base);
+    overflow: hidden;
+    .news__item {
         // @include v_rhytm('item', $l_h_base);
-        &-image{
-            @include color_scheme('accent-reverse');            
+        &-image {
+            @include color_scheme('accent-reverse');
             position: relative;
             display: block;
-            height: 6*$l_h_base;  // DS: 150px;;
+            height: 6*$l_h_base; // DS: 150px;
             overflow: hidden;
-            img{
+            img {
                 @include image_center_cover();
             }
         }
-        &-content{
+        &-content {
             @include color_scheme('grey');
             padding-top: 16px;
-            padding-bottom: 1px;           
+            padding-bottom: 1px;
         }
         &-content-inner {
             @include h_rhytm('card', $l_h);
-        }         
-        &-title{
+        }
+        &-title {
             @include font_size('fb');
-            @include height_leveling('heading_double');            
+            @include height_leveling('heading_double');
             color: $text;
             &:hover {
-                color: $accent;  // general a:hover ?;
-            }            
+                color: $accent; // general a:hover ?;
+            }
             a {
                 color: inherit;
-            }           
+            }
         }
-        &-text{
+        &-text {
             @include font_size('small');
             @include height_leveling('text-compressed');
-            @include v_rhytm('text', $l_h_base);
-            // min-height: 3*$l_h_medium;
-            height: 3*$l_h_medium; overflow: hidden;
+            @include v_rhytm('text', $l_h_base); // min-height: 3*$l_h_medium;
+            height: 3*$l_h_medium;
+            overflow: hidden;
         }
-
-        &-date{
+        &-date {
             @include font_size('smaller');
-            @include height_leveling('text');            
-            @include v_rhytm('text', $l_h);            
+            @include height_leveling('text');
+            @include v_rhytm('text', $l_h);
             display: block;
         }
         &-button {
@@ -113,105 +59,88 @@
     }
 }
 
-.news--slat{
+.news--slat {
     $news_slat_item_image_width_ds: 300px;
     $news_slat_item_image_width_tb: 240px;
-
-    .news__item{
-        position: relative;
-        // padding-left: $news_slat_item_image_width_tb;
-        // padding-left: 0;
-margin-bottom: 30px;
-// margin-bottom: 3*$l_h_base;
-margin-bottom: 2*$l_h_base;
-    min-height: 9*$l_h_base;
-
+    .news__item {
+        position: relative; // padding-left: $news_slat_item_image_width_tb;
+        margin-bottom: 30px;
+        margin-bottom: 2*$l_h_base;
+        min-height: 9*$l_h_base;
         @media (min-width: #{map-get($devices, 'tb_')}px) {
             padding-left: $news_slat_item_image_width_tb;
-        } 
+        }
         @media (min-width: #{map-get($devices, 'ds_')}px) {
             padding-left: $news_slat_item_image_width_ds;
-        } 
-
-        &-image{
-            @include color_scheme('accent-reverse');            
+        }
+        &-image {
+            @include color_scheme('accent-reverse');
             position: relative;
-            display: block;
-            // height: 6*$l_h_base;  // DS: 150px;;
+            display: block; // height: 6*$l_h_base;  // DS: 150px;
             overflow: hidden;
-
-            width: 100%;  // +
-            height: 9*$l_h_base;  // +-
+            width: 100%; // +
+            height: 9*$l_h_base; // +-
             margin-bottom: 1*$l_h_base;
-            
             @media (min-width: #{map-get($devices, 'tb_')}px) {
-                @include pseudoelement_left_top(0, 0);  // +
-                margin-bottom: 0px;
+                @include pseudoelement_left_top(0, 0); // +
+                margin-bottom: 0;
                 padding-left: $news_slat_item_image_width_tb;
-            }             
+            }
             @media (min-width: #{map-get($devices, 'ds_')}px) {
-                width: $news_slat_item_image_width_ds;  // +
-            }                
-            img{
+                width: $news_slat_item_image_width_ds; // +
+            }
+            img {
                 @include image_center_cover();
             }
         }
-        &-content{
-
+        &-content {
             // @include color_scheme('grey');
-            @include color_scheme('default');
-            // padding-top: 16px;
+            @include color_scheme('default'); // padding-top: 16px;
             padding-bottom: 1px;
         }
         &-content-inner {
             // @include h_rhytm('card', $l_h);
             @media (min-width: #{map-get($devices, 'tb_')}px) {
                 @include h_rhytm('card', $l_h);
-            }  
+            }
         }
-        &-title{
-            @include font_size('h4');  
-            // @include font_size('fb');  // +-
-            @include height_leveling('heading');   // +-          
+        &-title {
+            @include font_size('h4'); // @include font_size('fb');  // +-
+            @include height_leveling('heading'); // +-
             color: $text;
             a {
                 color: inherit;
             }
             &:hover {
-                color: $accent;  // general a:hover ?;
-            }            
+                color: $accent; // general a:hover ?;
+            }
         }
-        &-text{
-            @include font_size('fb');  // +-
-            @include height_leveling('text-compressed');  // +-
+        &-text {
+            @include font_size('fb'); // +-
+            @include height_leveling('text-compressed'); // +-
             @include height_leveling('text');
             @include v_rhytm('text', $l_h_base);
             word-wrap: break-word;
             min-height: 3*$l_h_medium;
         }
-
-        &-date{
+        &-date {
             @include font_size('smaller');
-            @include height_leveling('text');            
-            @include v_rhytm('text', $l_h);            
+            @include height_leveling('text');
+            @include v_rhytm('text', $l_h);
             display: block;
         }
-
         &-button {
-display: none;
-            // @include color_scheme('default');
-            // @include h_rhytm('card', $l_h);
+            display: none; // @include color_scheme('default');
             @include h_rhytm('modal', $l_h);
             .btn {
-                border: none;            
+                border: none;
                 @include flex(flex-start, center);
                 &:hover {
                     @include color_scheme('accent');
                     text-decoration: underline;
                 }
             }
-            
-        }        
+        }
     }
 }
 
@@ -220,9 +149,7 @@ display: none;
 }
 
 @media (min-width: #{map-get($devices, 'ds_')}px) {
-
-.news{
-
+    .news {}
 }
-    
-} // media end
+
+/* media end */

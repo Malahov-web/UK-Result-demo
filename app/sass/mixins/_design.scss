@@ -176,7 +176,7 @@
 
 @mixin color_scheme ($type) {
 
-    @if $type == default {
+    @if $type == default { // +
         background-color: $white;
         color: $text; 
     }
@@ -222,7 +222,6 @@
         background-color: $accent;
         border-color: $accent;
     } 
-
 
 
 }

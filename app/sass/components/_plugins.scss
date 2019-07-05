@@ -1,0 +1,73 @@
+
+/* B.1. Owl-carousel
+ * **********************************************************************
+*/
+
+/* Owl-carousel */
+
+body .row.owl-carousel {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body .owl-dots {
+    @include flex(center, center);
+    @include height_leveling('button');
+    margin-top: 0.5*$l_h_base;
+    width: 100%;
+    .owl-dot {
+        margin: 0 1*$columns_gap+px;
+        span {
+            display: block;
+            width: 0.5*$l_h_base; // 12
+            height: 0.5*$l_h_base; // 12
+            background-color: $grey_lighter;
+            border-radius: 50%;
+        }
+    }
+    .owl-dot.active {
+        span {
+            background-color: $accent;
+        }
+    }
+}
+
+body .owl-prev, body .owl-next {
+    @extend .fi;
+    @extend [data-icon];
+    @extend .ukr-020-down-arrow;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px; // width: 15px;
+    width: auto;
+    height: auto;
+    font-size: 0;
+    &:before {
+        @extend %transition;
+        font-size: 2*$fb;
+    }
+    span {
+        display: none;
+    }
+    &:hover {
+        &:before {
+            color: $accent;
+        }
+    }
+}
+
+body .owl-prev {
+    left: 0;
+    right: auto;
+    &:before {
+        transform: rotate(90deg);
+    }
+}
+
+body .owl-next {
+    left: auto;
+    right: 0;
+    &:before {
+        transform: rotate(-90deg);
+    }
+}

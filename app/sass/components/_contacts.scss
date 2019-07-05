@@ -1,26 +1,20 @@
 
 .contacts {
-
     @media (max-width: #{map-get($devices, 'ds_')-1}px) {
-        // margin: 1*$l_h_base  0;
         padding-top: 1*$l_h_base;
-    } 
-
+    }
     .address {
         @include v_rhytm('item', $l_h);
         @include height_leveling('text-compressed');
         @include font_size('fb');
         font-weight: 500;
     }
-
     .phones {
         @include v_rhytm('item', $l_h);
-
         &__item {
             @include height_leveling('text-compressed');
-            @include font_size('fb');            
+            @include font_size('fb');
             font-weight: 500;
-
             a {
                 @include color_scheme('dark');
                 &:hover {
@@ -31,47 +25,33 @@
                     &:hover {
                         @include color_scheme('accent');
                     }
-                }                
+                }
             }
-        }        
-    } 
+        }
+    }
 }
 
 .contacts--footer {
-    
     padding: 0;
     margin-top: 0.5*$l_h_base;
-
     .address {
         @include font_size('small');
         @include color_scheme('dark');
-        font-weight: 400;        
+        font-weight: 400;
     }
-
     .phones {
-        // color: $white;
-        // font-size: $fb;
-        // line-height: $l_h_head;
-            // @media (min-width: #{map-get($devices, 'ds_')}px) {
-            //     font-size: $font_small;
-            // }
-
-
         &__item {
             @include font_size('small');
             font-weight: 400;
-
             a {
                 @include color_scheme('dark');
                 &:hover {
                     @include color_scheme('accent');
-                }                
+                }
             }
-          
         }
     }
-
-   .contacts__title {
-        @extend %footer__title;  
+    .contacts__title {
+        @extend %footer__title;
     }
 }

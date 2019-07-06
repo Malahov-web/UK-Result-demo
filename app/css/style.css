@@ -2143,6 +2143,7 @@ p.rquote,
         padding-bottom: 0;
         overflow: hidden; }
         .offers__item-list.active {
+          height: auto;
           padding-top: 12px;
           padding-bottom: 12px; } }
     .offers__item-list li {

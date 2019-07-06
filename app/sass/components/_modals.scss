@@ -1,5 +1,3 @@
-
-
 .overlay-search {
     display: none;
     @include color_scheme('dark');
@@ -34,6 +32,7 @@
     bottom: auto;
     overflow: visible;
     transform: translate(-50%, -50%);
+    width: 90%;
     max-width: 520px;
     @extend %shadow;
     @include v_rhytm('section', $l_h_base);

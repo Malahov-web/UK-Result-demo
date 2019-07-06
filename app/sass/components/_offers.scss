@@ -24,7 +24,8 @@
             }
             img {
                 width: auto;
-                height: 80px;
+                // height: 80px;
+                height: 3*$l_h_base;
             }
         }
         &-title {

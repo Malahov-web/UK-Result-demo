@@ -25,8 +25,9 @@
  *  14. sertificates
  *  15. steps
  *  16. advantages
- *  17. footer
- *  18. modals
+ *  17. tarifs
+ *  18. footer
+ *  19. modals
  *  A. JS.
  *  B. Plugins
  *      B.1 Owl-carousel
@@ -407,17 +408,16 @@
 */
 
 // /components/advantages.scss
-/* 17. footer
+.section-advantages {
+    overflow: hidden;
+}
+
+/* 18. footer
  * **********************************************************************
  *
 */
 
 // /components/footer.scss
-/* . footer
- * **********************************************************************
- *
-*/
-
 .footer {
     @include color_scheme('dark');
     @include v_rhytm('section-collapse', $l_h);
@@ -482,19 +482,27 @@
     @include color_scheme('dark');
 }
 
-/* 18. modals
+/* 19. modals
  * **********************************************************************
  *
 */
 
 // /components/modals.scss
+/* A. JS
+ * **********************************************************************
+ *
+*/
+
+.js-modal {
+    display: none;
+}
+
 /* B. Plugins
  * **********************************************************************
  *
 */
 
 // /components/plugins.scss
-
 /* C. Decor
  * **********************************************************************
  *

@@ -3,7 +3,10 @@
 <head>
     <title>UK Result demo - home</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <meta content='true' name='HandheldFriendly'>
     <meta content='width' name='MobileOptimized'>
     <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -288,7 +291,8 @@
             <div class="mv_12 tb_6 tb_offset_1 ds_4 ds_offset_0 centered">
                 <a class="services__item" href="#">
                     <div class="services__item-icon">
-                        <img src="images/{{item-image}}" alt="">
+                        <!-- <img src="images/{{item-image}}" alt=""> -->
+                        <img src="uploads/services/{{item-image}}" alt="{{item-title}}">
                     </div>                    
                     <div class="services__item-title">
                         <span>{{item-title}}</span>
@@ -638,7 +642,7 @@
 
 <section class="section section-difference">
     <div class="container">
-        <div class="row difference">
+        <div class="difference">
 
 
             <!--  v3  all items in one stream, flex -->
@@ -823,7 +827,7 @@
                 <div class="row reviews owl-carousel">
                     
                     {{#reviews}}
-                    <div class="mv_22 mv_offset_1 tb_8 tb_offset_0 reviews__item-outer">
+                    <div class="mv_22 mv_offset_0 tb_8 tb_offset_0 reviews__item-outer">
                         <div class="reviews__item centered">
                             <a href="uploads/reviews/{{item-image-large}}" class="reviews__item-image" data-fancybox="galleryreviews">
                             <!-- <a data-fancybox="gallery" href="big_1.jpg"><img src="small_1.jpg"></a> -->

@@ -15,15 +15,15 @@
 		});
 
 		// var overlay = jQuery('.overlay');
-		var overlay = jQuery('#overlay');
+		var overlay = $('#overlay');
 
-		jQuery('.js-modal-open').on( 'click', function(){ 
+		$('.js-modal-open').on( 'click', function(){ 
 	  
-			var target_id = jQuery(this).attr('data-target'); 
+			var target_id = $(this).attr('data-target'); 
 			
 			overlay.fadeIn(600);
 			
-			jQuery('#'+target_id+'').slideDown(600);
+			$('#'+target_id+'').slideDown(600);
 			
 		});
 		

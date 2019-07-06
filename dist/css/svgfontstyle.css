@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "ukresultflaticons";
+  src: url("../fonts/ukresultflaticons/ukresultflaticons.eot");
+  src: url("../fonts/ukresultflaticons/ukresultflaticons.eot?#iefix") format("eot"), url("../fonts/ukresultflaticons/ukresultflaticons.woff2") format("woff2"), url("../fonts/ukresultflaticons/ukresultflaticons.woff") format("woff"), url("../fonts/ukresultflaticons/ukresultflaticons.ttf") format("truetype"), url("../fonts/ukresultflaticons/ukresultflaticons.svg#ukresultflaticons") format("svg"); }
+
+.ukresultflaticons:before {
+  font-family: "ukresultflaticons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none; }
+
+.ukresultflaticons-001-add:before {
+  content: "\EA01"; }
+
+.ukresultflaticons-002-support:before {
+  content: "\EA02"; }
+
+.ukresultflaticons-003-plus:before {
+  content: "\EA03"; }
+
+.ukresultflaticons-004-money:before {
+  content: "\EA04"; }
+
+.ukresultflaticons-005-locked:before {
+  content: "\EA05"; }
+
+.ukresultflaticons-006-stopwatch:before {
+  content: "\EA06"; }
+
+.ukresultflaticons-007-team:before {
+  content: "\EA07"; }
+
+.ukresultflaticons-008-court:before {
+  content: "\EA08"; }
+
+.ukresultflaticons-009-court-1:before {
+  content: "\EA09"; }
+
+.ukresultflaticons-010-avatar:before {
+  content: "\EA0A"; }
+
+.ukresultflaticons-011-money-1:before {
+  content: "\EA0B"; }
+
+.ukresultflaticons-012-loan:before {
+  content: "\EA0C"; }
+
+.ukresultflaticons-013-couple:before {
+  content: "\EA0D"; }
+
+.ukresultflaticons-014-house:before {
+  content: "\EA0E"; }
+
+.ukresultflaticons-015-sink:before {
+  content: "\EA0F"; }
+
+.ukresultflaticons-016-parcel:before {
+  content: "\EA10"; }
+
+.ukresultflaticons-017-document:before {
+  content: "\EA11"; }
+
+.ukresultflaticons-018-teamwork:before {
+  content: "\EA12"; }
+
+.ukresultflaticons-019-verification-mark:before {
+  content: "\EA13"; }
+
+.ukresultflaticons-020-down-arrow:before {
+  content: "\EA14"; }
+
+.ukresultflaticons-agreement:before {
+  content: "\EA15"; }
+
+.ukresultflaticons-bar-chart:before {
+  content: "\EA16"; }
+
+.ukresultflaticons-close:before {
+  content: "\EA17"; }
+
+.ukresultflaticons-magnifying-glass:before {
+  content: "\EA18"; }
+
+.ukresultflaticons-menu:before {
+  content: "\EA19"; }
+
+/*# sourceMappingURL=svgfontstyle.css.map */

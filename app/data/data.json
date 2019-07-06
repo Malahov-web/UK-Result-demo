@@ -112,12 +112,30 @@
     ],
 
     "services": [
-        { "item-title": "Допуски СРО", "item-image": "agreement.svg"},
-        { "item-title": "Лицензии МЧС" , "item-image": "agreement.svg"},
-        { "item-title": "Регистрация ООО", "item-image": "agreement.svg" },
-        { "item-title": "Услуги бухгалтера", "item-image": "agreement.svg" },
-        { "item-title": "Услуги адвоката", "item-image": "agreement.svg" },
-        { "item-title": "Налоговый адвокат", "item-image": "agreement.svg" }
+        { 
+            "item-title": "Допуски СРО", 
+            "item-image": "services-item-img-1.png"
+        },
+        { 
+            "item-title": "Лицензии МЧС" , 
+            "item-image": "services-item-img-2.png"
+        },
+        { 
+            "item-title": "Регистрация ООО", 
+            "item-image": "services-item-img-3.png" 
+        },
+        { 
+            "item-title": "Услуги бухгалтера", 
+            "item-image": "services-item-img-4.png" }
+            ,
+        { 
+            "item-title": "Услуги адвоката", 
+            "item-image": "services-item-img-5.png" 
+        },
+        { 
+            "item-title": "Налоговый адвокат", 
+            "item-image": "services-item-img-6.png" 
+        }
     ],
 
     "services_sro": [
@@ -572,6 +590,34 @@
             "item-link": "#"
         }
 
+    ],
+
+
+    "tarifs": [
+        { 
+            "item-title": "Начальный", 
+            "item-image": "tarifs-item-img-1.svg",
+            "item-text": "Я открыл ИП, но на данном этапе не веду деятельность. Но мне все равно необходимо подавать декларацию в Налоговую инспекцию и фонды.",
+            "item-price": "3 000 руб./квартал"
+        },
+        { 
+            "item-title": "Простой суперначалный", 
+            "item-image": "tarifs-item-img-1.svg",
+            "item-text": "Я индивидуальный предприниматель, веду небольшую деятельность, у меня некоторое количество первичной документации и штат до 2-х человек. Мне необходима помощь и поддержка в обработке первичной документации и сдаче налоговой и бухгалтерской отчетности.",
+            "item-price": "1 500 руб./месяц"
+        },
+        { 
+            "item-title": "Малая \n организация", 
+            "item-image": "tarifs-item-img-1.svg",
+            "item-text": "Мы – начинающая компания со штатом до 3-х человек и некоторым количеством первичной документации. Нам необходим бухгалтер, который может и будет вести наш кадровый, бухгалтерский и налоговый учет",
+            "item-price": "5 000 руб./месяц"
+        },
+        { 
+            "item-title": "Средняя \n организация", 
+            "item-image": "tarifs-item-img-1.svg",
+            "item-text": "Мы – средняя компания со штатом до 7-ми человек и с растущим объемом первичной документации. Нам нужна команда профессионалов, которая будет вести наш кадровый, бухгалтерский и налоговый учет.",
+            "item-price": "20 000 руб./месяц"
+        }                      
 
     ],
 

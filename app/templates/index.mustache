@@ -4,6 +4,7 @@
     <title>UK Result demo - home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+
     <meta content='true' name='HandheldFriendly'>
     <meta content='width' name='MobileOptimized'>
     <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -30,6 +31,23 @@
 </head>
 
 <body class="home">
+
+<div class="preloader" id="preloader">
+    <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#c2b385">
+        <g fill="none" fill-rule="evenodd">
+            <g transform="translate(1 1)" stroke-width="1">
+                <!--circle stroke-opacity=".6" cx="18" cy="18" r="18"/-->
+                <circle stroke-opacity="1" cx="18" cy="18" r="18" stroke="#ddd"/>
+                <path d="M36 18c0-9.94-8.06-18-18-18">
+                    <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1.25s" repeatCount="indefinite"/>
+                </path>
+            </g>
+        </g>
+    </svg>
+
+    <img src="images/logo_result.png" alt="">
+</div>
+
 <div id="my-page">
 
 <header class="header">
@@ -41,7 +59,7 @@
 
                 <div class="mv_10 tb_6 ds_hidden">
                     <div class="m_nav">
-                        <div class="btn btn-mini">
+                        <div class="btn btn-mini js-modal-open" data-target="modal-callback">
                             Позвоните мне
                         </div>     
                     </div>
@@ -168,7 +186,7 @@
                                 <a href="tel:+7423245-82-40">245-82-40</a>, 
                                 <a href="tel:+78005557910">8 (800) 555-79-10</a></div>
                         </div>
-                        <a href="#" class="btn btn-mini">
+                        <a href="#" class="btn btn-mini js-modal-open" data-target="modal-callback">
                             Перезвоните мне
                         </a>                              
                     </div>
@@ -225,7 +243,7 @@
 </header>
 
 
-<div class="overlay overlay-search search-modal">
+<div class="overlay-search search-modal">
     <div class="container">
 
         <div class="row">
@@ -271,7 +289,8 @@
             <div class="mv_12 tb_6 tb_offset_1 ds_4 ds_offset_0 centered">
                 <a class="services__item" href="#">
                     <div class="services__item-icon">
-                        <img src="images/{{item-image}}" alt="">
+                        <!-- <img src="images/{{item-image}}" alt=""> -->
+                        <img src="uploads/services/{{item-image}}" alt="{{item-title}}">
                     </div>                    
                     <div class="services__item-title">
                         <span>{{item-title}}</span>
@@ -323,245 +342,6 @@
             </div>
             {{/offers}}
 
-            <!--div class="mv_24 tb_10 tb_offset_1 ds_6 ds_offset_0  offers__slide">
-                <div class="offers__item d-shadow">
-                    <div class="offers__item__header">
-                        <div class="offers__item__icon offers__item__icon-court">
-                            <img src="images/court.png" alt="">
-                        </div>
-                        <div class="offers__item__title">Уголовное право 
-                        </div>
-                        <div class="offers__item__button centered tb_hidden">
-                            <a onclick="return false;" href="#" class="btn btn-readmore js-readmore" data-target="offers__item__list_1" data-text-default="Развернуть" data-text-open="Свернуть">Развернуть</a>
-                        </div> 
-                    </div>
-                    <div class="offers__item__content">
-
-                        <ul class="offers__item__list" id="offers__item__list_1">
-                             
-                            <li class="first-child">
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/dosudebnoe-uregulirovanie/">Досудебное урегулирование споров</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="mv_24 tb_10 tb_offset_2 ds_6 ds_offset_0 offers__slide">
-                <div class="offers__item d-shadow">
-                    <div class="offers__item__header">
-                        <div class="offers__item__icon offers__item__icon-court">
-                            <img src="images/book-2.png" alt="">
-                        </div>
-                        <div class="offers__item__title">Гражданское право
-                        </div>
-                        <div class="offers__item__button centered tb_hidden">
-                            <a onclick="return false;" href="#" class="btn btn-readmore js-readmore" data-target="offers__item__list_2" data-text-default="Развернуть" data-text-open="Свернуть">Развернуть</a>
-                        </div>                                
-                    </div>
-                    <div class="offers__item__content">
-
-                        <ul class="offers__item__list" id="offers__item__list_2">
-                             
-                            <li class="first-child">
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/dosudebnoe-uregulirovanie/">Досудебное урегулирование споров</a>
-                            </li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/arbitrazh/">Представительство интересов в арбитражном суде (арбитраж)</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/predstavitelstvo-v-sude/">Суды общей юрисдикции</a></li>
-                             
-                            <li>
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/sud/ugolovnyie-dela/">Адвокат по уголовным делам</a></li>
-                             
-                            <li>
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/bankrotstvo-fizicheskih-lits/">Банкротство физических лиц</a></li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/sud/vzyiskanie-dolgov/">Взыскание долгов</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/semeynoe-pravo/">Семейные споры</a></li>
-                             
-                            <li>
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/services/individual/zhilishhnoe-pravo/">Жилищные споры</a></li>
-
-                             
-                            <li>
-                                <img src="images/agreement.png" alt=""><a href="http://urcompanya.ru/zemelnyie-sporyi/">Земельные споры</a></li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/sud/kts/">Оспаривание корректировок таможенной стоимости</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/konsultatsii/">Консультации и подготовка документов</a></li>
-                             
-                            <li class="last-child">
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/sud/nasledstvennoe-pravo/">Наследственное право</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="mv_24 tb_10 tb_offset_1 ds_6 ds_offset_0 offers__slide">
-                <div class="offers__item d-shadow">
-                    <div class="offers__item__header">
-                        <div class="offers__item__icon offers__item__icon-court">
-                            <img src="images/avatar-2.png" alt="">
-                        </div>
-                        <div class="offers__item__title">Услуги юриста 
-                        </div>
-                        <div class="offers__item__button centered tb_hidden">
-                            <a onclick="return false;" href="#" class="btn btn-readmore js-readmore" data-target="offers__item__list_3" data-text-default="Развернуть" data-text-open="Свернуть">Развернуть</a>
-                        </div>                                 
-                    </div>
-                    <div class="offers__item__content">
-
-                        <ul class="offers__item__list" id="offers__item__list_3">
-                             
-                            <li class="first-child">
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/dosudebnoe-uregulirovanie/">Досудебное урегулирование споров</a>
-                            </li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/arbitrazh/">Представительство интересов в арбитражном суде (арбитраж)</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/predstavitelstvo-v-sude/">Суды общей юрисдикции</a></li>
-                             
-                            <li>
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/sud/ugolovnyie-dela/">Адвокат по уголовным делам</a></li>
-                             
-                            <li>
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/bankrotstvo-fizicheskih-lits/">Банкротство физических лиц</a></li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/sud/vzyiskanie-dolgov/">Взыскание долгов</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/semeynoe-pravo/">Семейные споры</a></li>
-                             
-                            <li>
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/services/individual/zhilishhnoe-pravo/">Жилищные споры</a></li>
-
-                             
-                            <li>
-                                <img src="images/agreement.png" alt=""><a href="http://urcompanya.ru/zemelnyie-sporyi/">Земельные споры</a></li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/sud/kts/">Оспаривание корректировок таможенной стоимости</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/konsultatsii/">Консультации и подготовка документов</a></li>
-                             
-                            <li class="last-child">
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/sud/nasledstvennoe-pravo/">Наследственное право</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="mv_24 tb_10 tb_offset_2 ds_6 ds_offset_0 offers__slide">
-                <div class="offers__item d-shadow">
-                    <div class="offers__item__header">
-                        <div class="offers__item__icon offers__item__icon-court">
-                            <img src="images/team.png" alt="">
-                        </div>
-                        <div class="offers__item__title">Бизнесу 
-                        </div>
-                        <div class="offers__item__button centered tb_hidden">
-                            <a onclick="return false;" href="#" class="btn btn-readmore js-readmore" data-target="offers__item__list_4" data-text-default="Развернуть" data-text-open="Свернуть">Развернуть</a>
-                        </div>                                 
-                    </div>
-                    <div class="offers__item__content">
-
-                        <ul class="offers__item__list" id="offers__item__list_4">
-                             
-                            <li class="first-child">
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/dosudebnoe-uregulirovanie/">Досудебное урегулирование споров</a>
-                            </li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/arbitrazh/">Представительство интересов в арбитражном суде (арбитраж)</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/predstavitelstvo-v-sude/">Суды общей юрисдикции</a></li>
-                             
-                            <li>
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/sud/ugolovnyie-dela/">Адвокат по уголовным делам</a></li>
-                             
-                            <li>
-                                <img src="images/agreement.png" alt="">
-                                <a href="http://urcompanya.ru/sud/bankrotstvo-fizicheskih-lits/">Банкротство физических лиц</a></li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/sud/vzyiskanie-dolgov/">Взыскание долгов</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/semeynoe-pravo/">Семейные споры</a></li>
-                             
-                            <li>
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/services/individual/zhilishhnoe-pravo/">Жилищные споры</a></li>
-
-                             
-                            <li>
-                                <img src="images/agreement.png" alt=""><a href="http://urcompanya.ru/zemelnyie-sporyi/">Земельные споры</a></li>
-                             
-                            <li>
-                                <img src="images/avatar.png" alt="">
-                                <a href="http://urcompanya.ru/sud/kts/">Оспаривание корректировок таможенной стоимости</a></li>
-                             
-                            <li>
-                                <img src="images/book.png" alt="">
-                                <a href="http://urcompanya.ru/sud/konsultatsii/">Консультации и подготовка документов</a></li>
-                             
-                            <li class="last-child">
-                                <img src="images/briefcase.png" alt="">
-                                <a href="http://urcompanya.ru/sud/nasledstvennoe-pravo/">Наследственное право</a></li>
-                        </ul>
-
-
-                    </div>
-                </div>
-            </div-->                                        
-
-
         </div>
 
 
@@ -606,7 +386,7 @@
                     </div>
                     
                     <div class="intro__button">
-                        <a href="#" class="btn btn-order" >Получить консультацию</a>
+                        <a href="#" class="btn btn-order js-modal-open" data-target="modal-request">Получить консультацию</a>
                     </div>
                 </div>
 
@@ -621,9 +401,48 @@
 
 <section class="section section-difference">
     <div class="container">
-        <div class="row difference">
+        <div class="difference">
 
-            <div class="mv_24">
+
+            <!--  v3  all items in one stream, flex -->
+
+                <ul class="difference__list row-flex top">
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2 difference__list-item-outer collapse">
+                        <li>
+                            <h2 class="title title-red title-difference">Как работаем мы </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-we}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2 difference__list-item-outer collapse">
+                        <li class="difference__list-item  difference__list-item--we">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-we}}
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4 difference__list-item-outer collapse">
+                        <li>
+                            <h2 class="title title-red title-difference">наши конкуренты </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-competitor}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4 difference__list-item-outer collapse">
+                        <li class="difference__list-item difference__list-item--they">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-competitor}}    
+
+                </ul>
+
+
+            <!--  v2  all items in one stream, columns:2 -->    
+            <!--div class="mv_24">
                 <ul class="difference__list difference__list--we row">
 
                     <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2">
@@ -657,7 +476,7 @@
                     {{/difference-competitor}}    
 
                 </ul>
-            </div>
+            </div-->
 
 
 
@@ -724,7 +543,7 @@
                                 <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
                             </div>
                             <div class="mv_24 tb_12 ds_8 field-outer">
-                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="phone">
+                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
                             </div>
                             <div class="mv_24 ds_8 field-outer">
                                 <a href="#" class="btn btn-submit">Отправить заявку</a>
@@ -767,7 +586,7 @@
                 <div class="row reviews owl-carousel">
                     
                     {{#reviews}}
-                    <div class="mv_22 mv_offset_1 tb_8 tb_offset_0 reviews__item-outer">
+                    <div class="mv_22 mv_offset_0 tb_8 tb_offset_0 reviews__item-outer">
                         <div class="reviews__item centered">
                             <a href="uploads/reviews/{{item-image-large}}" class="reviews__item-image" data-fancybox="galleryreviews">
                             <!-- <a data-fancybox="gallery" href="big_1.jpg"><img src="small_1.jpg"></a> -->
@@ -1030,6 +849,77 @@
 
 </div>
 
+
+<div class="overlay" id="overlay">
+    <div class="overlay__container container">
+
+        <div class="modal modal--callback js-modal" id="modal-callback">
+            <div class="modal-close js-modal-close">
+                <i class="ukr-close"></i>
+            </div>    
+
+            <div class="modal-inner">
+
+                <div class="modal__title">
+                    <h2 class="title">Заказ обратного звонка</h2>
+                </div>                 
+
+                <div class="modal__content">
+                    <form action="#" class="form form--callback">                        
+                    
+                        <div class="row">
+                            <div class="mv_24 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <a href="#" class="btn btn-submit-alt">Отправить заявку</a>
+                            </div>
+                        </div>
+                    
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal modal--request js-modal" id="modal-request">
+            <div class="modal-close js-modal-close">
+                <i class="ukr-close"></i>
+            </div>    
+
+            <div class="modal-inner">
+
+                <div class="modal__title">
+                    <h2 class="title">Заказ консультации</h2>
+                </div>                 
+
+                <div class="modal__content">
+                    <form action="#" class="form form--request">                        
+                    
+                        <div class="row">
+                            <div class="mv_24 field-outer">
+                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
+                            </div>
+                            <div class="mv_24 field-outer">
+                                <a href="#" class="btn btn-submit-alt">Отправить заявку</a>
+                            </div>
+                        </div>
+                    
+                    </form>
+                </div>
+
+            </div>
+        </div>        
+        
+    </div>
+</div>
 
 
 

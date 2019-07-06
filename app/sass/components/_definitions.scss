@@ -1,17 +1,14 @@
 
 .definitions {
-
     @media (max-width: #{map-get($devices, 'tb_')-1}px) {
         flex-direction: column-reverse;
-    }  
+    }
     @media (min-width: #{map-get($devices, 'tb_')}px) {
         border: 2px solid $accent;
-    }  
-
+    }
     &__text {
         @include h_rhytm('modal', $l_h);
         @include v_padding(0.5*$l_h_base, 0.5*$l_h_base);
-
         @media (max-width: #{map-get($devices, 'tb_')-1}px) {
             border: 2px solid $accent;
         }
@@ -22,16 +19,14 @@
             margin: 0 auto;
             width: 90%;
             max-width: 480px;
-
             @media (min-width: #{map-get($devices, 'tb_')}px) {
-                // @include pseudoelement_right_top(0, 100%);
                 position: absolute;
                 bottom: 0;
                 width: auto;
                 height: auto;
                 max-width: 110%;
                 max-height: 120%;
-            }              
+            }
         }
     }
 }

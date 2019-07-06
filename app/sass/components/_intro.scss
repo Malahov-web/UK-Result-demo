@@ -1,33 +1,24 @@
 
 .intro {
-
     &__image {
-
         @media (min-width: #{map-get($devices, 'ds_')}px) {
-            float: right;               
-        }         
-
+            float: right;
+        }
         img, picture {
             width: auto;
             margin: 0 auto;
-            
             @media (min-width: #{map-get($devices, 'tb_')}px) {
-                max-width: none;               
-            } 
+                max-width: none;
+            }
         }
-
     }
-
-    &__text {
-
-    }
+    &__text {}
     &__button {
         .btn {
             max-width: 315px;
             @media (max-width: #{map-get($devices, 'ds_')-1}px) {
                 margin: 0 auto;
-            }             
+            }
         }
     }
-
 }

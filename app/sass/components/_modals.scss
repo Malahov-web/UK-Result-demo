@@ -1,0 +1,75 @@
+.overlay-search {
+    display: none;
+    @include color_scheme('dark');
+    position: absolute;
+    z-index: $zindex_modal; // top: 48px; // Добавили logo в header-top
+    top: 0;
+    width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.overlay {
+    display: none;
+    z-index: $zindex_modal;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: transparentize($black, 0.3)
+}
+
+.overlay__container {
+    position: relative;
+    height: 100%;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    overflow: visible;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 520px;
+    @extend %shadow;
+    @include v_rhytm('section', $l_h_base);
+    @include h_rhytm('modal', $l_h_base);
+    @include color_scheme('default');
+    &-inner {}
+    &-close {
+        @include pseudoelement_right_top(1*$l_h_base, 1*$l_h_base);
+        @include font_size('h4');
+        color: $grey_light;
+        cursor: pointer;
+        &:hover {
+            color: $accent;
+        }
+        i {
+            color: inherit;
+        }
+    }
+    &__title {
+        .title {
+            @include font_size('h2');
+        }
+    }
+    &__content {}
+    .btn {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+}
+
+.modal--callback {
+    background: linear-gradient(to top, transparentize($white, 0.15) 0%, transparentize($white, 0.15) 100%, ), $white url('../images/logo_result.png') center center no-repeat;
+    background-size: contain;
+    background-size: auto 90%;
+}
+
+.modal--request {
+    background: linear-gradient(to top, transparentize($white, 0.15) 0%, transparentize($white, 0.15) 100%, ), $white url('../images/section-request-bg.jpg') center center no-repeat;
+    background-size: cover;
+}

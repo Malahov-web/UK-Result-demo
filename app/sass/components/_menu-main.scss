@@ -1,192 +1,147 @@
+
 /* . menu-main
  * **********************************************************************
  *
-*/  
+*/
 
-.menu-main-outer{
+.menu-main-outer {}
 
-}
-.menu-control{
+.menu-control {
     display: none;
 }
 
 .menu-main {
     > li {
-        a{
-
-        }
     }
     &:after {
-        @extend %transition;   
+        @extend %transition;
     }
     .sub-menu {
         @extend %shadow;
     }
 }
 
-
 .menu-main--mv {
-
-@media (max-width: #{map-get($devices, 'ds_')-1}px) {
-
-     text-align: left;
-
-    > li {
-        border-bottom: 1px solid transparentize($grey_super_light, 0.85);
-        > a {
-            display: block;
-            padding: 0.5*$l_h  0; padding-right: $margin_v_small;
-            // font-size: $font_h4_m;
-            @include font_size('h4');
-
-            // font-family: $font_family_alt;
-            // letter-spacing: $l_s_small;
-            @include typo('notice');
-            color: $white;
-        }
-
-    }
-    > li.menu-item-has-children > a {
-        position: relative;
-        &:after {
-            @include pseudoelement_right_top(0, 50%);
-            transform: translateY(-50%);
-            content: "+";            
-            
-            @include font_size('fb');
-            @include typo('notice');
-            // font-family: $font_family_alt;
-            // font-size: $fb;
-        } 
-    }
-    > li.menu-item-has-children.open_item > a {
-        &:after {
-            content: "-";
-        } 
-    }
-
-    .sub-menu {
-        @include font_size('h4');
-        padding-bottom: 0.5*$l_h;
-        li {
-            a {
+    @media (max-width: #{map-get($devices, 'ds_')-1}px) {
+        text-align: left;
+        > li {
+            border-bottom: 1px solid transparentize($grey_super_light, 0.85);
+            > a {
                 display: block;
-                padding: 0.25*$l_h  0  0.25*$l_h  1*$l_h;
+                padding: 0.5*$l_h 0;
+                padding-right: $margin_v_small;
+                @include font_size('h4');
+                @include typo('notice');
+                color: $white;
+            }
+        }
+        > li.menu-item-has-children > a {
+            position: relative;
+            &:after {
+                @include pseudoelement_right_top(0, 50%);
+                transform: translateY(-50%);
+                content: "+";
                 @include font_size('fb');
                 @include typo('notice');
-                @include color_scheme('dark');
-
-                &:hover {
-                    @include color_scheme('accent');                    
-                }                  
             }
         }
-    }
-
-   
-} // media
-}
-
-
-.menu-main--ds{
-@media (min-width: #{map-get($devices, 'ds_')}px) {
-
-    @include flex(space-around, center);
-
-    > li{
-        position: relative;
-        
-        &:last-child{
-            margin-right: 0;
-        }
-        a{
-            position: relative;
-            display: block;
-            // padding: 0.9*$l_h  $margin_v_small;
-            padding: 0.9*$l_h  0;
-            @include h_rhytm('card', $l_h);
-
-            @include font_size('fb');
-            @include height_leveling('text');
-            @include typo('menu-item');
-            @include color_scheme('dark');
-
-            &:hover{
-                @include color_scheme('accent');                
-            }
-        }
-        &:after {
-            @include pseudoelement_left_top(0, 100%);
-            // @extend %transition;
-            transform: translateY(-100%);
-            width: 100%;
-            height: 5px;
-            background-color: $accent;
-            opacity: 0;
-        }
-        &:hover {
+        > li.menu-item-has-children.open_item > a {
             &:after {
-                opacity: 1;
+                content: "-";
             }
         }
-
         .sub-menu {
-            display: none;
-            // @extend %shadow;            
-            position: absolute;
-            z-index: $zindex_nav;
-            width: 10000%;
-            max-width: 600px;
-            padding: $margin_v_small;
-            background-color: $white;
-
-            column-count: 2;
-            background-clip: padding-box;
-
-            border: 2px solid $accent;
-
+            @include font_size('h4');
+            padding-bottom: 0.5*$l_h;
             li {
                 a {
-                    padding: 0.5*$l_h;
-                    // @include v_rhytm('text', $l_h);  // сбивается выравнивание
-                    font-size: $font_small;
-                    @include color_scheme('default');
-                    font-weight: 400;
-
+                    display: block;
+                    padding: 1/4*$l_h 0 1/4*$l_h 1*$l_h;
+                    @include font_size('fb');
+                    @include typo('notice');
+                    @include color_scheme('dark');
                     &:hover {
-                        @include color_scheme('accent');                        
+                        @include color_scheme('accent');
                     }
                 }
             }
+        }
+    } // media end
+}
 
-        }
-        &:last-child .sub-menu {
-            left: auto;
-            right: 0;
-        }
-        &:hover {
-            .sub-menu {
+.menu-main--ds {
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        @include flex(space-around, center);
+        > li {
+            position: relative;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                position: relative;
                 display: block;
+                padding: 0.9*$l_h 0;
+                @include h_rhytm('card', $l_h);
+                @include height_leveling('text');
+                @include font_size('fb');                
+                @include typo('menu-item');
+                @include color_scheme('dark');
+                &:hover {
+                    @include color_scheme('accent');
+                }
+            }
+            &:after { // декор
+                @include pseudoelement_left_top(0, 100%);
+                transform: translateY(-100%);
+                width: 100%;
+                height: 5px;
+                background-color: $accent;
+                opacity: 0;
+            }
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+                .sub-menu {
+                    display: block;
+                }                
+            }
+            .sub-menu {
+                display: none;
+                position: absolute;
+                z-index: $zindex_nav;
+                width: 10000%;
+                max-width: 600px;
+                padding: $margin_v_small  0;
+                @include h_rhytm('card', $l_h_base);
+                @include color_scheme('default');
+                column-count: 2;
+                background-clip: padding-box;
+                // border: 2px solid $accent; // ?
+                li {
+                    a {
+                        padding: 0.5*$l_h; // @include v_rhytm('text', $l_h);  // сбивается выравнивание
+                        @include font_size('small');
+                        font-weight: 400;
+                        @include color_scheme('default');                        
+                        &:hover {
+                            @include color_scheme('accent');
+                        }
+                    }
+                }
+            }
+            &:last-child .sub-menu {
+                left: auto;
+                right: 0;
             }
         }
-
-    }
-
-} // media
+    } // media end
 }
-
 
 @media (min-width: #{map-get($devices, 'ds_')}px) {
-
-.menu-main{
-}
-    .menu-main li{
-
-    }
-    
+    .menu-main {}
+    .menu-main li {}
 } // media end
-
-
 .sub-menu {
     display: none;
 }

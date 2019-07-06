@@ -28,11 +28,13 @@
     // box-shadow: 0 0 8px 0px opacify($grey_super_dark, 0.1); 
     // box-shadow: 0 0 73px 0px transparentize($black, 0.9); 
      // box-shadow: 0 0 95px 9px transparentize($black, 0.9); 
-     box-shadow: 0 0 95px 9px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0 95px 9px rgba(0, 0, 0, 0.1); 
 }
-%shadow_small{
- 
-     box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.1); 
+%shadow_small{ 
+    box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.1); 
+}
+%shadow_inset{ 
+    box-shadow: inset 0 0 9px 0px rgba(0, 0, 0, 0.5); 
 }
 
 %top_list_item_link{

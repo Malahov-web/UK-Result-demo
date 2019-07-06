@@ -1,148 +1,95 @@
+
 .search {
     .search__field {
-            // Reset
-            border: none;
+        // Reset
+        border: none;
     }
     .search__button {
         &:before {
-            @extend %transition;   
+            @extend %transition;
         }
     }
-
 }
-
 
 .search--mv {
     @media (max-width: #{map-get($devices, 'ds_')-1}px) {
-
         @include flex(flex-start, center);
         max-width: 100%;
         border-bottom: 2px solid $accent;
-        // margin: 1*$l_h_base  0;
-        margin: 2em  0;
-
+        margin: 2em 0;
         $search_button_width: 30px;
-
-        .search__field { // +
-
+        .search__field {
+            // +
             @include font_size('fb');
             @include height_leveling('button');
             width: calc(100% - #{$search_button_width});
-
             background-color: transparent;
             color: $white;
         }
-
         .search__button {
             position: relative;
             @include height_leveling('button');
-
-            width: $search_button_width;    
-            // @include flex(center, center);
+            width: $search_button_width;
             cursor: pointer;
-            opacity: 0.5;
-
-                // zoom icon
-                &:before {
-                    // // @extend %transition; // Нельзя внутрь миксинов)            
-                    // @include pseudoelement_left_top(50%, 50%);
-                    // transform: translate(-50%, -50%);
-                    // z-index: $zindex_icon;
-                    // @include font_size('fb');
-                    // width: $search_button_width;
-                    // height: $search_button_width;
-                    // background: $white url('../images/magnifying-glass.svg') center center no-repeat;
-
-                }        
+            opacity: 0.5; // zoom icon
+            &:before {}
         }
-
-    } // media end  
-
+    } // media end
 }
-
 
 .search--ds {
     @media (min-width: #{map-get($devices, 'ds_')}px) {
-
         @include flex(flex-start, center);
         max-width: 230px;
         border-bottom: 2px solid $accent;
-
         $search_button_width: 20px;
-
         .search__field {
             @include font_size('small');
             @include height_leveling('button-small');
             width: calc(100% - #{$search_button_width});
         }
-
         .search__button {
             position: relative;
             @include height_leveling('button-small');
-
-            width: $search_button_width;    
-            // @include flex(center, center);
-            cursor: pointer;
-            // opacity: 0.5;
-
-                // zoom icon
-                &:before {
-                    // // @extend %transition; // Нельзя внутрь миксинов)            
-                    // @include pseudoelement_left_top(50%, 50%);
-                    // transform: translate(-50%, -50%);
-                    // z-index: $zindex_icon;
-                    @include font_size('h3');
-                    // width: $search_button_width;
-                    // height: $search_button_width;
-                    // background: $white url('../images/magnifying-glass.svg') center center no-repeat;
-                    // // background-size: 2em;
-
-                }        
+            width: $search_button_width; // @include flex(center, center);
+            cursor: pointer; // opacity: 0.5;
+            // zoom icon
+            &:before {
+                @include font_size('h4'); // h4 (ukr) || h3 (ukresultflaticons)
+            }
         }
-
-    } // media end  
-
+    } // media end
 }
 
 .btn-search {
     // Reset
     background: none;
     border: none;
-    // background-color: $pink;
-    // border-radius: 50%;
-    // color: $white;
-
-    @extend .ukresultflaticons;
-
+    // @extend .ukresultflaticons;
+    @extend [class^="ukr-"];
+    @extend .ukr-magnifying-glass;
     &:before {
-
-        @extend .ukresultflaticons-magnifying-glass; 
+        // @extend .ukresultflaticons-magnifying-glass;
         z-index: $zindex_icon;
-        @include font_size('h2');
-        @include color_scheme('accent');            
+        @include font_size('h3');  // h3 (ukr) || h2 (ukresultflaticons)
+        @include color_scheme('accent');
     }
 }
 
 $search_modal_close_width: 60px;
-.search-modal-close {
-    width: $search_modal_close_width;
-    // @include height_leveling('');
 
+.search-modal-close {
+    width: $search_modal_close_width; // @include height_leveling('');
     // @extend .ukresultflaticons;
     // @extend .ukr-menu;
-
-    @extend [class^="ukr-"];    
+    @extend [class^="ukr-"];
     @extend .ukr-close;
-
     &:before {
-
         // @extend .ukresultflaticons-close;
-        
         z-index: $zindex_icon;
         @include font_size('h2');
-        @include color_scheme('accent');            
-    }    
-
+        @include color_scheme('accent');
+    }
 }
 
 .search-modal-inner {

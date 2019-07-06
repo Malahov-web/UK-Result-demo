@@ -1,0 +1,91 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 19/05/2019 11:05
+    */
+
+//     @font-face {
+//   font-family: "Flaticon";
+//   src: url("./Flaticon.eot");
+//   src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+//        url("./Flaticon.woff2") format("woff2"),
+//        url("./Flaticon.woff") format("woff"),
+//        url("./Flaticon.ttf") format("truetype"),
+//        url("./Flaticon.svg#Flaticon") format("svg");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+    @font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/dist/flaticons/Flaticon.eot");
+  src: url("../fonts/dist/flaticons/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/dist/flaticons/Flaticon.woff2") format("woff2"),
+       url("../fonts/dist/flaticons/Flaticon.woff") format("woff"),
+       url("../fonts/dist/flaticons/Flaticon.ttf") format("truetype"),
+       url("../fonts/dist/flaticons/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/dist/flaticons/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-add:before { content: "\f100"; }
+.flaticon-support:before { content: "\f101"; }
+.flaticon-plus:before { content: "\f102"; }
+.flaticon-money:before { content: "\f103"; }
+.flaticon-locked:before { content: "\f104"; }
+.flaticon-stopwatch:before { content: "\f105"; }
+.flaticon-team:before { content: "\f106"; }
+.flaticon-court:before { content: "\f107"; }
+.flaticon-court-1:before { content: "\f108"; }
+.flaticon-avatar:before { content: "\f109"; }
+.flaticon-money-1:before { content: "\f10a"; }
+.flaticon-loan:before { content: "\f10b"; }
+.flaticon-couple:before { content: "\f10c"; }
+.flaticon-house:before { content: "\f10d"; }
+.flaticon-sink:before { content: "\f10e"; }
+.flaticon-parcel:before { content: "\f10f"; }
+.flaticon-document:before { content: "\f110"; }
+.flaticon-teamwork:before { content: "\f111"; }
+.flaticon-verification-mark:before { content: "\f112"; }
+.flaticon-down-arrow:before { content: "\f113"; }
+    
+    $font-Flaticon-add: "\f100";
+    $font-Flaticon-support: "\f101";
+    $font-Flaticon-plus: "\f102";
+    $font-Flaticon-money: "\f103";
+    $font-Flaticon-locked: "\f104";
+    $font-Flaticon-stopwatch: "\f105";
+    $font-Flaticon-team: "\f106";
+    $font-Flaticon-court: "\f107";
+    $font-Flaticon-court-1: "\f108";
+    $font-Flaticon-avatar: "\f109";
+    $font-Flaticon-money-1: "\f10a";
+    $font-Flaticon-loan: "\f10b";
+    $font-Flaticon-couple: "\f10c";
+    $font-Flaticon-house: "\f10d";
+    $font-Flaticon-sink: "\f10e";
+    $font-Flaticon-parcel: "\f10f";
+    $font-Flaticon-document: "\f110";
+    $font-Flaticon-teamwork: "\f111";
+    $font-Flaticon-verification-mark: "\f112";
+    $font-Flaticon-down-arrow: "\f113";

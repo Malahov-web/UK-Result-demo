@@ -1,0 +1,74 @@
+/* 17. tarifs
+ * **********************************************************************
+ *
+*/
+
+.tarifs {
+    &__item-outer {
+    }
+    &__item {
+        @extend %transition;
+        @extend %fullheight; // @include h_rhytm('card', $l_h);
+        @include v_padding(0, 2*$l_h);
+        @include color_scheme('card');
+        margin: 0 auto; // margin: 0 auto 2*$l_h_base;
+        max-width: 320px;
+        &:hover {
+            @extend %shadow_big;
+            .tarifs__item-title {
+                @include color_scheme('accent-reverse');
+            }
+        }       
+        &-image {
+            @include flex(center, center);
+            @include v_padding(2*$l_h, 2*$l_h);
+            @include font_size('small');
+            img {
+                width: auto;
+                // height: 80px;
+                height: 3*$l_h_base;
+            }
+        }
+        &-title {
+            @extend %transition;
+            @include flex( center, center);
+            @include h_rhytm('card', $l_h); // @include font_size('h5');
+            @include height_leveling('heading_double');
+            @include font_size('fb');
+            @include typo('card-title');
+            background-color: $grey_white;
+            span {
+                max-height: 2*$l_h_head;
+                display: block;
+            }
+        }
+        &-price {
+            @include v_rhytm('text', $l_h);
+            @include height_leveling('text');
+            @include font_size('h4');
+            @include typo('card-title');
+            @include color_scheme('accent');
+        }
+        &-text {
+            @include v_rhytm('text', $l_h);
+            @include h_rhytm('card', $l_h);
+            @include height_leveling('text-compressed');
+            @include font_size('small');
+            @include typo('text');
+            @include color_scheme('default');
+        }
+    }
+}
+
+.tarifs .row-flex.owl-carousel {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.tarifs .owl-item {
+    @extend %fullheight;
+}
+
+.owl-item .tarifs__item-outer {
+    width: 100%;
+}

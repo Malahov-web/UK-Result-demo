@@ -7,7 +7,7 @@ var   uglify = require('gulp-uglify');  // Подключаем Uglify
 
 var   sass = require('gulp-sass');  // Подключаем Sass пакет  
     
-// var   browserSync = require('browser-sync');  // Подключаем Browser Sync
+var   browserSync = require('browser-sync');  // Подключаем Browser Sync
     
 var   concat = require('gulp-concat'); // Подключаем  Gulp Concat
     
@@ -51,15 +51,13 @@ var bs = require('browser-sync').create();  // Подключаем Browser Sync
 
 var notify = require("gulp-notify");  // Выводит сообщения
 
-var duration = require("gulp-duration");  // Выводит сообщения
+var duration = require("gulp-duration");  // 
 
 var svgSprite = require('gulp-svg-sprite');
- 
+
+var gulpif = require('gulp-if');
 
 
-//gulp-debug - Вывод 
-
-    
 
 
 // 2. Config 
@@ -67,70 +65,57 @@ var svgSprite = require('gulp-svg-sprite');
 var path = 'app/';
 var path_libs = path + 'libs/';
 var autoprefixerOptions = {
-  browsers: ['last 15 versions', 'IE 10', 'IE 11']
+  browsers: ['last 10 versions', 'IE 10', 'IE 11']
 };   
 // Vars
 var fontName = 'ukresultflaticons';
-var js_jquery = 'app/libs/jquery/dist/jquery.min.js';
-var js_owl = 'app/libs/owl.carousel/dist/owl.carousel.min.js';
-var js_fancybox = 'app/libs/fancybox/dist/jquery.fancybox.min.js';
-var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';   
+
+var js_jquery = path_libs + '/jquery/dist/jquery.min.js';
+var js_owl = path_libs + '/owl.carousel/dist/owl.carousel.min.js';
+var js_fancybox = path_libs + '/fancybox/dist/jquery.fancybox.min.js';
+var js_selectric = path_libs + '/jquery-selectric/public/jquery.selectric.min.js';   
+var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.min.js';   
     
 
 
 
 // 3. Tasks  
- 
 
-    // SCSS - компиляция
+
+    // SCSS - компиляция  // UKResult demo // v. new
     gulp.task('scss', function(){ // Создаем таск "scss"        
         return gulp.src('app/sass/**/*.scss')
 
         // .pipe(debug({title: 'SRC'}))
         .pipe(sourcemaps.init())
-        // .pipe(plumber())
-
         .pipe(plumber( {  
             errorHandler: notify.onError()
         } ))
-
         // .pipe(postcss(processors, {syntax: syntax_scss}))  // Lint
+         .pipe(
+            gulpif(
+                function (file) {
+                    return (file.relative === 'style.scss')                   
+                },
+                postcss(processors, {syntax: syntax_scss})
+            )  
+        )
         .pipe(sass()) // Преобразуем scss в CSS посредством gulp-sass
-        // .on('error', function(err){
-        //     console.log(err.message);
-        //     this.end();
-        // } )
-        // .on('error', notify.onError())
-
-
         // .pipe(sass().on('error', sass.logError))
         .pipe(debug({title: 'SASS'}))
         .pipe(autoprefixer())
         .pipe(debug({title: 'AUTOPREFIXER'}))
-        // .pipe(sourcemaps.write())
-        .pipe(sourcemaps.write('.')) // Выводит в отдельный файл
+        .pipe(sourcemaps.write())
+        // .pipe(sourcemaps.write('.')) // Выводит в отдельный файл
         
         .pipe(gulp.dest('app/css')) 
         .pipe(debug({title: 'DEST'}))
-
-        // .pipe(browserSync.reload({stream: true}))
         .pipe(bs.stream());
+
     }); 
 
 
-    // Browser-sync - автообновление старниц
-    // gulp.task('browser-sync', function() { // Создаем таск browser-sync
-    //     browserSync({ // Выполняем browser Sync
-    //         server: { // Определяем параметры сервера
-    //             baseDir: 'app' // Директория для сервера - app
-    //         },
-    //         notify: false // Отключаем уведомления
-    //     });
-    // });
-
-
-
-    // Static Server + watching scss/html files
+    // Static Server + watching scss/html files  // v. new
     gulp.task('bs-serve', function() {
 
         bs.init({
@@ -140,17 +125,6 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
         // gulp.watch("app/scss/*.scss", ['sass']);
         // gulp.watch("app/*.html").on('change', browserSync.reload);
     });
-
-
-    // Compile sass into CSS & auto-inject into browsers
-    // gulp.task('sass', function() {
-    //     return gulp.src("app/scss/*.scss")
-    //         .pipe(sass())
-    //         .pipe(gulp.dest("app/css"))
-    //         .pipe(browserSync.stream());
-    // });
-
-
     
     
     // Svgmin - оптимизация svg
@@ -232,9 +206,8 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
             js_owl,
             js_fancybox,
             js_selectric,
+            js_maskedinput,
             'app/js/*.js'
-
-            //, 'app/js/menu-responsive/js/menu-responsive.js'
         ]
         )
         .pipe(concat('scripts.js'))
@@ -255,6 +228,7 @@ var js_selectric = 'app/libs/jquery-selectric/public/jquery.selectric.min.js';
             reporters: [
                 {formatter: 'string', console: true}
             ]
+            // ,fix: true
             // ,fix: true
         }),
         messages({
@@ -327,123 +301,3 @@ gulp.task('html', function(){
     .pipe(gulp.dest('app/'));
 
 });
-
-
-/*
-gulp.src("./templates/*.mustache")
-    .pipe(mustache('your_json_file.json',{},{}))
-    .pipe(gulp.dest("./dist"));
-
-*/
-
-
-
-// gulp.src("./templates/**/*.mustache")
-
-// и
-
-// gulp.watch('./templates/**/*.mustache', ['mustache']);
-// Так пробовал? 
-
-
-
-
-// Gulp screencasts
-
-
-// Gulp screencasts - 03
-gulp.task('move', function() {
-    return gulp.src('app/css/**/*.*', {read: false})  // read - читать файлы)
-        .on('data', function(file){  // Файл - файл который проходит обработку процессом
-            // console.log('Перетащили файл' + file); 
-            // console.dir(file);
-            console.log('Перетащили файл ' +  file.path);
-        })
-        .pipe(gulp.dest('app/css-dest'));
-} )
-
-
-
-// Gulp screencasts - 05
-// gulp.task('assets', function() {
-//     return gulp.src('app/css/**/*.*', {since: gulp.lastRun('assets')})  // since - только измененные с указанной даты
-//         .pipe(debug())
-//         .pipe(gulp.dest('app/css-dest'));
-// } )
-
-
-
-// Gulp screencasts - 06
-// gulp.task('assets', function() {
-//     return gulp.src('app/css/**/*.*')
-//         .pipe(newer('app/css-dest'))
-//         .pipe(gulp.dest('app/css-dest'));        
-// } )
-
-gulp.task('assets', function() {
-    return gulp.src('app/css/**/*.*')
-        .pipe(remember('styles'))
-        .pipe(gulp.dest('app/css-dest'));        
-} )
-
-
-// gulp.lastRun('taskName') - // Gulp 4.0 only (!) - возвращает дату последнего запуска задачи taskName
-//gulp-newer  // фильтрует файлы по дате изменения  // - актуально когда работаем без watch()
-//gulp-debug - Вывод 
-//gulp-remember - // 
-//gulp-cached  - // запоминает все файлы которые через него проходят, по содержимому
-//gulp-cahce -  // получает поток и кэширует файлы, пишет temp файлы на диск .
-
-
-
-// Gulp screencasts - 08
-// async-done - Node.js module - проверяет потоки
-
-
-    // // SCSS - компиляция
-    // gulp.task('scss', function(){ // Создаем таск "scss"        
-    //     return gulp.src('app/sass/**/*.scss')
-
-    //     // .pipe(debug({title: 'SRC'}))
-    //     .pipe(sourcemaps.init())
-    //     // .pipe(plumber())
-
-    //     .pipe(plumber( {  
-    //         errorHandler: notify.onError()
-
-    //     } ))
-
-    //     // .pipe(postcss(processors, {syntax: syntax_scss}))  // Lint
-    //     .pipe(sass()) // Преобразуем scss в CSS посредством gulp-sass
-    //     // .on('error', function(err){
-    //     //     console.log(err.message);
-    //     //     this.end();
-    //     // } )
-    //     // .on('error', notify.onError())
-
-
-    //     // .pipe(sass().on('error', sass.logError))
-    //     .pipe(debug({title: 'SASS'}))
-    //     .pipe(autoprefixer())
-    //     .pipe(debug({title: 'AUTOPREFIXER'}))
-    //     // .pipe(sourcemaps.write())
-    //     .pipe(sourcemaps.write('.')) // Выводит в отдельный файл
-        
-    //     .pipe(gulp.dest('app/css')) 
-    //     .pipe(debug({title: 'DEST'}))
-
-    //     // .pipe(browserSync.reload({stream: true}))
-    //     .pipe(bs.stream());
-    // }); 
-
-
-// gulp-notify - выводит сообщение об ошибке
-// gulp-plumber - создает свой поток, который имеет доступ к другим потокам (для передачи ошибки)
-// gulp-multipipe - собирает несколько поток в свой (оборачивает?)
-// stream-combiner2
-
-
-// Gulp screencasts - 13
-// gulp-svg-sprite;
-// gulp-cssnano
-// gulp-rev

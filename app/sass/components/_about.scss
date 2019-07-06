@@ -1,14 +1,12 @@
 
-.about {
+.about {}
 
-}
 .about__decor {
     color: transparent;
     display: none;
-
-        @media (min-width: #{map-get($devices, 'ds_')}px) {
-            display: block;              
-        }      
+    @media (min-width: #{map-get($devices, 'ds_')}px) {
+        display: block;
+    }
     img {
         position: absolute;
         width: auto;

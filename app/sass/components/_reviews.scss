@@ -1,53 +1,37 @@
 
 .reviews-outer {
-    margin-top: -2*$margin_v_medium;
+    margin-top: -2*$margin_v_medium; // нейтрализуем карман-паддинг для тени
 }
 
 .reviews {
-
     overflow: hidden;
-
     &__item-outer {
-        padding-top: 2*$margin_v_medium;
-        padding-bottom: 2*$margin_v_medium;
+        padding-top: 2*$margin_v_medium; // для симметрии)
+        padding-bottom: 2*$margin_v_medium; // карман-паддинг для тени
     }
-
     &__item {
-    
-        // margin-top: -2*$margin_v_big;
-        // padding-top: 2*$margin_v_big;
-        // padding-bottom: 2*$margin_v_big;
-        // padding-bottom: 1000px;
-
         &-image {
-
             @extend %transition;
             @include color_scheme('gallery');
             position: relative;
             display: inline-block;
-            font-size: 0;            
-            border-width: 5px; border-style: solid;
-
-            // box-shadow:  10px 100px 20px 0px transparentize($black, 0.5);
-
+            font-size: 0;
+            border-width: 5px;
+            border-style: solid; // @extend %shadow_inset;
             @media (min-width: #{map-get($devices, 'ds_')}px) {
                 border-width: 10px;
-            }
-
-            // тень
+            } // тень
             &:after {
                 @include pseudoelement_left_top(0%, 60%);
                 width: 100%;
-                height: 100%;
-                // background-color: $accent;
+                height: 100%; // background-color: $accent;
                 background-color: transparent;
                 border-radius: 50%;
                 transform: scaleY(0.1);
-                box-shadow:  0 350px 80px 0px transparentize($black, 0.85);
-            }
-            // zoom icon
+                box-shadow: 0 350px 80px 0 transparentize($black, 0.85);
+            } // zoom icon
             &:before {
-                @extend %transition;             
+                @extend %transition;
                 @include pseudoelement_left_top(50%, 50%);
                 transform: translate(-50%, -50%);
                 z-index: $zindex_icon;
@@ -57,27 +41,21 @@
                 background: $white url('../images/magnifying-glass.svg') center center no-repeat;
                 background-size: 2em;
                 border-radius: 50%;
-
                 opacity: 0;
             }
-
             img {
                 @extend %transition;
                 width: auto;
             }
-
             &:hover img {
                 opacity: 0.3;
             }
             &:hover:before {
                 opacity: 1;
-            }             
+            }
         }
     }
-
     .owl-item &__item-outer {
-    // .owl-item .reviews__item-outer {
         width: 100%;
     }
-
 }

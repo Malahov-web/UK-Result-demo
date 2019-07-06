@@ -110,7 +110,7 @@
         padding-left: 2 * $columns_gap+px;
         padding-right: 2 * $columns_gap+px;
     } 
-    @else if $type == nav_element {
+    @else if $type == nav_element { // +
 
         padding-left: $fs * 2;
         padding-right: $fs * 2; 
@@ -150,7 +150,7 @@
         letter-spacing: $l_s;
         text-transform: uppercase; 
 
-    } @else if $type == text {
+    } @else if $type == text { // +
         letter-spacing: $l_s;
         font-weight: 400;
 
@@ -174,9 +174,10 @@
 
 }
 
+
 @mixin color_scheme ($type) {
 
-    @if $type == default {
+    @if $type == default { // +
         background-color: $white;
         color: $text; 
     }
@@ -222,7 +223,6 @@
         background-color: $accent;
         border-color: $accent;
     } 
-
 
 
 }

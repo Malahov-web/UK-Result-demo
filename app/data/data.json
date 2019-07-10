@@ -1,4 +1,12 @@
 {
+    "mytitle": "uk result demo",
+    
+    "site": {
+        "title": "UK Result demo",
+        "name": "ЮК Результат",
+        "address": "г. Владивосток, ул. Океанский проспект, 135, офис 304"
+    },
+
     "menu-class": "menu-main--mv menu-main--ds",
     "items": [
       {"name": "red", "first": true, "url": "#Red"},

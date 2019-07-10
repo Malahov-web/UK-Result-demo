@@ -41,6 +41,10 @@ var cleanCSS = require('gulp-clean-css');
 // var mustache = require("gulp-mustache");
 var mustache = require("gulp-mustache-plus");
 
+var handlebars = require('gulp-handlebars');
+
+var compile_handlebars = require('gulp-compile-handlebars');
+
 var debug = require("gulp-debug");
 
 var newer = require("gulp-newer");
@@ -58,16 +62,24 @@ var svgSprite = require('gulp-svg-sprite');
 var gulpif = require('gulp-if');
 
 
+var infoData = require('./app/data/data.json');
+
+var handlebarsHelpers = require('./app/templates_hbs/helpers.js');
+
+
 
 
 // 2. Config 
 
+// paths
 var path = 'app/';
 var path_libs = path + 'libs/';
+
+// settings
 var autoprefixerOptions = {
   browsers: ['last 10 versions', 'IE 10', 'IE 11']
 };   
-// Vars
+// assets
 var fontName = 'ukresultflaticons';
 
 var js_jquery = path_libs + '/jquery/dist/jquery.min.js';
@@ -80,6 +92,16 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
 
 
 // 3. Tasks  
+/*
+ * 3.1 scss  // SCSS - компиляция
+ * 3.2 bs-serve  // Static Server + watching scss/html files
+ * 3.3 Svgmin  // Svgmin - оптимизация svg
+ * 3.4 Iconfont  // генерация шрифта
+ * 3.5 svgSprite  // 
+ * 3.6 js  // JS - сборка
+ * 3.7 clean  // Clean - очистка директории для build
+ * 3.8 clean  // JS - сборка
+*/
 
 
     // SCSS - компиляция  // UKResult demo // v. new
@@ -92,7 +114,7 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
             errorHandler: notify.onError()
         } ))
         // .pipe(postcss(processors, {syntax: syntax_scss}))  // Lint
-         .pipe(
+        .pipe(
             gulpif(
                 function (file) {
                     return (file.relative === 'style.scss')                   
@@ -106,7 +128,7 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
         .pipe(autoprefixer())
         .pipe(debug({title: 'AUTOPREFIXER'}))
         .pipe(sourcemaps.write())
-        // .pipe(sourcemaps.write('.')) // Выводит в отдельный файл
+        // .pipe(sourcemaps.write('.')) // ('.') - Выводит в отдельный файл
         
         .pipe(gulp.dest('app/css')) 
         .pipe(debug({title: 'DEST'}))
@@ -125,8 +147,8 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
         // gulp.watch("app/scss/*.scss", ['sass']);
         // gulp.watch("app/*.html").on('change', browserSync.reload);
     });
-    
-    
+
+
     // Svgmin - оптимизация svg
     gulp.task('Svgmin', function () {
         return gulp.src('app/images/svg-icons/*')
@@ -179,7 +201,7 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
         ], done);
     }); 
 
-  // Basic configuration example
+    // Basic configuration example
     var configSvgSprite = {
         mode: {
           css: { // Activate the «css» mode
@@ -242,6 +264,44 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
     });
 
 
+    // gulp.task('html', function(){
+    //     return gulp.src('app/templates/**/*.mustache')
+
+    //         .pipe(mustache('app/data/data.json', {}, {}))
+    //         .pipe(gulp.dest('app/'));
+    // });
+
+
+    // Mustache/Handlebars - компиляция в HTML 
+    // gulp-compile-handlebars
+    gulp.task('html', function() {
+
+        var templateData = infoData,
+        options = {
+            ignorePartials: true, //ignores the unknown footer2 partial in the handlebars template, defaults to false
+            helpers : handlebarsHelpers,
+            // helpers : require('./app/templates_hbs/helpers.js'),
+            batch : ['./app/templates_hbs/partials'],
+        }
+
+        return gulp.src('app/templates_hbs/**/*.hbs')
+
+            .on('data', function(file){  // Файл - файл который проходит обработку процессом
+
+                console.log('Проходит файл ' +  file.path);
+            })
+            // .pipe(compile_handlebars(require ('app/data/data.json'), options))
+            .pipe(compile_handlebars(templateData, options))
+
+            .pipe(rename(function (path) {
+                path.extname = '.html';
+            }))        
+            .pipe(gulp.dest('app/'));
+          
+    });
+
+
+
 
 // 4. Calls
 
@@ -253,14 +313,16 @@ gulp.task('watch', ['bs-serve', 'scss'], function() {
 
     // gulp.watch('app/sass/**/*.+(scss|scss)', [ 'scss', 'html']);  // будут выполнятся обе задачи []
     gulp.watch('app/sass/**/*.+(scss|scss)', [ 'scss']);  
-    gulp.watch('app/templates/**/*.mustache', [ 'html']);    
+    // gulp.watch('app/templates/**/*.mustache', [ 'html']);    
+    gulp.watch('app/templates_hbs/**/*.hbs', [ 'html']);    
 });
 
 // gulp.task('watchjs', ['browser-sync', 'js'], function() {
 gulp.task('watchjs', ['bs-serve', 'js'], function() {
 
     gulp.watch('app/js/*.js', ['js']);
-    gulp.watch('app/templates/**/*.mustache', [ 'html']); 
+    // gulp.watch('app/templates/**/*.mustache', [ 'html']); 
+    gulp.watch('app/templates_hbs/**/*.hbs', [ 'html']); 
 }); 
 
 gulp.task('makesvgfont', ['Svgmin', 'Iconfont']);
@@ -290,14 +352,3 @@ gulp.task('build', ['clean'],  function () {
 });
 
 gulp.task('default', ['watch']);
-
-
-gulp.task('html', function(){
-
-    return gulp.src('app/templates/**/*.mustache')
-    // return gulp.src('app/**/*.mustache')
-
-    .pipe(mustache('app/data/data.json', {}, {}))
-    .pipe(gulp.dest('app/'));
-
-});

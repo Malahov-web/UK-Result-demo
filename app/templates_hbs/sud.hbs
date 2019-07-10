@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>UK Result demo - sud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <meta content='true' name='HandheldFriendly'>
+    <meta content='width' name='MobileOptimized'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+
+    <meta name="theme-color" content="#c2b385"> 
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#c2b385"> 
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#c2b385"> 
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+    <!-- Яндекс.Браузер -->
+    <meta name="viewport" content="ya-title=#c2b385,ya-dock=fade">      
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Plugins -->
+
+</head>
+
+
+<body class="">
+
+
+
+
+{{> header}}
+
+
+
+
+{{> overlay-search}}
+
+
+
+
+<section class="section section-about section-content">
+
+    <div class="container ">
+        <div class="row">
+            <div class="mv_24">
+                <h1 class="title">Представительство в судах</h1>
+            </div>
+        </div>
+
+        <!--  topinfo  -->
+        <div class="row row-topinfo">
+            <div class="mv_24 tb_24">
+                <div class="row topinfo">
+                    
+                    <div class="mv_24 tb_14 ds_15">
+                        <div class="content">
+                            <p>ЮА «Результат» предлагает услуги представительства в судах в Москве: общей юрисдикции различных инстанций, арбитражных и третейских судах. <strong>Мы обладаем богатым опытом по представлению интересов организаций и граждан в суде,
+                                    помогаем подготовиться к процессу и сопровождаем его до вынесения решения, в том числе в апелляционных инстанциях</strong>.</p>
+                            <p>Ежегодно представители нашей компании принимают участие в сотнях судебных заседаний во Владивостоке и других городах ДФО. Если в силу различных обстоятельств нам не удается защитить интересы клиентов в суде первой инстанции,
+                                мы продолжаем защищать их в судах следующих инстанций, имеем опыт представительства интересов в Верховном суде Российской Федерации.</p>                
+                        </div>                        
+                    </div>
+
+                    <div class="mv_24 tb_10 ds_9 ds_offset_0 image_molotok-outer" >
+
+                        <div class="image_molotok">
+                            <picture>
+                                <source media="(max-width: 1023px)" srcset="images/img_molotok_tb.jpg">
+                                <source media="(max-width: 1920px)" srcset="images/img_molotok.jpg">
+                            
+                                <img src="images/img_molotok.jpg">                            
+                            </picture>
+                        </div>
+                    </div>
+
+                    <div class="mv_24 ds_15">
+                        <p>
+                            <strong>На 2016 год за нашей спиной более 1000 судебных дел, решенных в пользу клиента.Защита Ваших законных прав и интересов — дело, которым должны заниматься профессионалы. Мы гарантируем профессиональный подход к урегулирования любого спора.</strong>
+                        </p>                        
+                    </div>
+
+                </div>
+            </div>
+        </div>        
+
+
+
+    </div>
+</section>
+
+
+
+
+<section class="section section-subcategories bg-grey">
+    <div class="container">
+
+
+        <div class="row-flex  subcategories">
+
+            {{#subcategories}}
+            <div class="mv_22 mv_offset_1 tb_12 tb_offset_0 ds_8 subcategories__item-outer">
+                <a href="#" class="subcategories__item">
+                    <span class="subcategories__item-image">
+                        <img src="uploads/subpages/{{item-image}}" alt="{{item-title}}">
+                        <!-- <img src="uploads/subpages/011-money-1.svg" alt=""> -->
+                        <!-- <img src="uploads/subpages/007-team.svg" alt=""> -->
+                    </span>
+                    <h3 class="subcategories__item-title">{{item-title}}</h3>
+                </a>
+            </div>
+            {{/subcategories}}
+
+
+                
+                <!-- <div class="mv_24 tb_12 ds_8">
+                    <div class="subpagelist__item d-shadow-light">
+                        <a href="#"><img src="uploads/subpages/007-team.svg" alt=""></a>
+                        <h4><a href="#">Досудебное урегулирование споров</a></h4>
+                    </div>
+                </div> -->
+
+            
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="section section-reviews">
+    <div class="container">
+
+        <div class="row">
+            <div class="mv_24">
+                <h2 class="title">Отзывы наших клиентов</h2>
+            </div>
+        </div>
+
+
+        
+        <div class="row">
+            <div class="mv_24 reviews-outer">
+                <div class="row reviews owl-carousel">
+                    
+                    {{#reviews}}
+                    <div class="mv_22 mv_offset_0 tb_8 tb_offset_0 reviews__item-outer">
+                        <div class="reviews__item centered">
+                            <a href="#" class="reviews__item-image">
+                                <img src="uploads/reviews/{{item-image}}" alt="{{item-title}}">
+                            </a>
+                        </div>
+                    </div>
+                    {{/reviews}}
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="section section-features">
+    <div class="container collapse">
+
+        <!-- <div class="row">
+            <div class="mv_24">
+                <h2 class="title">features</h2>
+            </div>
+        </div> -->
+
+        <div class="features__item">
+            <div class="row-flex collapse">
+                <div class="mv_24 ds_12">
+                    <div class="features__item-image">
+                        <img src="uploads/features/features-item-image-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mv_24 ds_12">
+                    <div class="features__item-content content">
+                        <div class="features__item-content-inner">
+
+                            <h3 class="h2">Что входит в список наших услуг?</h3>
+                            <p>Представление интересов организаций и граждан в суде&nbsp; обычно включает следующие виды работ:</p>
+                            <ul>
+                                <li>Изучение документов по существу рассматриваемого дела;</li>
+                                <li>Изучение соответствующей правоприменительной практики;</li>
+                                <li>Юридическая экспертиза перспектив рассмотрения дела в суде;</li>
+                                <li>Юридическое консультирование;</li>
+                                <li>Подготовка соответствующих процессуальных документов;</li>
+                                <li>Участие в судебных заседаниях;</li>
+                                <li>Контроль за исполнением судебных решений;</li>
+                                <li>Взыскание понесенных Вами расходов с проигравшей стороны.</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features__item">
+            <div class="row-flex collapse">
+
+                <div class="mv_24 ds_12">
+                    <div class="features__item-image">
+                        <img src="uploads/features/features-item-image-2.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="mv_24 ds_12">
+                    <div class="features__item-content content">
+                        <div class="features__item-content-inner">
+
+                            <h3 class="h2">Что входит в список наших услуг?</h3>
+                            <p>Представление интересов организаций и граждан в суде&nbsp; обычно включает следующие виды работ:</p>
+                            <ul>
+                                <li>Изучение документов по существу рассматриваемого дела;</li>
+                                <li>Изучение соответствующей правоприменительной практики;</li>
+                             
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="features__item">
+            <div class="row-flex collapse">
+                <div class="mv_24 ds_12">
+                    <div class="features__item-image">
+                        <img src="uploads/features/features-item-image-3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mv_24 ds_12">
+                    <div class="features__item-content content">
+                        <div class="features__item-content-inner">
+
+                            <h3 class="h2">Туристические сертификаты</h3>
+                            <p>Представление интересов организаций и граждан в суде&nbsp; обычно включает следующие виды работ:</p>
+                            <ul>
+                                <li>Изучение документов по существу рассматриваемого дела;</li>
+                                <li>Изучение соответствующей правоприменительной практики;</li>
+                                <li>Юридическая экспертиза перспектив рассмотрения дела в суде;</li>
+                                <li>Юридическое консультирование;</li>
+                                <li>Подготовка соответствующих процессуальных документов;</li>
+                                <li>Участие в судебных заседаниях;</li>
+                                <li>Контроль за исполнением судебных решений;</li>
+                                <li>Взыскание понесенных Вами расходов с проигравшей стороны.</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+    </div>
+</section>
+
+
+
+
+<section class="section section-tarifs bg-grey">
+    <div class="container">
+
+        <div class="row">
+            <div class="mv_24">
+                <h2 class="title">Наши тарифы</h2>
+            </div>
+        </div>
+
+        <div class="tarifs">
+            <div class="row-flex  ">
+                
+                {{#tarifs}}
+                <div class="mv_22 mv_offset_0 tb_12 tb_offset_0 ds_6 tarifs__item-outer">
+                    <div class="tarifs__item centered">
+                        <div class="tarifs__item-image">
+                            <img src="uploads/tarifs/tarifs-item-img-1.svg" alt="{{item-title}}">
+                        </div>
+                        <div class="tarifs__item-title"><span>{{item-title}}</span></div>
+                        <div class="tarifs__item-price">{{item-price}}</div>
+                        <div class="tarifs__item-text">{{item-text}}</div>
+                    </div>
+                </div>
+                {{/tarifs}}
+            
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+{{> footer}}
+
+
+
+
+{{> overlay}}
+
+
+
+
+    <!-- <script src="js/scripts.js"> </script> -->
+    <script src="js/min/scripts.min.js"> </script>    
+
+</body>
+</html>

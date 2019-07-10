@@ -1,4 +1,3 @@
-
 .search {
     .search__field {
         // Reset
@@ -64,20 +63,18 @@
 .btn-search {
     // Reset
     background: none;
-    border: none;
-    // @extend .ukresultflaticons;
+    border: none; // @extend .ukresultflaticons;
     @extend [class^="ukr-"];
     @extend .ukr-magnifying-glass;
     &:before {
         // @extend .ukresultflaticons-magnifying-glass;
         z-index: $zindex_icon;
-        @include font_size('h3');  // h3 (ukr) || h2 (ukresultflaticons)
+        @include font_size('h3'); // h3 (ukr) || h2 (ukresultflaticons)
         @include color_scheme('accent');
     }
 }
 
 $search_modal_close_width: 60px;
-
 .search-modal-close {
     width: $search_modal_close_width; // @include height_leveling('');
     // @extend .ukresultflaticons;
@@ -95,5 +92,4 @@ $search_modal_close_width: 60px;
 .search-modal-inner {
     width: calc(100% - #{$search_modal_close_width});
     border-bottom: 2px solid transparent;
-    background: url('../../images/section-actions-bg-1024.jpg') 0 0 no-repeat;
 }

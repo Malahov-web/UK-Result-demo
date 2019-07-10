@@ -176,6 +176,7 @@
 }
 
 .logo {
+    // display: none;
     @media (max-width: #{map-get($devices, 'ds_')-1}px) {
         padding: 1*$l_h_base 0;
     }

@@ -1,0 +1,112 @@
+        <div class="difference">
+
+
+            <!--  v3  all items in one stream, flex -->
+
+                <ul class="difference__list row-flex top">
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2 difference__list-item-outer collapse">
+                        <li>
+                            <h2 class="title title-red title-difference">Как работаем мы </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-we}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2 difference__list-item-outer collapse">
+                        <li class="difference__list-item  difference__list-item--we">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-we}}
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4 difference__list-item-outer collapse">
+                        <li>
+                            <h2 class="title title-red title-difference">наши конкуренты </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-competitor}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4 difference__list-item-outer collapse">
+                        <li class="difference__list-item difference__list-item--they">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-competitor}}    
+
+                </ul>
+
+
+            <!--  v2  all items in one stream, columns:2 -->    
+            <!--div class="mv_24">
+                <ul class="difference__list difference__list--we row">
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2">
+                        <li>
+                            <h2 class="title title-red title-difference">Как работаем мы </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-we}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2">
+                        <li class="difference__list-item  ">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-we}}
+
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4">
+                        <li>
+                            <h2 class="title title-red title-difference">Как работаем мы </h2>
+                        </li>
+                    </div>
+                    
+                    {{#difference-competitor}}
+                    <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4">
+                        <li class="difference__list-item">
+                            <div class="difference__list-item-title">{{item-title}}</div>
+                            <div class="difference__list-item-text">{{item-text}}</div>
+                        </li>
+                    </div>
+                    {{/difference-competitor}}    
+
+                </ul>
+            </div-->
+
+
+
+            <!--div class="mv_20 mv_offset_2 tb_10 tb_offset_1 ds_8 ds_offset_2">
+                <ul class="difference__list difference__list--we">
+                    <li>
+                        <h2 class="title title-red title-difference">Как работаем мы </h2>
+                    </li>
+                    
+                    {{#difference-we}}
+                    <li class="difference__list-item  ">
+                        <div class="difference__list-item-title">{{item-title}}</div>
+                        <div class="difference__list-item-text">{{item-text}}</div>
+                    </li>
+                    {{/difference-we}}
+
+                </ul>
+            </div>
+
+            <div class="mv_20 mv_offset_2 tb_10 tb_offset_2 ds_8 ds_offset_4">
+                <ul class="difference__list difference__list--competitor">
+                    <li>
+                        <h2 class="title title-red title-difference">Как работаем мы </h2>
+                    </li>
+                    
+                    {{#difference-competitor}}
+                    <li class="difference__list-item">
+                        <div class="difference__list-item-title">{{item-title}}</div>
+                        <div class="difference__list-item-text">{{item-text}}</div>
+                    </li>
+                    {{/difference-competitor}}
+
+                </ul>                
+            </div-->
+
+        </div>

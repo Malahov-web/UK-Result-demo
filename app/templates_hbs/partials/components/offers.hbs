@@ -1,0 +1,32 @@
+        <div class="row offers">
+
+            {{#each offers}}
+            <div class="{{offers_class_helper @index}} ">
+                <div class="offers__item">
+
+                    <div class="offers__item-header">
+                        <div class="offers__item-icon">
+                            <img src="images/{{item-image}}" alt="{{title}}">
+                        </div>
+                        <div class="offers__item-title">{{item-title}}</div>
+                        <div class="offers__item-button centered tb_hidden">
+                            <a href="" class="btn-btn-readmore js-readmore js-trigger"  data-target="offers__item__list_{{id}}" data-text-default="Развернуть" data-text-open="Свернуть"><span>Развернуть</span></a>
+                        </div>
+                    </div>
+
+                    <div class="offers__item-content">
+                        <ul class="offers__item-list" id="offers__item__list_{{id}}">
+                            {{#list}}
+                            <li class="offers__item-list-item">
+                                <img src="images/{{list-item-image}}" alt="{{list-item-title}}">
+                                <a href="#">{{list-item-title}}</a>
+                            </li>
+                            {{/list}}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            {{/each}}
+
+        </div>

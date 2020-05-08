@@ -1,0 +1,16 @@
+        <div class="row services ">
+            
+            {{#each services}}
+            <div class="{{services_class_helper}} centered">
+                <a class="services__item" href="#">
+                    <div class="services__item-icon">
+                        <img src="uploads/services/{{item-image}}" alt="{{item-title}}">
+                    </div>                    
+                    <div class="services__item-title">
+                        <span>{{item-title}}</span>
+                    </div>                    
+                </a>
+            </div>
+            {{/each}}      
+
+        </div>

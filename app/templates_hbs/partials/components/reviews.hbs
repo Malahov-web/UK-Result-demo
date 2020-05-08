@@ -1,0 +1,14 @@
+                <div class="row reviews owl-carousel">
+                    
+                    {{#reviews}}
+                    <div class="mv_22 mv_offset_0 tb_8 tb_offset_0 reviews__item-outer">
+                        <div class="reviews__item centered">
+                            <a href="uploads/reviews/{{item-image-large}}" class="reviews__item-image" data-fancybox="galleryreviews">
+                            <!-- <a data-fancybox="gallery" href="big_1.jpg"><img src="small_1.jpg"></a> -->
+                                <img src="uploads/reviews/{{item-image}}" alt="{{item-title}}">
+                            </a>
+                        </div>
+                    </div>
+                    {{/reviews}}
+                
+                </div>

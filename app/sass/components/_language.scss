@@ -11,7 +11,7 @@
         i {
             margin-left: 5px;
             @include font_size('smaller');
-            @include color_scheme('default');
+            // @include color_scheme('default');
         }
     }
     &__list {

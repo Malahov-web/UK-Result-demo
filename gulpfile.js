@@ -61,6 +61,10 @@ var svgSprite = require('gulp-svg-sprite');
 
 var gulpif = require('gulp-if');
 
+var imagemin = require('gulp-imagemin');
+
+var pngquant = require('imagemin-pngquant');
+
 
 var infoData = require('./app/data/data.json');
 
@@ -333,7 +337,7 @@ gulp.task('build', ['clean'],  function () {
         .pipe(gulp.dest('dist'))        
 
     gulp.src('app/css/**/*.css')
-        // .pipe(cleanCSS({compatibility: 'ie10'}))
+        .pipe(cleanCSS({compatibility: 'ie10'}))
         .pipe(gulp.dest('dist/css'))
 
     gulp.src('app/js/min/scripts.min.js')
@@ -344,9 +348,21 @@ gulp.task('build', ['clean'],  function () {
         .pipe(gulp.dest('dist/fonts'))
 
     gulp.src('app/images/**/*')
+        .pipe(imagemin({ // Сжимаем с наилучшими настройками
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
         .pipe(gulp.dest('dist/images'))
 
     gulp.src('app/uploads/**/*')
+        .pipe(imagemin({ // Сжимаем с наилучшими настройками
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))    
         .pipe(gulp.dest('dist/uploads'))    
     
 });

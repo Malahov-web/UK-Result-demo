@@ -66,7 +66,11 @@ module.exports = {
 
 const helpers = {
 
+            setVar(varName, varValue, options){
+                options.data.root[varName] = varValue;
+            },
             capitals : function capitalsFunction (str){
+
                 return str.toUpperCase();
                 // return "12345";
             },

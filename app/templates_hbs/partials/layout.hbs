@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title data-nomatter-megahack="">UKResult Demo - {{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <meta content='true' name='HandheldFriendly'>
+    <meta content='width' name='MobileOptimized'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+
+    <meta name="theme-color" content="#c2b385"> 
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#c2b385"> 
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#c2b385"> 
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+    <!-- Яндекс.Браузер -->
+    <meta name="viewport" content="ya-title=#c2b385,ya-dock=fade">      
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Plugins -->
+ 
+</head>
+
+<body class="{{ bodyClass }}">
+
+
+
+
+{{> header}}
+
+
+
+{{> overlay-search}}
+
+
+
+
+{{> @partial-block }}
+
+
+
+
+{{> footer}}
+
+
+
+
+{{> overlay}}
+
+
+
+
+    <script src="js/min/scripts.min.js"> </script>    
+
+</body>
+</html>

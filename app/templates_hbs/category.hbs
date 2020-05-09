@@ -1,46 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>UK Result demo - category</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-    <meta content='true' name='HandheldFriendly'>
-    <meta content='width' name='MobileOptimized'>
-    <meta content='yes' name='apple-mobile-web-app-capable'>
-
-    <meta name="theme-color" content="#c2b385"> 
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#c2b385"> 
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#c2b385"> 
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
-    <!-- Яндекс.Браузер -->
-    <meta name="viewport" content="ya-title=#c2b385,ya-dock=fade">      
-
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Plugins -->
- 
-</head>
-
-<body class="category">
 
 
+{{#> layout title="Категория"  bodyClass="category" }}
 
 
-{{> header}}
-
-
-
-
-{{> overlay-search}}
-
-
-
-
-<section class="section section-category">
+<section class="section section-category" style="__display: none;">
     <div class="container">
 
         <div class="row">
@@ -52,26 +15,12 @@
         {{ setVar "itemOuterClass" "mv_22 mv_offset_1 tb_24 tb_offset_0 ds_24" }}
         {{ setVar "textField" "item-text-long" }}
 
-        {{> news blockClass = 'news--slat category'  }}
+        {{> components/_news blockClass = 'news--slat category'  }}
         {{!> news__item textField = item-text-long }}
 
     </div>
 </section>
 
 
+{{/layout}}
 
-
-{{> footer}}
-
-
-
-
-{{> overlay}}
-
-
-
-
-    <script src="js/min/scripts.min.js"> </script>    
-
-</body>
-</html>

@@ -1,10 +1,12 @@
+
+
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>UK Result demo - home</title>
+    <title data-nomatter-megahack="">UKResult Demo - Главная</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-
     <meta content='true' name='HandheldFriendly'>
     <meta content='width' name='MobileOptimized'>
     <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -22,29 +24,11 @@
 
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
     <!-- Plugins -->
-
+ 
 </head>
 
 <body class="home">
-
-
-<div class="preloader" id="preloader" style="__display: flex; display: none;">
-    <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#c2b385">
-        <g fill="none" fill-rule="evenodd">
-            <g transform="translate(1 1)" stroke-width="1">
-                <!--circle stroke-opacity=".6" cx="18" cy="18" r="18"/-->
-                <circle stroke-opacity="1" cx="18" cy="18" r="18" stroke="#ddd"/>
-                <path d="M36 18c0-9.94-8.06-18-18-18">
-                    <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1.25s" repeatCount="indefinite"/>
-                </path>
-            </g>
-        </g>
-    </svg>
-
-    <img src="images/logo_result.png" alt="ЮК Результат">
-</div>
 
 
 
@@ -234,9 +218,10 @@
                 <div class="mv_24 tb_10 tb_offset_2 ds_6 ds_offset_0"> 
 
                     <div class="contacts lefted">
-                        <div class="address"></div>
+
                         <div class="address">г. Владивосток, ул. Океанский проспект, 135, офис 304</div>
-                        <div class="address"></div>
+                        <!--div class="address" style="display: none;">Главная</div-->
+                        <!--div class="address" style="display: none;">ЮК Результат</div-->
                         <a href="#" class="btn btn-mini">Схема проезда</a>
                     </div>
 
@@ -384,7 +369,6 @@
 </header>
 
 
-
 <div class="overlay-search search-modal">
     <div class="container">
 
@@ -410,6 +394,27 @@
         </div>
 
     </div>
+</div>
+
+
+
+
+
+
+<div class="preloader" id="preloader" style="__display: flex; display: none;">
+    <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#c2b385">
+        <g fill="none" fill-rule="evenodd">
+            <g transform="translate(1 1)" stroke-width="1">
+                <!--circle stroke-opacity=".6" cx="18" cy="18" r="18"/-->
+                <circle stroke-opacity="1" cx="18" cy="18" r="18" stroke="#ddd"/>
+                <path d="M36 18c0-9.94-8.06-18-18-18">
+                    <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1.25s" repeatCount="indefinite"/>
+                </path>
+            </g>
+        </g>
+    </svg>
+
+    <img src="images/logo_result.png" alt="ЮК Результат">
 </div>
 
 
@@ -1065,43 +1070,40 @@
 
     </div>
 
-
-    <div class="bg-grey request">
-        <div class="container">
-            <div class="row ">
-                
-                <div class="mv_24 tb_16 tb_offset_8  ds_18 ds_offset_6 form-outer">
-                    <form action="#" class="form form--request">                        
-
-                        <div class="row">
-                            <div class="mv_24 tb_12 ds_8 field-outer">
-                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
-                            </div>
-                            <div class="mv_24 tb_12 ds_8 field-outer">
-                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
-                            </div>
-                            <div class="mv_24 ds_8 field-outer">
-                                <a href="#" class="btn btn-submit">Отправить заявку</a>
-                            </div>
-                        </div>
-
-                    </form>
+        <div class="bg-grey request">
+            <div class="container">
+                <div class="row ">
+                    
+                    <div class="mv_24 tb_16 tb_offset_8  ds_18 ds_offset_6 form-outer">
+                                            <form action="#" class="form form--request">                        
+                        
+                                                <div class="row">
+                                                    <div class="mv_24 tb_12 ds_8 field-outer">
+                                                        <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                                                    </div>
+                                                    <div class="mv_24 tb_12 ds_8 field-outer">
+                                                        <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
+                                                    </div>
+                                                    <div class="mv_24 ds_8 field-outer">
+                                                        <a href="#" class="btn btn-submit">Отправить заявку</a>
+                                                    </div>
+                                                </div>
+                        
+                                            </form>                </div>
+            
                 </div>
-        
-            </div>
-
-            <div class="row">
-                <div class="mv_24 tb_16 tb_offset_8 ds_18 ds_offset_6 ">
-                    <div class="form__notice">В течение часа с Вами свяжется наш менеджер и ответит на все интересуюшие вопросы</div>
+    
+                <div class="row">
+                    <div class="mv_24 tb_16 tb_offset_8 ds_18 ds_offset_6 ">
+                        <div class="form__notice">В течение часа с Вами свяжется наш менеджер и ответит на все интересуюшие вопросы</div>
+                    </div>
+                    <div class="request__image">
+                        <img src="images/section-request-girl.png" alt="">
+                    </div>                  
                 </div>
-                <div class="request__image">
-                    <img src="images/section-request-girl.png" alt="">
-                </div>                  
-            </div>
-
-        </div>        
-    </div>
-
+    
+            </div>        
+        </div>
 </section>
 
 
@@ -1212,52 +1214,54 @@
 <section class="section section-form section-form--consultation">
     <div class="container">
 
-        <div class="row">
-            <div class="mv_24 tb_24 ds_18 ds_offset_3">
-                <a href="#" class="btn btn-more">Узнайте больше</a>
-            </div>                 
-        </div> 
-
-        <div class="row">
-            <div class="mv_24 tb_24 ds_18 ds_offset_3 ">
-                <h2 class="title title-white">получите бесплатную консультацию</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mv_24 tb_24 ds_18 ds_offset_3">
-                <div class="form__subtitle form__notice--white">Заполните форму и наш менеджер свяжется с вами в течение 10 минут</div>
-            </div>                 
-        </div>  
-
-
-        <div class="row consultation">
-            <div class="mv_24 tb_24 ds_18 ds_offset_3 form-outer">
-                    <form action="#" class="form form--consultation">                        
-
-                        <div class="row">
-                            <div class="mv_24 tb_8 ds_8 field-outer">
-                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
-                            </div>
-                            <div class="mv_24 tb_8 ds_8 field-outer">
-                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="phone">
-                            </div>
-                            <div class="mv_24 tb_8 ds_8 field-outer">
-                                <a href="#" class="btn btn-submit">Отправить заявку</a>
-                            </div>
-                        </div>
-
-                    </form>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mv_24 tb_24 ds_18 ds_offset_3">
-                <div class="form__notice form__notice--white">Нам доверяют больше <b>500 клиентов</b></div>
-            </div>                 
-        </div>        
-
- 
+        
+                <div class="row">
+                    <div class="mv_24 tb_24 ds_18 ds_offset_3">
+                        <a href="#" class="btn btn-more">Узнайте больше</a>
+                    </div>                 
+                </div> 
+        
+                <div class="row">
+                    <div class="mv_24 tb_24 ds_18 ds_offset_3 ">
+                        <h2 class="title title-white">получите бесплатную консультацию</h2>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="mv_24 tb_24 ds_18 ds_offset_3">
+                        <div class="form__subtitle form__notice--white">Заполните форму и наш менеджер свяжется с вами в течение 10 минут</div>
+                    </div>                 
+                </div>  
+        
+        
+                <div class="row consultation">
+                    <div class="mv_24 tb_24 ds_18 ds_offset_3 form-outer">
+        
+                                            <form action="#" class="form form--consultation">                        
+                        
+                                                <div class="row">
+                                                    <div class="mv_24 tb_8 ds_8 field-outer">
+                                                        <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                                                    </div>
+                                                    <div class="mv_24 tb_8 ds_8 field-outer">
+                                                        <input name="your-name" class="field--text" placeholder="Ваше имя" type="phone">
+                                                    </div>
+                                                    <div class="mv_24 tb_8 ds_8 field-outer">
+                                                        <a href="#" class="btn btn-submit">Отправить заявку</a>
+                                                    </div>
+                                                </div>
+                        
+                                            </form>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="mv_24 tb_24 ds_18 ds_offset_3">
+                        <div class="form__notice form__notice--white">Нам доверяют больше <b>500 клиентов</b></div>
+                    </div>                 
+                </div>        
+        
+         
     </div>
 
 </section>
@@ -1277,53 +1281,15 @@
         
                 
         
-                      <div class="row news--card" data-item=" mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6 ">
+                      <div class="row news--card">
         
         
-                        <!--div class="mv_12" data-test="Нельзя исплозовать внешние переменные внутри each">
-                          Тест itemOuterClass: mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6
-                        </div-->
-                        <div class=" mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--0" data-field="item-text ">
         
-                            <!-- root.blockNewsCardClass =  
-                             -->
-                            
-                                 <div class="news__item">
-                             
-                                     <a href="#" class="news__item-image">
-                                         <img src="uploads/news/news-item-img-1.jpg" alt="Кредитные карты — как не быть обманутым">
-                                     </a>
-                            
-                                     <div class="news__item-content">
-                                          <div class="news__item-content-inner">
-                                              <div class="news__item-title">
-                                                  <a href="#">Кредитные карты — как не быть обманутым</a>
-                                              </div>
-                                              <time class="news__item-date" datetime="2019-02-05">05.02.2019</time>
-                                              <div class="news__item-text"> Нередки ситуации, когда заемщик обращается в банк за получением кредитной карты и ему выдают заветный пластик всего за 5 минут. Сотрудник кредитного учреждения предлагает заполнить короткую анкету, подписать ее, делает ксерокопию паспорта и выдает карту с ПИН-конвертом, в котором указывает код для доступа к средствам. </div>
-                                          </div>
-                            
-                                          <div class="news__item-button">
-                                             <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                          </div>
-                                     </div>
-                                 </div>
-                            
-                            <!-- 
-                            Есть глобальные переменные 
-                            itemCardOuterClass
-                            blockClass = itemCardOuterClass
-                                news.hbs template
-                                blockClass
-                                    news__item.hbs
-                            
-                                     -->
+                        <div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--0" data-field="item-text ">
         
-                        </div>
         
-                        <!--div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6 news__item-outer--0">
                              <div class="news__item">
-        
+                         
                                  <a href="#" class="news__item-image">
                                      <img src="uploads/news/news-item-img-1.jpg" alt="Кредитные карты — как не быть обманутым">
                                  </a>
@@ -1331,62 +1297,27 @@
                                  <div class="news__item-content">
                                       <div class="news__item-content-inner">
                                           <div class="news__item-title">
-                                              <a href="#">КРЕДИТНЫЕ КАРТЫ — КАК НЕ БЫТЬ ОБМАНУТЫМ Кредитные карты — как не быть обманутым</a>
+                                              <a href="#">Кредитные карты — как не быть обманутым</a>
                                           </div>
                                           <time class="news__item-date" datetime="2019-02-05">05.02.2019</time>
-                                          <div class="news__item-text">Создание приверженного покупателя усиливает охват аудитории, не считаясь с затратами</div>
+                                          <div class="news__item-text"> Нередки ситуации, когда заемщик обращается в банк за получением кредитной карты и ему выдают заветный пластик всего за 5 минут. Сотрудник кредитного учреждения предлагает заполнить короткую анкету, подписать ее, делает ксерокопию паспорта и выдает карту с ПИН-конвертом, в котором указывает код для доступа к средствам. </div>
                                       </div>
         
                                       <div class="news__item-button">
                                          <a href="#" class="btn btn-readmore">Читать дальше</a>
                                       </div>
                                  </div>
-                             </div>
-                        </div-->
-                        <!--div class="mv_12" data-test="Нельзя исплозовать внешние переменные внутри each">
-                          Тест itemOuterClass: mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6
-                        </div-->
-                        <div class=" mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--1" data-field="item-text ">
-        
-                            <!-- root.blockNewsCardClass =  
-                             -->
-                            
-                                 <div class="news__item">
-                             
-                                     <a href="#" class="news__item-image">
-                                         <img src="uploads/news/news-item-img-2.jpg" alt="IT-компаниям могут предоставить налоговые льготы">
-                                     </a>
-                            
-                                     <div class="news__item-content">
-                                          <div class="news__item-content-inner">
-                                              <div class="news__item-title">
-                                                  <a href="#">IT-компаниям могут предоставить налоговые льготы</a>
-                                              </div>
-                                              <time class="news__item-date" datetime="2019-03-05">05.03.2019</time>
-                                              <div class="news__item-text"> Как сообщает пресс-служба Госдумы, в частности, производители программного обеспечения говорили о высоком налоговом бремени и просили законодателей внести изменения в действующее законодательство – снизить для специализирующихся в этой сфере компаний НДС и налог на прибыль. </div>
-                                          </div>
-                            
-                                          <div class="news__item-button">
-                                             <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                          </div>
-                                     </div>
-                                 </div>
-                            
-                            <!-- 
-                            Есть глобальные переменные 
-                            itemCardOuterClass
-                            blockClass = itemCardOuterClass
-                                news.hbs template
-                                blockClass
-                                    news__item.hbs
-                            
-                                     -->
+                             </div>                    
         
                         </div>
         
-                        <!--div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6 news__item-outer--1">
-                             <div class="news__item">
         
+        
+                        <div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--1" data-field="item-text ">
+        
+        
+                             <div class="news__item">
+                         
                                  <a href="#" class="news__item-image">
                                      <img src="uploads/news/news-item-img-2.jpg" alt="IT-компаниям могут предоставить налоговые льготы">
                                  </a>
@@ -1394,62 +1325,27 @@
                                  <div class="news__item-content">
                                       <div class="news__item-content-inner">
                                           <div class="news__item-title">
-                                              <a href="#">IT-КОМПАНИЯМ МОГУТ ПРЕДОСТАВИТЬ НАЛОГОВЫЕ ЛЬГОТЫ IT-компаниям могут предоставить налоговые льготы</a>
+                                              <a href="#">IT-компаниям могут предоставить налоговые льготы</a>
                                           </div>
                                           <time class="news__item-date" datetime="2019-03-05">05.03.2019</time>
-                                          <div class="news__item-text">В Госдуме обсудили меры поддержки производителей отечественного программного обеспечения.</div>
+                                          <div class="news__item-text"> Как сообщает пресс-служба Госдумы, в частности, производители программного обеспечения говорили о высоком налоговом бремени и просили законодателей внести изменения в действующее законодательство – снизить для специализирующихся в этой сфере компаний НДС и налог на прибыль. </div>
                                       </div>
         
                                       <div class="news__item-button">
                                          <a href="#" class="btn btn-readmore">Читать дальше</a>
                                       </div>
                                  </div>
-                             </div>
-                        </div-->
-                        <!--div class="mv_12" data-test="Нельзя исплозовать внешние переменные внутри each">
-                          Тест itemOuterClass: mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6
-                        </div-->
-                        <div class=" mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--2" data-field="item-text ">
-        
-                            <!-- root.blockNewsCardClass =  
-                             -->
-                            
-                                 <div class="news__item">
-                             
-                                     <a href="#" class="news__item-image">
-                                         <img src="uploads/news/news-item-img-3.jpg" alt="Правительство РФ расширило перечень товаров облагаемых НДС">
-                                     </a>
-                            
-                                     <div class="news__item-content">
-                                          <div class="news__item-content-inner">
-                                              <div class="news__item-title">
-                                                  <a href="#">Правительство РФ расширило перечень товаров облагаемых НДС</a>
-                                              </div>
-                                              <time class="news__item-date" datetime="2019-02-04">04.02.2019</time>
-                                              <div class="news__item-text"> Правительство РФ расширило перечень товаров, облагаемых по ставке НДС 10%</div>
-                                          </div>
-                            
-                                          <div class="news__item-button">
-                                             <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                          </div>
-                                     </div>
-                                 </div>
-                            
-                            <!-- 
-                            Есть глобальные переменные 
-                            itemCardOuterClass
-                            blockClass = itemCardOuterClass
-                                news.hbs template
-                                blockClass
-                                    news__item.hbs
-                            
-                                     -->
+                             </div>                    
         
                         </div>
         
-                        <!--div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6 news__item-outer--2">
-                             <div class="news__item">
         
+        
+                        <div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--2" data-field="item-text ">
+        
+        
+                             <div class="news__item">
+                         
                                  <a href="#" class="news__item-image">
                                      <img src="uploads/news/news-item-img-3.jpg" alt="Правительство РФ расширило перечень товаров облагаемых НДС">
                                  </a>
@@ -1457,62 +1353,27 @@
                                  <div class="news__item-content">
                                       <div class="news__item-content-inner">
                                           <div class="news__item-title">
-                                              <a href="#">ПРАВИТЕЛЬСТВО РФ РАСШИРИЛО ПЕРЕЧЕНЬ ТОВАРОВ ОБЛАГАЕМЫХ НДС Правительство РФ расширило перечень товаров облагаемых НДС</a>
+                                              <a href="#">Правительство РФ расширило перечень товаров облагаемых НДС</a>
                                           </div>
                                           <time class="news__item-date" datetime="2019-02-04">04.02.2019</time>
-                                          <div class="news__item-text">Правительство РФ расширило перечень товаров, облагаемых по ставке НДС 10%</div>
+                                          <div class="news__item-text"> Правительство РФ расширило перечень товаров, облагаемых по ставке НДС 10%</div>
                                       </div>
         
                                       <div class="news__item-button">
                                          <a href="#" class="btn btn-readmore">Читать дальше</a>
                                       </div>
                                  </div>
-                             </div>
-                        </div-->
-                        <!--div class="mv_12" data-test="Нельзя исплозовать внешние переменные внутри each">
-                          Тест itemOuterClass: mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6
-                        </div-->
-                        <div class=" mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--3" data-field="item-text ">
-        
-                            <!-- root.blockNewsCardClass =  
-                             -->
-                            
-                                 <div class="news__item">
-                             
-                                     <a href="#" class="news__item-image">
-                                         <img src="uploads/news/news-item-img-4.jpg" alt="Порядок открытия лицевых счетов для организаций и ИП">
-                                     </a>
-                            
-                                     <div class="news__item-content">
-                                          <div class="news__item-content-inner">
-                                              <div class="news__item-title">
-                                                  <a href="#">Порядок открытия лицевых счетов для организаций и ИП</a>
-                                              </div>
-                                              <time class="news__item-date" datetime="2019-02-05">05.02.2019</time>
-                                              <div class="news__item-text"> Порядок открытия лицевых счетов для организаций и ИП</div>
-                                          </div>
-                            
-                                          <div class="news__item-button">
-                                             <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                          </div>
-                                     </div>
-                                 </div>
-                            
-                            <!-- 
-                            Есть глобальные переменные 
-                            itemCardOuterClass
-                            blockClass = itemCardOuterClass
-                                news.hbs template
-                                blockClass
-                                    news__item.hbs
-                            
-                                     -->
+                             </div>                    
         
                         </div>
         
-                        <!--div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6 news__item-outer--3">
-                             <div class="news__item">
         
+        
+                        <div class="mv_24 mv_offset_0 tb_12 tb_offset_0 ds_6  news__item-outer--3" data-field="item-text ">
+        
+        
+                             <div class="news__item">
+                         
                                  <a href="#" class="news__item-image">
                                      <img src="uploads/news/news-item-img-4.jpg" alt="Порядок открытия лицевых счетов для организаций и ИП">
                                  </a>
@@ -1520,112 +1381,32 @@
                                  <div class="news__item-content">
                                       <div class="news__item-content-inner">
                                           <div class="news__item-title">
-                                              <a href="#">ПОРЯДОК ОТКРЫТИЯ ЛИЦЕВЫХ СЧЕТОВ ДЛЯ ОРГАНИЗАЦИЙ И ИП Порядок открытия лицевых счетов для организаций и ИП</a>
+                                              <a href="#">Порядок открытия лицевых счетов для организаций и ИП</a>
                                           </div>
                                           <time class="news__item-date" datetime="2019-02-05">05.02.2019</time>
-                                          <div class="news__item-text">Порядок открытия лицевых счетов для организаций и ИП</div>
+                                          <div class="news__item-text"> Порядок открытия лицевых счетов для организаций и ИП</div>
                                       </div>
         
                                       <div class="news__item-button">
                                          <a href="#" class="btn btn-readmore">Читать дальше</a>
                                       </div>
                                  </div>
-                             </div>
-                        </div-->
+                             </div>                    
+        
+                        </div>
+        
+        
         
         
                       </div>
-        
-        
-        
-        
-        <!--         <div class="row category news--slat">
-        
-                    <div class="mv_22 mv_offset_1 tb_24 tb_offset_0 ds_24">
-                        <div class="news__item">
-        
-                            <a href="#" class="news__item-image">
-                                <img src="uploads/news/news-item-img-1.jpg" alt="Кредитные карты — как не быть обманутым">
-                            </a>
-        
-                            <div class="news__item-content">
-                                <div class="news__item-content-inner">
-                                    <div class="news__item-title"><a href="">Кредитные карты — как не быть обманутым</a></div>
-                                    <time class="news__item-date" datetime="2019-02-05">05.02.2019</time>
-                                    <div class="news__item-text">Нередки ситуации, когда заемщик обращается в банк за получением кредитной карты и ему выдают заветный пластик всего за 5 минут. Сотрудник кредитного учреждения предлагает заполнить короткую анкету, подписать ее, делает ксерокопию паспорта и выдает карту с ПИН-конвертом, в котором указывает код для доступа к средствам. </div>
-                                </div>
-                            
-                                <div class="news__item-button">
-                                    <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mv_22 mv_offset_1 tb_24 tb_offset_0 ds_24">
-                        <div class="news__item">
-        
-                            <a href="#" class="news__item-image">
-                                <img src="uploads/news/news-item-img-2.jpg" alt="IT-компаниям могут предоставить налоговые льготы">
-                            </a>
-        
-                            <div class="news__item-content">
-                                <div class="news__item-content-inner">
-                                    <div class="news__item-title"><a href="">IT-компаниям могут предоставить налоговые льготы</a></div>
-                                    <time class="news__item-date" datetime="2019-03-05">05.03.2019</time>
-                                    <div class="news__item-text">Как сообщает пресс-служба Госдумы, в частности, производители программного обеспечения говорили о высоком налоговом бремени и просили законодателей внести изменения в действующее законодательство – снизить для специализирующихся в этой сфере компаний НДС и налог на прибыль. </div>
-                                </div>
-                            
-                                <div class="news__item-button">
-                                    <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mv_22 mv_offset_1 tb_24 tb_offset_0 ds_24">
-                        <div class="news__item">
-        
-                            <a href="#" class="news__item-image">
-                                <img src="uploads/news/news-item-img-3.jpg" alt="Правительство РФ расширило перечень товаров облагаемых НДС">
-                            </a>
-        
-                            <div class="news__item-content">
-                                <div class="news__item-content-inner">
-                                    <div class="news__item-title"><a href="">Правительство РФ расширило перечень товаров облагаемых НДС</a></div>
-                                    <time class="news__item-date" datetime="2019-02-04">04.02.2019</time>
-                                    <div class="news__item-text">Правительство РФ расширило перечень товаров, облагаемых по ставке НДС 10%</div>
-                                </div>
-                            
-                                <div class="news__item-button">
-                                    <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mv_22 mv_offset_1 tb_24 tb_offset_0 ds_24">
-                        <div class="news__item">
-        
-                            <a href="#" class="news__item-image">
-                                <img src="uploads/news/news-item-img-4.jpg" alt="Порядок открытия лицевых счетов для организаций и ИП">
-                            </a>
-        
-                            <div class="news__item-content">
-                                <div class="news__item-content-inner">
-                                    <div class="news__item-title"><a href="">Порядок открытия лицевых счетов для организаций и ИП</a></div>
-                                    <time class="news__item-date" datetime="2019-02-05">05.02.2019</time>
-                                    <div class="news__item-text">Порядок открытия лицевых счетов для организаций и ИП</div>
-                                </div>
-                            
-                                <div class="news__item-button">
-                                    <a href="#" class="btn btn-readmore">Читать дальше</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>  -->                  
+
     </div>
 </section>
         
+
+
+
+
 
 
 
@@ -1779,6 +1560,7 @@
 </footer>
 
 
+
 <div class="overlay" id="overlay">
     <div class="overlay__container container">
 
@@ -1791,39 +1573,6 @@
 
                 <div class="modal__title">
                     <h2 class="title">Заказ обратного звонка</h2>
-                </div>                 
-
-                <div class="modal__content">
-                    <form action="#" class="form form--callback">                        
-                    
-                        <div class="row">
-                            <div class="mv_24 field-outer">
-                                <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
-                            </div>
-                            <div class="mv_24 field-outer">
-                                <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
-                            </div>
-                            <div class="mv_24 field-outer">
-                                <a href="#" class="btn btn-submit-alt">Отправить заявку</a>
-                            </div>
-                        </div>
-                    
-                    </form>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="modal modal--request js-modal" id="modal-request">
-            <div class="modal-close js-modal-close">
-                <i class="ukr-close"></i>
-            </div>    
-
-            <div class="modal-inner">
-
-                <div class="modal__title">
-                    <h2 class="title">Заказ консультации</h2>
                 </div>                 
 
                 <div class="modal__content">
@@ -1841,8 +1590,39 @@
                             </div>
                         </div>
                     
-                    </form>
-                </div>
+                    </form>                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal modal--request js-modal" id="modal-request">
+            <div class="modal-close js-modal-close">
+                <i class="ukr-close"></i>
+            </div>    
+
+            <div class="modal-inner">
+
+                <div class="modal__title">
+                    <h2 class="title">Заказ консультации</h2>
+                </div>                 
+
+                <div class="modal__content">
+                                        <form action="#" class="form form--request">                        
+                                        
+                                            <div class="row">
+                                                <div class="mv_24 field-outer">
+                                                    <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
+                                                </div>
+                                                <div class="mv_24 field-outer">
+                                                    <input name="your-phone" class="field--text" placeholder="Ваш телефон" type="phone">
+                                                </div>
+                                                <div class="mv_24 field-outer">
+                                                    <a href="#" class="btn btn-submit-alt">Отправить заявку</a>
+                                                </div>
+                                            </div>
+                                        
+                                        </form>                </div>
 
             </div>
         </div>        
@@ -1852,7 +1632,6 @@
 
 
 
-    <!-- <script src="js/scripts.js"> </script> -->
     <script src="js/min/scripts.min.js"> </script>    
 
 </body>

@@ -70,6 +70,7 @@ var infoData = require('./app/data/data.json');
 
 var handlebarsHelpers = require('./app/templates_hbs/helpers.js');
 
+var layouts = require('handlebars-layouts');
 
 
 
@@ -288,7 +289,8 @@ var js_maskedinput = path_libs + '/jquery.maskedinput/dist/jquery.maskedinput.mi
             batch : ['./app/templates_hbs/partials'],
         }
 
-        return gulp.src('app/templates_hbs/**/*.hbs')
+        // return gulp.src('app/templates_hbs/**/*.hbs')
+        return gulp.src('app/templates_hbs/*.hbs')
 
             .on('data', function(file){  // Файл - файл который проходит обработку процессом
 

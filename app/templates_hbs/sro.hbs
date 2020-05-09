@@ -1,42 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>UK Result demo - sro</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-    <meta content='true' name='HandheldFriendly'>
-    <meta content='width' name='MobileOptimized'>
-    <meta content='yes' name='apple-mobile-web-app-capable'>
+﻿
 
-    <meta name="theme-color" content="#c2b385"> 
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#c2b385"> 
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#c2b385"> 
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
-    <!-- Яндекс.Браузер -->
-    <meta name="viewport" content="ya-title=#c2b385,ya-dock=fade">      
-
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <!-- Plugins -->
-
-</head>
-
-<body class="">
-
-
-
-
-{{> header}}
-
-
-
-
-{{> overlay-search}}
+{{#> layout title="СРО"}}
 
 
 
@@ -52,21 +16,8 @@
 
     </div>
 
-    <div class="container-elastic actions-bg">
+    {{> components/_actions }}
 
-        <div class="container actions">
-            <div class="mv_24 tb_12 tb_offset_12 ds_12 ds_offset_12 centered tb_lefted">
-                <div class="actions__item">
-                    <div class="actions__item-title">Вышел новый закон по СРО</div>
-                    <div class="actions__item-subtitle">Изменились условия вступления!</div>
-                    <div class="actions__item-button">
-                        <a href="#" class="btn btn-cta">Узнать подробнее</a>
-                    </div>    
-                </div>
-            </div>
-        </div>
-
-    </div>    
 </section>
 
 
@@ -75,26 +26,7 @@
 <section class="section section-definitions">
     <div class="container ">
 
-        <div class="row-flex  definitions">
-            <div class="mv_24 tb_16 ds_12 collapse">
-                <div class="definitions__text">
-                    <p>СРО (саморегулируемая организация) – это некоммерческое партнерство, которое создается представителями той или иной профессиональной отрасли. Основная цель существования СРО – снизить государственный контроль в сфере регулирования коммерческой деятельности и возложить полномочия по надзору на самих участников рынка. Так, в строительных, проектировочных и изыскательных СРО ответственность распределяется между всеми членами саморегулируемой организации.</p>
-
-                    <p><strong>Вступление в СРО является обязательным для компаний и ИП, работающих в сфере строительства, изыскания и архитектурно-строительного проектирования.</strong></p>
-                </div>
-            </div>
-            <div class="mv_24 tb_8 ds_12">
-                <div class="definitions__image">
-                    <picture>
-                        <source media="(max-width: 1023px)" srcset="uploads/img-sro-pemitting-people.png">
-                        <source media="(max-width: 1920px)" srcset="uploads/img-sro-pemitting-people.png">
-                    
-                        <img src="uploads/img-sro-pemitting-people.png">                         
-                    </picture>                    
-                </div>
-            </div>     
-            
-        </div>
+        {{> components/_definitions }}
 
     </div>    
 </section>
@@ -105,33 +37,7 @@
 <section class="section section-services bg-grey">
     <div class="container">
 
-        <!-- <div class="row">
-            <div class="mv_24">
-                <h2 class="title">6 популярных услуг</h2>
-            </div>
-        </div> -->
-
-        <!--  v3  -->
-        <div class="row-flex centered services ">
-            <!-- <div class="mv_24 ds_20 ds_offset_2"> -->
-            
-            {{#services_sro}}
-            <div class="mv_12 tb_6 tb_offset_0 ds_6 ds_offset_0 centered">
-                <a class="services__item" href="#">
-                    <div class="services__item-icon">
-                        <img src="images/{{item-image}}" alt="">
-                    </div>                    
-                    <div class="services__item-title">
-                        <span>{{item-title}}</span>
-                    </div>                    
-                </a>
-            </div>
-            {{/services_sro}}
-
-            <!-- </div> -->
-
-        </div>
-
+        {{> components/_services-sro }}
 
     </div>
 </section>
@@ -142,83 +48,10 @@
 <section class="section section-sertificates">
     <div class="container ">
 
-        <div class="row-flex middle sertificates">
+        
+        {{> components/_sertificates }}
 
-            <div class="mv_24 tb_10 ds_8 ds_offset_2">
-                <div class="sertificates__slider owl-carousel">
-
-                    {{#sertificates}}
-                    <div class="mv_22 mv_offset_0 tb_16 tb_offset_4 ds_12 ds_offset_6 collapse sertificates__item-outer">
-                        <div class="sertificates__item centered">
-                            <a href="#" class="sertificates__item-image">
-                                <img src="uploads/reviews/{{item-image}}" alt="{{item-title}}">
-                            </a>
-                        </div>
-                    </div>
-                    {{/sertificates}}                    
-
-                </div>
-            </div>
-
-            <div class="mv_22 mv_offset_1 tb_12 tb_offset_2 ds_12 ds_offset_2 centered tb_lefted">
-                <div class="sertificates__content row">
-                    <div class="sertificates__text mv_24">
-                        ЮА "Результат" оформляем для Вас <span>лицензию МЧС</span> под "ключ". В стоимость услуг входит аренда оборудования и специалистов, а также подготовка, сдача и получение документов в МЧС
-                    </div>
-                    <div class="sertificates__button mv_24">
-                        <a href="#" class="btn btn-readmore">Получить допуск СРО</a>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-
-
-        <div class="row steps">
-            
-        </div>
-
-        <div class="row-flex top steps">
-
-            <div class="mv_24 tb_8 tb_offset_3 ds_4 ds_offset_0 steps__item-outer">
-                <div class="steps__item">
-                    <div class="steps__item-image">
-                        <img src="images/icon-place-order.png" alt="">
-                    </div>
-                    <div class="steps__item-text">Оставьте заявку на получение допуска СРО</div>
-                </div>
-            </div>
-
-            <div class="mv_24 tb_8 tb_offset_2 ds_4 ds_offset_0 steps__item-outer">
-                <div class="steps__item">
-                    <div class="steps__item-image">
-                        <img src="images/icon-email.png" alt="">
-                    </div>
-                    <div class="steps__item-text">Пришлите сканы документов нам на E-Mail</div>
-                </div>
-            </div>
-
-            <div class="mv_24 tb_8 tb_offset_3 ds_4 ds_offset_0 steps__item-outer">
-                <div class="steps__item">
-                    <div class="steps__item-image">
-                        <img src="images/icon-access.png" alt="">
-                    </div>
-                    <div class="steps__item-text">Согласуйте список видов работ для включения в допуск</div>
-                </div>
-            </div>
-
-            <div class="mv_24 tb_8 tb_offset_2 ds_4 ds_offset_0 steps__item-outer">
-                <div class="steps__item">
-                    <div class="steps__item-image">
-                        <img src="images/icon-get-case.png" alt="">
-                    </div>
-                    <div class="steps__item-text">Получите скан допуска СРО и начинайте работать!</div>
-                </div>
-            </div>
-
-        </div>
+        {{> components/_steps }}
 
 
     </div>
@@ -238,19 +71,9 @@
 
         <div class="row">
             <div class="mv_24 reviews-outer">
-                <div class="row reviews owl-carousel">
-                    
-                    {{#reviews}}
-                    <div class="mv_22 mv_offset_0 tb_8 tb_offset_0 reviews__item-outer">
-                        <div class="reviews__item centered">
-                            <a href="#" class="reviews__item-image">
-                                <img src="uploads/reviews/{{item-image}}" alt="{{item-title}}">
-                            </a>
-                        </div>
-                    </div>
-                    {{/reviews}}
-                
-                </div>
+
+                {{> components/_reviews }}
+
             </div>
         </div>        
 
@@ -260,245 +83,21 @@
 
 
 
+<section class="section section-subcategories bg-grey">
+    <div class="container">
+
+        {{> components/_subcategories }}
+
+    </div>
+</section>
+
+
+
 
 <section class="section section-features">
-    <div class="container collapse">
 
-        <div class="features__item">
-            <div class="row-flex collapse">
-                <div class="mv_24 ds_12">
-                    <div class="features__item-image">
-                        <img src="uploads/features/features-item-image-4.jpg" alt="">
-                    </div>
-                </div>
-                <div class="mv_24 ds_12">
-                    <div class="features__item-content content">
-                        <div class="features__item-content-inner">
+    {{> components/_features }}
 
-                            <h3 class="h2">Сколько стоит оформление допуска СРО?</h3>
-                            <p>Точная стоимость вступления в СРО зависит от многих факторов: максимальной суммы ген. подряда, видов работ и типа СРО. Во Владивостоке мы предлагаем наиболее выгодные условия вступления:</p>
-                            <table>
-                                <tr>
-                                    <td>Страховка</td>
-                                    <td>От 5 000 руб.</td>
-                                </tr>
-                                <tr>
-                                    <td>Скан вступления в СРО</td>
-                                    <td>за 24 часа (после оплаты)</td>
-                                </tr>
-                                <tr>
-                                    <td>Персональный менеджер</td>
-                                    <td>Бесплатно!</td>
-                                </tr>
-                                <tr>
-                                    <td>Материально-техническая база</td>
-                                    <td>Бесплатно!</td>
-                                </tr>
-                                <tr>
-                                    <td>Вступительный взнос</td>
-                                    <td>от 5 000 руб.</td>
-                                </tr>
-                                <tr>
-                                    <td>Членские взносы</td>
-                                    <td>от 5 000 руб./месяц</td>
-                                </tr>
-                                <tr>
-                                    <td>Компенсационный фонд</td>
-                                    <td>Первый платеж от 50 000 руб.</td>
-                                </tr>
-                            </table>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="features__item">
-            <div class="row-flex collapse">
-
-                <div class="mv_24 ds_12">
-                    <div class="features__item-image">
-                        <img src="uploads/features/features-item-image-5.jpg" alt="">
-                    </div>
-                </div>
-
-                <div class="mv_24 ds_12">
-                    <div class="features__item-content content">
-                        <div class="features__item-content-inner">
-
-                            <h3 class="h2">Для чего нужно вступать в СРО?</h3>
-                            <p>С 2010 года компании, занимающиеся строительными, проектировочными и изыскательными работами, обязаны вступить в саморегулируемую организацию, чтобы и дальше иметь возможность заниматься коммерческой деятельностью.
-                            </p>
-                            <p>Без допуска к СРО Вы не сможете:</p>
-                            <ul>
-                                <li>Принимать участие в государственных аукционах;</li>
-                                <li>Получать субподряды на крупных объектах;</li>
-                                <li>Осуществлять работы на законных основаниях.</li>
-                             
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="features__item">
-            <div class="row-flex collapse">
-                <div class="mv_24 ds_12">
-                    <div class="features__item-image">
-                        <img src="uploads/features/features-item-image-6.jpg" alt="">
-                    </div>
-                </div>
-                <div class="mv_24 ds_12">
-                    <div class="features__item-content content">
-                        <div class="features__item-content-inner">
-
-                            <h3 class="h2">Риски при вступлении в СРО</h3>
-                            <p>Законодательством Российской Федерации не предусмотрен возврат средств, внесенных в компенсационный фонд в случае выхода из саморегулируемой организации, поэтому к выбору СРО нужно подойти основательно.
-
-                            <br>При вступлении в СРО необходимо уточнить, будет ли внесена Ваша компания в реестр Ностроя.
-                            <br>Если Вы собираетесь воспользоваться услугами компании – посредника, уточните, есть ли у этой организации официальная аккредитация от данного СРО.
-                            <br>Многие фирмы-однодневки при проверке СРО надзорными органами просто дают Вам специалистов. Это не дает никаких гарантий — вероятность того, что Вы не пройдете проверку при таком подходе очень высока! Ведь надзорные органы будут запрашивать дополнительные документы на данных специалистов.
-                            <br>При вступлении в СРО мы предоставляем проверку «под ключ» — не просто предоставляем специалистов, но и сопровождаем Вас на протяжении всего процесса.
-                            <br>Для того, чтобы избежать рисков при вступлении в СРО выбирайте надежного партнера! 
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
-
-        <div class="features__item">
-            <div class="row-flex collapse">
-                <div class="mv_24 ds_12">
-                    <div class="features__item-image">
-                        <img src="uploads/features/features-item-image-7.jpg" alt="">
-                    </div>
-                </div>
-                <div class="mv_24 ds_12">
-                    <div class="features__item-content content">
-                        <div class="features__item-content-inner">
-
-                            <h3 class="h2">Где найти специалистов для вступления в СРО?</h3>
-                            <p><strong>Основное препятствие для небольших компаний при получении допуска — отсутствие квалифицированного персонала.</strong></p>
-                            <p>При вступлении в СРО у Вас должны быть специалисты по каждому из видов работ, допуск к которым Вы хотели бы получить. Если Вы будете искать специалистов самостоятельно, наем может обойтись в большую сумму денег. </p>
-                            <p>Мы подберем Вам сотрудников, бесплатно предоставим материально-техническую базу и оперативно подготовим всю необходимую документацию для получения допуска СРО во Владивостоке.  </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-
-        <div class="features__item">
-            <div class="row-flex collapse">
-                <div class="mv_24 ds_12">
-                    <div class="features__item-image">
-                        <img src="uploads/features/features-item-image-8.jpg" alt="">
-                    </div>
-                </div>
-                <div class="mv_24 ds_12">
-                    <div class="features__item-content content">
-                        <div class="features__item-content-inner">
-
-                            <h3 class="h2">Страхование ответственности членов СРО</h3>
-                            <p>Страхование — это обязательное условие при вступлении в СРО. Если по вине подрядчика работы были выполнены некачественно или произошло обрушение здания – страховка  выполнит функцию «спасательного круга». Строительным и проектировочным компаниям, вступившим в СРО, гарантировано страхование таких рисков.
-                            <br>Страховка оформляется на Вашу компанию и уберегает Вас от финансовой и профессиональной ответственности в случае ошибок, совершенных Вашими сотрудниками. В целом, вступление в саморегулируемую организацию и страхование ответственности значительно снижает Ваши риски при осуществлении строительных работ.</p>
-                            <p><strong>Мы подготовим для Вас необходимую документацию и поможем оформить страховку во Владивостоке в короткие сроки и без комиссий.</strong></p>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-
-    </div>  
-          
-    <div class="container-elastic collapse features__promo-outer">
-        <div class="container">
-
-            <div class="row">
-                <div class="mv_24">
-                    <h2 class="title">Вступить в СРО во Владивостоке за 1 день!</h2>
-                </div>
-            </div>
-
-            <div class="row-flex bottom features__promo">
-                <div class="mv_24 tb_10">
-                    <div class="features__promo-image">
-                        <img src="uploads/features/features-promo-image-1.png" alt="">
-                    </div>    
-                </div>
-                <div class="mv_24 tb_14 tb_offset_0 ds_14 ds_offset_0">
-                    <div class="features__promo-content content">
-                        <div class="features__item-content-inner">
-
-                            <p>ЮА «Москонсалт» оказывает полную юридическую поддержку участникам строительного рынка и помогает оформить допуск СРО в кратчайшие сроки. </p>
-                            <p>С нами Вы быстро и без специальных знаний получите допуск к любым строительным работам и ген. подрядам.</p>
-                            <p>
-                                <strong>Как мы работаем:</strong>
-                            </p>
-                            <ul>
-                                <li>Оставьте заявку у нас на сайте или позвоните нам;</li>
-                                <li>Мы рассчитаем стоимость допуска и пришлем Вам расчет; </li>
-                                <li>Мы заключаем с Вами официальный договор на выдачу допуска СРО; </li>
-                                <li>Вы присылаете сканы необходимых документов нам на E-Mail;</li>
-                                <li>Производите оплату членских взносов и взноса в компенсационный фонд;</li>
-                                <li>Получаете допуск СРО и начинаете работать.</li>
-                            </ul>
-                        </div>
-                        <div class="features__promo-button">
-                            <a href="#" class="btn btn-order">Получить допуск СРО</a>
-                        </div>
-
-                    </div>                    
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="container collapse">
-
-        <div class="features__item features__item--cap"></div>
-
-        <div class="features__item">
-            <div class="row-flex collapse">
-                <div class="mv_24 ds_12">
-                    <div class="features__item-image">
-                        <img src="uploads/features/features-item-image-9.jpg" alt="">
-                    </div>
-                </div>
-                <div class="mv_24 ds_12">
-                    <div class="features__item-content content">
-                        <div class="features__item-content-inner">
-
-                            <h3 class="h2">Виды строительных работ</h3>
-                            <p>Компания Москонсалт уже <strong>5 лет</strong> работает в сфере получения допусков СРО на выполнение строительных, проектировочных и изыскательных работ, которые включены в перечень видов работ обязательного участия в СРО. Перечень утвержден Министерством регионального развития Российской Федерации — Приказом №624 от 30.06.2009. </p>
-                            <p><strong>Например, вступить в СРО необходимо при выполнении следующих работ:</strong></p>
-                            <ul>
-                                <li>Проектирование и строительство котельных;</li>
-                                <li>Различные виды инженерных изысканий;</li>
-                                <li> Подготовка ген. плана земельного участка;</li>
-                                <li>Выдача энергетического паспорта;</li>
-                                <li>Монтаж систем электроснабжения на строящихся объектах.</li>
-
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-
-    </div>
 </section>
 
 
@@ -513,85 +112,8 @@
             </div>
         </div>
 
-        <div class="row top advantages">
-            
-            <div class="mv_24 tb_16 tb_offset_4 ds_12 ds_offset_0 advantages__item-outer">
-                <div class="advantages__item">
-                    <div class="advantages__item-icon">
-                        <i class="fi flaticon-add"></i>
-                    </div>
-                    <div class="advantages__item-text">
-                        <div class="advantages__item-text-inner">Согласно последним исследованиям, 
-                            рекламоноситель создает социометрический 
-                            рекламный клаттер</div>
-                    </div>
+        {{> components/_advantages }}
 
-                </div>
-            </div>
-
-            <div class="mv_24 tb_16 tb_offset_4 ds_12 ds_offset_0 advantages__item-outer">
-                <div class="advantages__item">
-                    <div class="advantages__item-icon">
-                        <i class="fi flaticon-support"></i>
-                    </div>
-                    <div class="advantages__item-text">
-                        <div class="advantages__item-text-inner">Полный комплекс услуг по оформлению допуска: 
-                            от регистрации компании до оформления 
-                            допуска на опасные работы</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="mv_24 tb_16 tb_offset_4 ds_12 ds_offset_0 advantages__item-outer">
-                <div class="advantages__item">
-                    <div class="advantages__item-icon">
-                        <i class="fi flaticon-plus"></i>
-                    </div>
-                    <div class="advantages__item-text">
-                        <div class="advantages__item-text-inner">Внесение в 3 реестра членов саморегулируемых организация - гарантия надежности СРО</div>
-                    </div>
-
-                </div>
-            </div>  
-
-
-            <div class="mv_24 tb_16 tb_offset_4 ds_12 ds_offset_0 advantages__item-outer">
-                <div class="advantages__item">
-                    <div class="advantages__item-icon">
-                        <i class="fi flaticon-money"></i>
-                    </div>
-                    <div class="advantages__item-text">
-                        <div class="advantages__item-text-inner">Самые выгодные условия вступления в СРО в Приморском крае!</div>
-                    </div>
-
-                </div>
-            </div> 
-
-            <div class="mv_24 tb_16 tb_offset_4 ds_12 ds_offset_0 advantages__item-outer">
-                <div class="advantages__item">
-                    <div class="advantages__item-icon">
-                        <i class="fi flaticon-locked"></i>
-                    </div>
-                    <div class="advantages__item-text">
-                        <div class="advantages__item-text-inner">Ваши конфиденциальные данные никогда не попадут в третьи руки - Ваши интересы в СРО представляем мы</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="mv_24 tb_16 tb_offset_4 ds_12 ds_offset_0 advantages__item-outer">
-                <div class="advantages__item">
-                    <div class="advantages__item-icon">
-                        <i class="fi flaticon-stopwatch"></i>
-                    </div>
-                    <div class="advantages__item-text">
-                        <div class="advantages__item-text-inner">Срочное оформление допуска за 1 рабочий день - сегодня Вы оплачиваете взносы, а завтра получаете скан допуска</div>
-                    </div>
-
-                </div>
-            </div>          
-        </div>
     </div>
 </section>
 
@@ -604,21 +126,7 @@
         <div class="row">
 
             <div class="mv_24 ds_18 ds_offset_6 form-outer">
-                <form action="#" class="form form--sro">                        
-
-                    <div class="row">
-                        <div class="mv_24 tb_8 ds_8 field-outer">
-                            <input name="your-name" class="field--text" placeholder="Ваше имя" type="text">
-                        </div>
-                        <div class="mv_24 tb_8 ds_8 field-outer">
-                            <input name="your-phone" class="field--text" placeholder="Ваше имя" type="phone">
-                        </div>
-                        <div class="mv_24 tb_8 ds_8 field-outer">
-                            <a href="#" class="btn btn-submit">Отправить заявку</a>
-                        </div>
-                    </div>
-
-                </form>
+                {{> components/_form--sro }}
             </div>
 
         </div>
@@ -632,24 +140,7 @@
 <section class="section section-services bg-grey">
     <div class="container">
 
-        <!--  v3  -->
-        <div class="row-flex centered services ">
-            
-            {{#services_sro}}
-            <div class="mv_12 tb_6 tb_offset_0 ds_6 ds_offset_0 centered">
-                <a class="services__item" href="#">
-                    <div class="services__item-icon">
-                        <img src="images/{{item-image}}" alt="">
-                    </div>                    
-                    <div class="services__item-title">
-                        <span>{{item-title}}</span>
-                    </div>                    
-                </a>
-            </div>
-            {{/services_sro}}
-
-        </div>
-
+        {{> components/_services-sro }}
 
     </div>
 </section>
@@ -657,18 +148,4 @@
 
 
 
-{{> footer}}
-
-
-
-
-{{> overlay}}
-
-
-
-
-    <!-- <script src="js/scripts.js"> </script> -->
-    <script src="js/min/scripts.min.js"> </script>    
-
-</body>
-</html>
+{{/layout}}

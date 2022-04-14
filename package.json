@@ -16,7 +16,7 @@
     "through2": "^3.0.1"
   },
   "devDependencies": {
-    "async": "^2.6.2",
+    "async": "^3.2.2",
     "browser-sync": "^2.26.3",
     "git-pre-commit": "^2.1.4",
     "glob": "^7.1.3",
